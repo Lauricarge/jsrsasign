@@ -5,7 +5,7 @@
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="generator" content="JsDoc Toolkit" />
 		
-		<title>jsrsasign 4.8.7 JavaScript API Reference - KJUR.asn1.x509.GeneralName</title>
+		<title>jsrsasign 8.0.0 JavaScript API Reference - KJUR.asn1.x509.GeneralName</title>
 
 		<style type="text/css">
 			/* default.css */
@@ -299,6 +299,18 @@ ul.inheritsList
 	
 	<li><a href="../symbols/KJUR.asn1.DERUTF8String.html">KJUR.asn1.DERUTF8String</a></li>
 	
+	<li><a href="../symbols/KJUR.asn1.ocsp.html">KJUR.asn1.ocsp</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.ocsp.CertID.html">KJUR.asn1.ocsp.CertID</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.ocsp.OCSPRequest.html">KJUR.asn1.ocsp.OCSPRequest</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.ocsp.OCSPUtil.html">KJUR.asn1.ocsp.OCSPUtil</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.ocsp.Request.html">KJUR.asn1.ocsp.Request</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.ocsp.TBSRequest.html">KJUR.asn1.ocsp.TBSRequest</a></li>
+	
 	<li><a href="../symbols/KJUR.asn1.tsp.html">KJUR.asn1.tsp</a></li>
 	
 	<li><a href="../symbols/KJUR.asn1.tsp.AbstractTSAAdapter.html">KJUR.asn1.tsp.AbstractTSAAdapter</a></li>
@@ -333,6 +345,8 @@ ul.inheritsList
 	
 	<li><a href="../symbols/KJUR.asn1.x509.AttributeTypeAndValue.html">KJUR.asn1.x509.AttributeTypeAndValue</a></li>
 	
+	<li><a href="../symbols/KJUR.asn1.x509.AuthorityInfoAccess.html">KJUR.asn1.x509.AuthorityInfoAccess</a></li>
+	
 	<li><a href="../symbols/KJUR.asn1.x509.AuthorityKeyIdentifier.html">KJUR.asn1.x509.AuthorityKeyIdentifier</a></li>
 	
 	<li><a href="../symbols/KJUR.asn1.x509.BasicConstraints.html">KJUR.asn1.x509.BasicConstraints</a></li>
@@ -357,11 +371,15 @@ ul.inheritsList
 	
 	<li><a href="../symbols/KJUR.asn1.x509.GeneralNames.html">KJUR.asn1.x509.GeneralNames</a></li>
 	
+	<li><a href="../symbols/KJUR.asn1.x509.IssuerAltName.html">KJUR.asn1.x509.IssuerAltName</a></li>
+	
 	<li><a href="../symbols/KJUR.asn1.x509.KeyUsage.html">KJUR.asn1.x509.KeyUsage</a></li>
 	
 	<li><a href="../symbols/KJUR.asn1.x509.OID.html">KJUR.asn1.x509.OID</a></li>
 	
 	<li><a href="../symbols/KJUR.asn1.x509.RDN.html">KJUR.asn1.x509.RDN</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.x509.SubjectAltName.html">KJUR.asn1.x509.SubjectAltName</a></li>
 	
 	<li><a href="../symbols/KJUR.asn1.x509.SubjectPublicKeyInfo.html">KJUR.asn1.x509.SubjectPublicKeyInfo</a></li>
 	
@@ -376,6 +394,8 @@ ul.inheritsList
 	<li><a href="../symbols/KJUR.asn1.x509.X509Util.html">KJUR.asn1.x509.X509Util</a></li>
 	
 	<li><a href="../symbols/KJUR.crypto.html">KJUR.crypto</a></li>
+	
+	<li><a href="../symbols/KJUR.crypto.Cipher.html">KJUR.crypto.Cipher</a></li>
 	
 	<li><a href="../symbols/KJUR.crypto.DSA.html">KJUR.crypto.DSA</a></li>
 	
@@ -401,7 +421,7 @@ ul.inheritsList
 	
 	<li><a href="../symbols/KJUR.jws.JWSJS.html">KJUR.jws.JWSJS</a></li>
 	
-	<li><a href="../symbols/PKCS5PKEY.html">PKCS5PKEY</a></li>
+	<li><a href="../symbols/KJUR.lang.String.html">KJUR.lang.String</a></li>
 	
 	<li><a href="../symbols/RSAKey.html">RSAKey</a></li>
 	
@@ -448,7 +468,7 @@ ul.inheritsList
 							<div class="fixedFont">
 								<b><a href="../symbols/KJUR.asn1.x509.GeneralName.html#constructor">KJUR.asn1.x509.GeneralName</a></b>()
 							</div>
-							<div class="description">GeneralName ASN.1 structure class
+							<div class="description">GeneralName ASN.1 structure class<br/>
 <br/>
 As for argument 'params' for constructor, you can specify one of
 following properties:
@@ -480,7 +500,7 @@ following properties:
 				</div>
 				
 				<div class="description">
-					GeneralName ASN.1 structure class
+					GeneralName ASN.1 structure class<br/>
 <br/>
 As for argument 'params' for constructor, you can specify one of
 following properties:
@@ -488,35 +508,45 @@ following properties:
 <li>rfc822 - rfc822Name[1] (ex. user1@foo.com)</li>
 <li>dns - dNSName[2] (ex. foo.com)</li>
 <li>uri - uniformResourceIdentifier[6] (ex. http://foo.com/)</li>
+<li>dn - directoryName[4] (ex. /C=US/O=Test)</li>
+<li>ldapdn - directoryName[4] (ex. O=Test,C=US)</li>
 <li>certissuer - directoryName[4] (PEM or hex string of cert)</li>
 <li>certsubj - directoryName[4] (PEM or hex string of cert)</li>
+<li>ip - iPAddress[7] (ex. 192.168.1.1, 2001:db3::43, 3faa0101...)</li>
 </ul>
-NOTE1: certissuer and certsubj is supported since asn1x509 1.0.10.
+NOTE1: certissuer and certsubj were supported since asn1x509 1.0.10.<br/>
+NOTE2: dn and ldapdn were supported since jsrsasign 6.2.3 asn1x509 1.0.19.<br/>
+NOTE3: ip were supported since jsrsasign 8.0.10 asn1x509 1.1.4.<br/>
 
 Here is definition of the ASN.1 syntax:
 <pre>
 -- NOTE: under the CHOICE, it will always be explicit.
 GeneralName ::= CHOICE {
-        otherName                       [0]     OtherName,
-        rfc822Name                      [1]     IA5String,
-        dNSName                         [2]     IA5String,
-        x400Address                     [3]     ORAddress,
-        directoryName                   [4]     Name,
-        ediPartyName                    [5]     EDIPartyName,
-        uniformResourceIdentifier       [6]     IA5String,
-        iPAddress                       [7]     OCTET STRING,
-        registeredID                    [8]     OBJECT IDENTIFIER } 
+  otherName                  [0] OtherName,
+  rfc822Name                 [1] IA5String,
+  dNSName                    [2] IA5String,
+  x400Address                [3] ORAddress,
+  directoryName              [4] Name,
+  ediPartyName               [5] EDIPartyName,
+  uniformResourceIdentifier  [6] IA5String,
+  iPAddress                  [7] OCTET STRING,
+  registeredID               [8] OBJECT IDENTIFIER }
 </pre>
 					
 				</div>
 				
 				
 				
-				<pre class="code">gn = new KJUR.asn1.x509.GeneralName({rfc822:      'test@aaa.com'});
-gn = new KJUR.asn1.x509.GeneralName({dns:         'aaa.com'});
-gn = new KJUR.asn1.x509.GeneralName({uri:         'http://aaa.com/'});
-gn = new KJUR.asn1.x509.GeneralName({certissuer:  certPEM});
-gn = new KJUR.asn1.x509.GeneralName({certsubj:    certPEM});</pre>
+				<pre class="code">gn = new KJUR.asn1.x509.GeneralName({rfc822:     'test@aaa.com'});
+gn = new KJUR.asn1.x509.GeneralName({dns:        'aaa.com'});
+gn = new KJUR.asn1.x509.GeneralName({uri:        'http://aaa.com/'});
+gn = new KJUR.asn1.x509.GeneralName({dn:         '/C=US/O=Test'});
+gn = new KJUR.asn1.x509.GeneralName({ldapdn:     'O=Test,C=US'});
+gn = new KJUR.asn1.x509.GeneralName({certissuer: certPEM});
+gn = new KJUR.asn1.x509.GeneralName({certsubj:   certPEM});
+gn = new KJUR.asn1.x509.GeneralName({ip:         '192.168.1.1'});
+gn = new KJUR.asn1.x509.GeneralName({ip:         '2001:db4::4:1'});
+gn = new KJUR.asn1.x509.GeneralName({ip:         'c0a80101'});</pre>
 				
 				
 				
@@ -547,7 +577,7 @@ gn = new KJUR.asn1.x509.GeneralName({certsubj:    certPEM});</pre>
 		
 <!-- ============================== footer ================================= -->
 		<div class="fineprint" style="clear:both">
-                        &copy; 2012-2015 Kenji Urushima, All rights reserved<br/>
+                        &copy; 2012-2017 Kenji Urushima, All rights reserved<br/>
 			
 			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.4.0 
 		</div>

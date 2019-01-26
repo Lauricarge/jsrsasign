@@ -5,7 +5,7 @@
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="generator" content="JsDoc Toolkit" />
 		
-		<title>jsrsasign 4.8.7 JavaScript API Reference - KJUR.crypto.Signature</title>
+		<title>jsrsasign 8.0.0 JavaScript API Reference - KJUR.crypto.Signature</title>
 
 		<style type="text/css">
 			/* default.css */
@@ -299,6 +299,18 @@ ul.inheritsList
 	
 	<li><a href="../symbols/KJUR.asn1.DERUTF8String.html">KJUR.asn1.DERUTF8String</a></li>
 	
+	<li><a href="../symbols/KJUR.asn1.ocsp.html">KJUR.asn1.ocsp</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.ocsp.CertID.html">KJUR.asn1.ocsp.CertID</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.ocsp.OCSPRequest.html">KJUR.asn1.ocsp.OCSPRequest</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.ocsp.OCSPUtil.html">KJUR.asn1.ocsp.OCSPUtil</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.ocsp.Request.html">KJUR.asn1.ocsp.Request</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.ocsp.TBSRequest.html">KJUR.asn1.ocsp.TBSRequest</a></li>
+	
 	<li><a href="../symbols/KJUR.asn1.tsp.html">KJUR.asn1.tsp</a></li>
 	
 	<li><a href="../symbols/KJUR.asn1.tsp.AbstractTSAAdapter.html">KJUR.asn1.tsp.AbstractTSAAdapter</a></li>
@@ -333,6 +345,8 @@ ul.inheritsList
 	
 	<li><a href="../symbols/KJUR.asn1.x509.AttributeTypeAndValue.html">KJUR.asn1.x509.AttributeTypeAndValue</a></li>
 	
+	<li><a href="../symbols/KJUR.asn1.x509.AuthorityInfoAccess.html">KJUR.asn1.x509.AuthorityInfoAccess</a></li>
+	
 	<li><a href="../symbols/KJUR.asn1.x509.AuthorityKeyIdentifier.html">KJUR.asn1.x509.AuthorityKeyIdentifier</a></li>
 	
 	<li><a href="../symbols/KJUR.asn1.x509.BasicConstraints.html">KJUR.asn1.x509.BasicConstraints</a></li>
@@ -357,11 +371,15 @@ ul.inheritsList
 	
 	<li><a href="../symbols/KJUR.asn1.x509.GeneralNames.html">KJUR.asn1.x509.GeneralNames</a></li>
 	
+	<li><a href="../symbols/KJUR.asn1.x509.IssuerAltName.html">KJUR.asn1.x509.IssuerAltName</a></li>
+	
 	<li><a href="../symbols/KJUR.asn1.x509.KeyUsage.html">KJUR.asn1.x509.KeyUsage</a></li>
 	
 	<li><a href="../symbols/KJUR.asn1.x509.OID.html">KJUR.asn1.x509.OID</a></li>
 	
 	<li><a href="../symbols/KJUR.asn1.x509.RDN.html">KJUR.asn1.x509.RDN</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.x509.SubjectAltName.html">KJUR.asn1.x509.SubjectAltName</a></li>
 	
 	<li><a href="../symbols/KJUR.asn1.x509.SubjectPublicKeyInfo.html">KJUR.asn1.x509.SubjectPublicKeyInfo</a></li>
 	
@@ -376,6 +394,8 @@ ul.inheritsList
 	<li><a href="../symbols/KJUR.asn1.x509.X509Util.html">KJUR.asn1.x509.X509Util</a></li>
 	
 	<li><a href="../symbols/KJUR.crypto.html">KJUR.crypto</a></li>
+	
+	<li><a href="../symbols/KJUR.crypto.Cipher.html">KJUR.crypto.Cipher</a></li>
 	
 	<li><a href="../symbols/KJUR.crypto.DSA.html">KJUR.crypto.DSA</a></li>
 	
@@ -401,7 +421,7 @@ ul.inheritsList
 	
 	<li><a href="../symbols/KJUR.jws.JWSJS.html">KJUR.jws.JWSJS</a></li>
 	
-	<li><a href="../symbols/PKCS5PKEY.html">PKCS5PKEY</a></li>
+	<li><a href="../symbols/KJUR.lang.String.html">KJUR.lang.String</a></li>
 	
 	<li><a href="../symbols/RSAKey.html">RSAKey</a></li>
 	
@@ -505,9 +525,9 @@ As for params of constructor's argument, it can be specify following attributes:
 					<tbody>
 					
 						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="attributes">&nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont">KJUR.crypto.Signature.<b><a href="../symbols/KJUR.crypto.Signature.html#.init">init</a></b>(key, pass)
+								<div class="fixedFont"><b><a href="../symbols/KJUR.crypto.Signature.html#init">init</a></b>(key, pass)
 								</div>
 								<div class="description">Initialize this object for signing or verifying depends on key
 This method is very useful initialize method for Signature class since
@@ -517,49 +537,9 @@ using <a href="../symbols/KEYUTIL.html#.getKey">KEYUTIL.getKey</a> method.</div>
 						</tr>
 					
 						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="attributes">&nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont">KJUR.crypto.Signature.<b><a href="../symbols/KJUR.crypto.Signature.html#.initSign">initSign</a></b>(param)
-								</div>
-								<div class="description">Initialize this object for signing
-Private key information will be provided as 'param' parameter and the value will be
-following:
-<ul>
-<li><a href="../symbols/RSAKey.html">RSAKey</a> object for RSA signing</li>
-<li>associative array for ECDSA signing
-    (ex.</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">KJUR.crypto.Signature.<b><a href="../symbols/KJUR.crypto.Signature.html#.initVerifyByCertificatePEM">initVerifyByCertificatePEM</a></b>(certPEM)
-								</div>
-								<div class="description">Initialize this object for verifying with a certficate
-</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">KJUR.crypto.Signature.<b><a href="../symbols/KJUR.crypto.Signature.html#.initVerifyByPublicKey">initVerifyByPublicKey</a></b>(param)
-								</div>
-								<div class="description">Initialize this object for verifying with a public key
-Public key information will be provided as 'param' parameter and the value will be
-following:
-<ul>
-<li><a href="../symbols/RSAKey.html">RSAKey</a> object for RSA verification</li>
-<li>associative array for ECDSA verification
-    (ex.</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">KJUR.crypto.Signature.<b><a href="../symbols/KJUR.crypto.Signature.html#.setAlgAndProvider">setAlgAndProvider</a></b>(alg, prov)
+								<div class="fixedFont"><b><a href="../symbols/KJUR.crypto.Signature.html#setAlgAndProvider">setAlgAndProvider</a></b>(alg, prov)
 								</div>
 								<div class="description">set signature algorithm and provider
 </div>
@@ -567,9 +547,9 @@ following:
 						</tr>
 					
 						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="attributes">&nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont">KJUR.crypto.Signature.<b><a href="../symbols/KJUR.crypto.Signature.html#.sign">sign</a></b>()
+								<div class="fixedFont"><b><a href="../symbols/KJUR.crypto.Signature.html#sign">sign</a></b>()
 								</div>
 								<div class="description">Returns the signature bytes of all data updates as a hexadecimal string
 </div>
@@ -577,9 +557,9 @@ following:
 						</tr>
 					
 						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="attributes">&nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont">KJUR.crypto.Signature.<b><a href="../symbols/KJUR.crypto.Signature.html#.signHex">signHex</a></b>(hex)
+								<div class="fixedFont"><b><a href="../symbols/KJUR.crypto.Signature.html#signHex">signHex</a></b>(hex)
 								</div>
 								<div class="description">performs final update on the sign using hexadecimal string, then returns the signature bytes of all data updates as a hexadecimal string
 </div>
@@ -587,9 +567,9 @@ following:
 						</tr>
 					
 						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="attributes">&nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont">KJUR.crypto.Signature.<b><a href="../symbols/KJUR.crypto.Signature.html#.signString">signString</a></b>(str)
+								<div class="fixedFont"><b><a href="../symbols/KJUR.crypto.Signature.html#signString">signString</a></b>(str)
 								</div>
 								<div class="description">performs final update on the sign using string, then returns the signature bytes of all data updates as a hexadecimal string
 </div>
@@ -597,9 +577,9 @@ following:
 						</tr>
 					
 						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="attributes">&nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont">KJUR.crypto.Signature.<b><a href="../symbols/KJUR.crypto.Signature.html#.updateHex">updateHex</a></b>(hex)
+								<div class="fixedFont"><b><a href="../symbols/KJUR.crypto.Signature.html#updateHex">updateHex</a></b>(hex)
 								</div>
 								<div class="description">Updates the data to be signed or verified by a hexadecimal string
 </div>
@@ -607,9 +587,9 @@ following:
 						</tr>
 					
 						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="attributes">&nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont">KJUR.crypto.Signature.<b><a href="../symbols/KJUR.crypto.Signature.html#.updateString">updateString</a></b>(str)
+								<div class="fixedFont"><b><a href="../symbols/KJUR.crypto.Signature.html#updateString">updateString</a></b>(str)
 								</div>
 								<div class="description">Updates the data to be signed or verified by a string
 </div>
@@ -617,9 +597,9 @@ following:
 						</tr>
 					
 						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="attributes">&nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont">KJUR.crypto.Signature.<b><a href="../symbols/KJUR.crypto.Signature.html#.verify">verify</a></b>(str)
+								<div class="fixedFont"><b><a href="../symbols/KJUR.crypto.Signature.html#verify">verify</a></b>(str)
 								</div>
 								<div class="description">verifies the passed-in signature.</div>
 							</td>
@@ -779,11 +759,11 @@ var isValid = sig.verify(sigValueHex);</pre>
 					Method Detail
 				</div>
 				
-					<a name=".init"> </a>
-					<div class="fixedFont">&lt;static&gt; 
+					<a name="init"> </a>
+					<div class="fixedFont">
 					
 					
-					<span class="light">KJUR.crypto.Signature.</span><b>init</b>(key, pass)
+					<b>init</b>(key, pass)
 					
 					</div>
 					<div class="description">
@@ -854,180 +834,11 @@ As for 'key',  following argument type are supported:
 
 					<hr />
 				
-					<a name=".initSign"> </a>
-					<div class="fixedFont">&lt;static&gt; 
+					<a name="setAlgAndProvider"> </a>
+					<div class="fixedFont">
 					
 					
-					<span class="light">KJUR.crypto.Signature.</span><b>initSign</b>(param)
-					
-					</div>
-					<div class="description">
-						Initialize this object for signing
-Private key information will be provided as 'param' parameter and the value will be
-following:
-<ul>
-<li><a href="../symbols/RSAKey.html">RSAKey</a> object for RSA signing</li>
-<li>associative array for ECDSA signing
-    (ex. <code>{'ecprvhex': '1d3f..', 'eccurvename': 'secp256r1'}</code>)</li>
-</ul>
-						
-						
-					</div>
-					
-					
-					
-					<pre class="code">sig.initSign(prvKey)</pre>
-					
-					
-					
-						
-							<dl class="detailList">
-							<dt class="heading">Parameters:</dt>
-							
-								<dt>
-									<span class="light fixedFont">{Object}</span> <b>param</b>
-									
-								</dt>
-								<dd>RSAKey object of public key or associative array for ECDSA</dd>
-							
-							</dl>
-						
-						
-							<dl class="detailList">
-							<dt class="heading">Deprecated:</dt>
-							<dt>
-								from crypto 1.1.5. please use init() method instead.
-							</dt>
-							</dl>
-						
-						
-						
-						
-						
-						
-
-					<hr />
-				
-					<a name=".initVerifyByCertificatePEM"> </a>
-					<div class="fixedFont">&lt;static&gt; 
-					
-					
-					<span class="light">KJUR.crypto.Signature.</span><b>initVerifyByCertificatePEM</b>(certPEM)
-					
-					</div>
-					<div class="description">
-						Initialize this object for verifying with a certficate
-
-						
-						
-					</div>
-					
-					
-					
-					<pre class="code">sig.initVerifyByCertificatePEM(certPEM)</pre>
-					
-					
-					
-						
-							<dl class="detailList">
-							<dt class="heading">Parameters:</dt>
-							
-								<dt>
-									<span class="light fixedFont">{String}</span> <b>certPEM</b>
-									
-								</dt>
-								<dd>PEM formatted string of certificate</dd>
-							
-							</dl>
-						
-						
-							<dl class="detailList">
-							<dt class="heading">Deprecated:</dt>
-							<dt>
-								from crypto 1.1.5. please use init() method instead.
-							</dt>
-							</dl>
-						
-						
-							<dl class="detailList">
-							<dt class="heading">Since:</dt>
-								<dd>1.0.2</dd>
-							</dl>
-							</dl>
-						
-						
-						
-						
-						
-
-					<hr />
-				
-					<a name=".initVerifyByPublicKey"> </a>
-					<div class="fixedFont">&lt;static&gt; 
-					
-					
-					<span class="light">KJUR.crypto.Signature.</span><b>initVerifyByPublicKey</b>(param)
-					
-					</div>
-					<div class="description">
-						Initialize this object for verifying with a public key
-Public key information will be provided as 'param' parameter and the value will be
-following:
-<ul>
-<li><a href="../symbols/RSAKey.html">RSAKey</a> object for RSA verification</li>
-<li>associative array for ECDSA verification
-    (ex. <code>{'ecpubhex': '041f..', 'eccurvename': 'secp256r1'}</code>)
-</li>
-</ul>
-						
-						
-					</div>
-					
-					
-					
-					<pre class="code">sig.initVerifyByPublicKey(rsaPrvKey)</pre>
-					
-					
-					
-						
-							<dl class="detailList">
-							<dt class="heading">Parameters:</dt>
-							
-								<dt>
-									<span class="light fixedFont">{Object}</span> <b>param</b>
-									
-								</dt>
-								<dd>RSAKey object of public key or associative array for ECDSA</dd>
-							
-							</dl>
-						
-						
-							<dl class="detailList">
-							<dt class="heading">Deprecated:</dt>
-							<dt>
-								from crypto 1.1.5. please use init() method instead.
-							</dt>
-							</dl>
-						
-						
-							<dl class="detailList">
-							<dt class="heading">Since:</dt>
-								<dd>1.0.2</dd>
-							</dl>
-							</dl>
-						
-						
-						
-						
-						
-
-					<hr />
-				
-					<a name=".setAlgAndProvider"> </a>
-					<div class="fixedFont">&lt;static&gt; 
-					
-					
-					<span class="light">KJUR.crypto.Signature.</span><b>setAlgAndProvider</b>(alg, prov)
+					<b>setAlgAndProvider</b>(alg, prov)
 					
 					</div>
 					<div class="description">
@@ -1070,11 +881,11 @@ following:
 
 					<hr />
 				
-					<a name=".sign"> </a>
-					<div class="fixedFont">&lt;static&gt; 
+					<a name="sign"> </a>
+					<div class="fixedFont">
 					
 					
-					<span class="light">KJUR.crypto.Signature.</span><b>sign</b>()
+					<b>sign</b>()
 					
 					</div>
 					<div class="description">
@@ -1107,11 +918,11 @@ following:
 
 					<hr />
 				
-					<a name=".signHex"> </a>
-					<div class="fixedFont">&lt;static&gt; 
+					<a name="signHex"> </a>
+					<div class="fixedFont">
 					
 					
-					<span class="light">KJUR.crypto.Signature.</span><b>signHex</b>(hex)
+					<b>signHex</b>(hex)
 					
 					</div>
 					<div class="description">
@@ -1155,11 +966,11 @@ following:
 
 					<hr />
 				
-					<a name=".signString"> </a>
-					<div class="fixedFont">&lt;static&gt; 
+					<a name="signString"> </a>
+					<div class="fixedFont">
 					
 					
-					<span class="light">KJUR.crypto.Signature.</span><b>signString</b>(str)
+					<b>signString</b>(str)
 					
 					</div>
 					<div class="description">
@@ -1203,11 +1014,11 @@ following:
 
 					<hr />
 				
-					<a name=".updateHex"> </a>
-					<div class="fixedFont">&lt;static&gt; 
+					<a name="updateHex"> </a>
+					<div class="fixedFont">
 					
 					
-					<span class="light">KJUR.crypto.Signature.</span><b>updateHex</b>(hex)
+					<b>updateHex</b>(hex)
 					
 					</div>
 					<div class="description">
@@ -1244,11 +1055,11 @@ following:
 
 					<hr />
 				
-					<a name=".updateString"> </a>
-					<div class="fixedFont">&lt;static&gt; 
+					<a name="updateString"> </a>
+					<div class="fixedFont">
 					
 					
-					<span class="light">KJUR.crypto.Signature.</span><b>updateString</b>(str)
+					<b>updateString</b>(str)
 					
 					</div>
 					<div class="description">
@@ -1285,11 +1096,11 @@ following:
 
 					<hr />
 				
-					<a name=".verify"> </a>
-					<div class="fixedFont">&lt;static&gt; 
+					<a name="verify"> </a>
+					<div class="fixedFont">
 					
 					<span class="light">{Boolean}</span>
-					<span class="light">KJUR.crypto.Signature.</span><b>verify</b>(str)
+					<b>verify</b>(str)
 					
 					</div>
 					<div class="description">
@@ -1344,7 +1155,7 @@ following:
 		
 <!-- ============================== footer ================================= -->
 		<div class="fineprint" style="clear:both">
-                        &copy; 2012-2015 Kenji Urushima, All rights reserved<br/>
+                        &copy; 2012-2017 Kenji Urushima, All rights reserved<br/>
 			
 			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.4.0 
 		</div>

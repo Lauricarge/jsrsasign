@@ -5,7 +5,7 @@
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="generator" content="JsDoc Toolkit" />
 		
-		<title>jsrsasign 4.8.7 JavaScript API Reference - KJUR.asn1.x509.X500Name</title>
+		<title>jsrsasign 8.0.0 JavaScript API Reference - KJUR.asn1.x509.X500Name</title>
 
 		<style type="text/css">
 			/* default.css */
@@ -299,6 +299,18 @@ ul.inheritsList
 	
 	<li><a href="../symbols/KJUR.asn1.DERUTF8String.html">KJUR.asn1.DERUTF8String</a></li>
 	
+	<li><a href="../symbols/KJUR.asn1.ocsp.html">KJUR.asn1.ocsp</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.ocsp.CertID.html">KJUR.asn1.ocsp.CertID</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.ocsp.OCSPRequest.html">KJUR.asn1.ocsp.OCSPRequest</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.ocsp.OCSPUtil.html">KJUR.asn1.ocsp.OCSPUtil</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.ocsp.Request.html">KJUR.asn1.ocsp.Request</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.ocsp.TBSRequest.html">KJUR.asn1.ocsp.TBSRequest</a></li>
+	
 	<li><a href="../symbols/KJUR.asn1.tsp.html">KJUR.asn1.tsp</a></li>
 	
 	<li><a href="../symbols/KJUR.asn1.tsp.AbstractTSAAdapter.html">KJUR.asn1.tsp.AbstractTSAAdapter</a></li>
@@ -333,6 +345,8 @@ ul.inheritsList
 	
 	<li><a href="../symbols/KJUR.asn1.x509.AttributeTypeAndValue.html">KJUR.asn1.x509.AttributeTypeAndValue</a></li>
 	
+	<li><a href="../symbols/KJUR.asn1.x509.AuthorityInfoAccess.html">KJUR.asn1.x509.AuthorityInfoAccess</a></li>
+	
 	<li><a href="../symbols/KJUR.asn1.x509.AuthorityKeyIdentifier.html">KJUR.asn1.x509.AuthorityKeyIdentifier</a></li>
 	
 	<li><a href="../symbols/KJUR.asn1.x509.BasicConstraints.html">KJUR.asn1.x509.BasicConstraints</a></li>
@@ -357,11 +371,15 @@ ul.inheritsList
 	
 	<li><a href="../symbols/KJUR.asn1.x509.GeneralNames.html">KJUR.asn1.x509.GeneralNames</a></li>
 	
+	<li><a href="../symbols/KJUR.asn1.x509.IssuerAltName.html">KJUR.asn1.x509.IssuerAltName</a></li>
+	
 	<li><a href="../symbols/KJUR.asn1.x509.KeyUsage.html">KJUR.asn1.x509.KeyUsage</a></li>
 	
 	<li><a href="../symbols/KJUR.asn1.x509.OID.html">KJUR.asn1.x509.OID</a></li>
 	
 	<li><a href="../symbols/KJUR.asn1.x509.RDN.html">KJUR.asn1.x509.RDN</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.x509.SubjectAltName.html">KJUR.asn1.x509.SubjectAltName</a></li>
 	
 	<li><a href="../symbols/KJUR.asn1.x509.SubjectPublicKeyInfo.html">KJUR.asn1.x509.SubjectPublicKeyInfo</a></li>
 	
@@ -376,6 +394,8 @@ ul.inheritsList
 	<li><a href="../symbols/KJUR.asn1.x509.X509Util.html">KJUR.asn1.x509.X509Util</a></li>
 	
 	<li><a href="../symbols/KJUR.crypto.html">KJUR.crypto</a></li>
+	
+	<li><a href="../symbols/KJUR.crypto.Cipher.html">KJUR.crypto.Cipher</a></li>
 	
 	<li><a href="../symbols/KJUR.crypto.DSA.html">KJUR.crypto.DSA</a></li>
 	
@@ -401,7 +421,7 @@ ul.inheritsList
 	
 	<li><a href="../symbols/KJUR.jws.JWSJS.html">KJUR.jws.JWSJS</a></li>
 	
-	<li><a href="../symbols/PKCS5PKEY.html">PKCS5PKEY</a></li>
+	<li><a href="../symbols/KJUR.lang.String.html">KJUR.lang.String</a></li>
 	
 	<li><a href="../symbols/RSAKey.html">RSAKey</a></li>
 	
@@ -451,7 +471,8 @@ ul.inheritsList
 								<b><a href="../symbols/KJUR.asn1.x509.X500Name.html#constructor">KJUR.asn1.x509.X500Name</a></b>(params)
 							</div>
 							<div class="description">X500Name ASN.1 structure class
-</div>
+This class provides DistinguishedName ASN.1 class structure
+defined in <a href="https://tools.ietf.org/html/rfc2253#section-2">RFC 2253 section 2</a>.</div>
 						</td>
 					</tr>
 				</tbody>
@@ -487,20 +508,52 @@ ul.inheritsList
 						<tr>
 							<td class="attributes">&lt;static&gt; &nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont">KJUR.asn1.x509.X500Name.<b><a href="../symbols/KJUR.asn1.x509.X500Name.html#.setByObject">setByObject</a></b>(dnObj)
+								<div class="fixedFont">KJUR.asn1.x509.X500Name.<b><a href="../symbols/KJUR.asn1.x509.X500Name.html#.ldapToOneline">ldapToOneline</a></b>(s)
 								</div>
-								<div class="description">set DN by associative array
-</div>
+								<div class="description">convert LDAP(RFC 2253) distinguished name format string to OpenSSL oneline format<br/>
+This static method converts a distinguished name string in 
+LDAP(RFC 2253) format to OpenSSL oneline format.</div>
 							</td>
 						</tr>
 					
 						<tr>
 							<td class="attributes">&lt;static&gt; &nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont">KJUR.asn1.x509.X500Name.<b><a href="../symbols/KJUR.asn1.x509.X500Name.html#.setByString">setByString</a></b>(dnStr)
+								<div class="fixedFont">KJUR.asn1.x509.X500Name.<b><a href="../symbols/KJUR.asn1.x509.X500Name.html#.onelineToLDAP">onelineToLDAP</a></b>(s)
 								</div>
-								<div class="description">set DN by string
+								<div class="description">convert OpenSSL oneline distinguished name format string to LDAP(RFC 2253) format<br/>
+This static method converts a distinguished name string in OpenSSL oneline 
+format to LDAP(RFC 2253) format.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/KJUR.asn1.x509.X500Name.html#setByLdapString">setByLdapString</a></b>(dnStr)
+								</div>
+								<div class="description">set DN by LDAP(RFC 2253) distinguished name string<br/>
 </div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/KJUR.asn1.x509.X500Name.html#setByObject">setByObject</a></b>(dnObj)
+								</div>
+								<div class="description">set DN by associative array<br/>
+</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/KJUR.asn1.x509.X500Name.html#setByString">setByString</a></b>(dnStr)
+								</div>
+								<div class="description">set DN by OpenSSL oneline distinguished name string<br/>
+Sets distinguished name by string.</div>
 							</td>
 						</tr>
 					
@@ -510,7 +563,7 @@ ul.inheritsList
 				
 				
 				<dl class="inheritsList">
-				
+				<dt>Methods borrowed from class <a href="../symbols/KJUR.asn1.ASN1Object.html">KJUR.asn1.ASN1Object</a>: </dt><dd><a href="../symbols/KJUR.asn1.ASN1Object.html#getEncodedHex">getEncodedHex</a>, <a href="../symbols/KJUR.asn1.ASN1Object.html#getLengthHexFromValue">getLengthHexFromValue</a>, <a href="../symbols/KJUR.asn1.ASN1Object.html#getValueHex">getValueHex</a></dd>
 				</dl>
 				
 			
@@ -530,7 +583,25 @@ ul.inheritsList
 				
 				<div class="description">
 					X500Name ASN.1 structure class
+This class provides DistinguishedName ASN.1 class structure
+defined in <a href="https://tools.ietf.org/html/rfc2253#section-2">RFC 2253 section 2</a>.
+<blockquote><pre>
+DistinguishedName ::= RDNSequence
 
+RDNSequence ::= SEQUENCE OF RelativeDistinguishedName
+
+RelativeDistinguishedName ::= SET SIZE (1..MAX) OF
+  AttributeTypeAndValue
+
+AttributeTypeAndValue ::= SEQUENCE {
+  type  AttributeType,
+  value AttributeValue }
+</pre></blockquote>
+<br/>
+For string representation of distinguished name in jsrsasign,
+OpenSSL oneline format is used. Please see <a href="https://github.com/kjur/jsrsasign/wiki/NOTE-distinguished-name-representation-in-jsrsasign">wiki article</a> for it.
+<br/>
+NOTE: Multi-valued RDN is supported since jsrsasign 6.2.1 asn1x509 1.0.17.
 					
 				</div>
 				
@@ -538,6 +609,7 @@ ul.inheritsList
 				
 				<pre class="code">// 1. construct with string
 o = new KJUR.asn1.x509.X500Name({str: "/C=US/O=aaa/OU=bbb/CN=foo@example.com"});
+o = new KJUR.asn1.x509.X500Name({str: "/C=US/O=aaa+CN=contact@example.com"}); // multi valued
 // 2. construct by object
 o = new KJUR.asn1.x509.X500Name({C: "US", O: "aaa", CN: "http://example.com/"});</pre>
 				
@@ -562,6 +634,17 @@ o = new KJUR.asn1.x509.X500Name({C: "US", O: "aaa", CN: "http://example.com/"});
 					
 					
 					
+						<dl class="detailList">
+						<dt class="heading">See:</dt>
+						
+							<dd><a href="../symbols/KJUR.asn1.x509.X500Name.html">KJUR.asn1.x509.X500Name</a></dd>
+						
+							<dd><a href="../symbols/KJUR.asn1.x509.RDN.html">KJUR.asn1.x509.RDN</a></dd>
+						
+							<dd><a href="../symbols/KJUR.asn1.x509.AttributeTypeAndValue.html">KJUR.asn1.x509.AttributeTypeAndValue</a></dd>
+						
+						</dl>
+					
 
 			</div>
 			
@@ -575,15 +658,190 @@ o = new KJUR.asn1.x509.X500Name({C: "US", O: "aaa", CN: "http://example.com/"});
 					Method Detail
 				</div>
 				
-					<a name=".setByObject"> </a>
+					<a name=".ldapToOneline"> </a>
 					<div class="fixedFont">&lt;static&gt; 
 					
-					
-					<span class="light">KJUR.asn1.x509.X500Name.</span><b>setByObject</b>(dnObj)
+					<span class="light">{String}</span>
+					<span class="light">KJUR.asn1.x509.X500Name.</span><b>ldapToOneline</b>(s)
 					
 					</div>
 					<div class="description">
-						set DN by associative array
+						convert LDAP(RFC 2253) distinguished name format string to OpenSSL oneline format<br/>
+This static method converts a distinguished name string in 
+LDAP(RFC 2253) format to OpenSSL oneline format.
+						
+						
+					</div>
+					
+					
+					
+					<pre class="code">KJUR.asn1.x509.X500Name.ldapToOneline('O=test,C=US') &rarr; '/C=US/O=test'
+KJUR.asn1.x509.X500Name.ldapToOneline('O=a\,a,C=US') &rarr; '/C=US/O=a,a'
+KJUR.asn1.x509.X500Name.ldapToOneline('O=a/a,C=US')  &rarr; '/C=US/O=a\/a'</pre>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{String}</span> <b>s</b>
+									
+								</dt>
+								<dd>distinguished name string in LDAP(RFC 2253) format (ex. O=test,C=US)</dd>
+							
+							</dl>
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Since:</dt>
+								<dd>jsrsasign 6.2.2 asn1x509 1.0.18</dd>
+							</dl>
+							</dl>
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> distinguished name string in OpenSSL oneline format (ex. /C=US/O=test)</dd>
+							
+							</dl>
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">See:</dt>
+							
+								<dd><a href="https://github.com/kjur/jsrsasign/wiki/NOTE-distinguished-name-representation-in-jsrsasign">jsrsasign wiki: distinguished name string difference between OpenSSL oneline and LDAP(RFC 2253)</a></dd>
+							
+							</dl>
+						
+
+					<hr />
+				
+					<a name=".onelineToLDAP"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{String}</span>
+					<span class="light">KJUR.asn1.x509.X500Name.</span><b>onelineToLDAP</b>(s)
+					
+					</div>
+					<div class="description">
+						convert OpenSSL oneline distinguished name format string to LDAP(RFC 2253) format<br/>
+This static method converts a distinguished name string in OpenSSL oneline 
+format to LDAP(RFC 2253) format.
+						
+						
+					</div>
+					
+					
+					
+					<pre class="code">KJUR.asn1.x509.X500Name.onelineToLDAP("/C=US/O=test") &rarr; 'O=test,C=US'
+KJUR.asn1.x509.X500Name.onelineToLDAP("/C=US/O=a,a") &rarr; 'O=a\,a,C=US'</pre>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{String}</span> <b>s</b>
+									
+								</dt>
+								<dd>distinguished name string in OpenSSL oneline format (ex. /C=US/O=test)</dd>
+							
+							</dl>
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Since:</dt>
+								<dd>jsrsasign 6.2.2 asn1x509 1.0.18</dd>
+							</dl>
+							</dl>
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{String}</span> distinguished name string in LDAP(RFC 2253) format (ex. O=test,C=US)</dd>
+							
+							</dl>
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">See:</dt>
+							
+								<dd><a href="https://github.com/kjur/jsrsasign/wiki/NOTE-distinguished-name-representation-in-jsrsasign">jsrsasign wiki: distinguished name string difference between OpenSSL oneline and LDAP(RFC 2253)</a></dd>
+							
+							</dl>
+						
+
+					<hr />
+				
+					<a name="setByLdapString"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>setByLdapString</b>(dnStr)
+					
+					</div>
+					<div class="description">
+						set DN by LDAP(RFC 2253) distinguished name string<br/>
+
+						
+						
+					</div>
+					
+					
+					
+					<pre class="code">name = new KJUR.asn1.x509.X500Name();
+name.setByLdapString("CN=foo@example.com,OU=bbb,O=aaa,C=US");</pre>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{String}</span> <b>dnStr</b>
+									
+								</dt>
+								<dd>distinguished name by LDAP string (ex. O=aaa,C=US)</dd>
+							
+							</dl>
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Since:</dt>
+								<dd>jsrsasign 6.2.2 asn1x509 1.0.18</dd>
+							</dl>
+							</dl>
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="setByObject"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>setByObject</b>(dnObj)
+					
+					</div>
+					<div class="description">
+						set DN by associative array<br/>
 
 						
 						
@@ -623,16 +881,19 @@ name.setByObject({C: "US", O: "aaa", CN="http://example.com/"1});</pre>
 
 					<hr />
 				
-					<a name=".setByString"> </a>
-					<div class="fixedFont">&lt;static&gt; 
+					<a name="setByString"> </a>
+					<div class="fixedFont">
 					
 					
-					<span class="light">KJUR.asn1.x509.X500Name.</span><b>setByString</b>(dnStr)
+					<b>setByString</b>(dnStr)
 					
 					</div>
 					<div class="description">
-						set DN by string
-
+						set DN by OpenSSL oneline distinguished name string<br/>
+Sets distinguished name by string. 
+dnStr must be formatted as 
+"/type0=value0/type1=value1/type2=value2...".
+No need to escape a slash in an attribute value.
 						
 						
 					</div>
@@ -640,7 +901,9 @@ name.setByObject({C: "US", O: "aaa", CN="http://example.com/"1});</pre>
 					
 					
 					<pre class="code">name = new KJUR.asn1.x509.X500Name();
-name.setByString("/C=US/O=aaa/OU=bbb/CN=foo@example.com");</pre>
+name.setByString("/C=US/O=aaa/OU=bbb/CN=foo@example.com");
+// no need to escape slash in an attribute value
+name.setByString("/C=US/O=aaa/CN=1980/12/31");</pre>
 					
 					
 					
@@ -649,7 +912,7 @@ name.setByString("/C=US/O=aaa/OU=bbb/CN=foo@example.com");</pre>
 							<dt class="heading">Parameters:</dt>
 							
 								<dt>
-									<span class="light fixedFont">{Array}</span> <b>dnStr</b>
+									<span class="light fixedFont">{String}</span> <b>dnStr</b>
 									
 								</dt>
 								<dd>distinguished name by string (ex. /C=US/O=aaa)</dd>
@@ -676,7 +939,7 @@ name.setByString("/C=US/O=aaa/OU=bbb/CN=foo@example.com");</pre>
 		
 <!-- ============================== footer ================================= -->
 		<div class="fineprint" style="clear:both">
-                        &copy; 2012-2015 Kenji Urushima, All rights reserved<br/>
+                        &copy; 2012-2017 Kenji Urushima, All rights reserved<br/>
 			
 			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.4.0 
 		</div>

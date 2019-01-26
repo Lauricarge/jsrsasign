@@ -5,7 +5,7 @@
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="generator" content="JsDoc Toolkit" />
 		
-		<title>jsrsasign 4.8.7 JavaScript API Reference - KJUR.asn1.x509.TBSCertificate</title>
+		<title>jsrsasign 8.0.0 JavaScript API Reference - KJUR.asn1.x509.TBSCertificate</title>
 
 		<style type="text/css">
 			/* default.css */
@@ -299,6 +299,18 @@ ul.inheritsList
 	
 	<li><a href="../symbols/KJUR.asn1.DERUTF8String.html">KJUR.asn1.DERUTF8String</a></li>
 	
+	<li><a href="../symbols/KJUR.asn1.ocsp.html">KJUR.asn1.ocsp</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.ocsp.CertID.html">KJUR.asn1.ocsp.CertID</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.ocsp.OCSPRequest.html">KJUR.asn1.ocsp.OCSPRequest</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.ocsp.OCSPUtil.html">KJUR.asn1.ocsp.OCSPUtil</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.ocsp.Request.html">KJUR.asn1.ocsp.Request</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.ocsp.TBSRequest.html">KJUR.asn1.ocsp.TBSRequest</a></li>
+	
 	<li><a href="../symbols/KJUR.asn1.tsp.html">KJUR.asn1.tsp</a></li>
 	
 	<li><a href="../symbols/KJUR.asn1.tsp.AbstractTSAAdapter.html">KJUR.asn1.tsp.AbstractTSAAdapter</a></li>
@@ -333,6 +345,8 @@ ul.inheritsList
 	
 	<li><a href="../symbols/KJUR.asn1.x509.AttributeTypeAndValue.html">KJUR.asn1.x509.AttributeTypeAndValue</a></li>
 	
+	<li><a href="../symbols/KJUR.asn1.x509.AuthorityInfoAccess.html">KJUR.asn1.x509.AuthorityInfoAccess</a></li>
+	
 	<li><a href="../symbols/KJUR.asn1.x509.AuthorityKeyIdentifier.html">KJUR.asn1.x509.AuthorityKeyIdentifier</a></li>
 	
 	<li><a href="../symbols/KJUR.asn1.x509.BasicConstraints.html">KJUR.asn1.x509.BasicConstraints</a></li>
@@ -357,11 +371,15 @@ ul.inheritsList
 	
 	<li><a href="../symbols/KJUR.asn1.x509.GeneralNames.html">KJUR.asn1.x509.GeneralNames</a></li>
 	
+	<li><a href="../symbols/KJUR.asn1.x509.IssuerAltName.html">KJUR.asn1.x509.IssuerAltName</a></li>
+	
 	<li><a href="../symbols/KJUR.asn1.x509.KeyUsage.html">KJUR.asn1.x509.KeyUsage</a></li>
 	
 	<li><a href="../symbols/KJUR.asn1.x509.OID.html">KJUR.asn1.x509.OID</a></li>
 	
 	<li><a href="../symbols/KJUR.asn1.x509.RDN.html">KJUR.asn1.x509.RDN</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.x509.SubjectAltName.html">KJUR.asn1.x509.SubjectAltName</a></li>
 	
 	<li><a href="../symbols/KJUR.asn1.x509.SubjectPublicKeyInfo.html">KJUR.asn1.x509.SubjectPublicKeyInfo</a></li>
 	
@@ -376,6 +394,8 @@ ul.inheritsList
 	<li><a href="../symbols/KJUR.asn1.x509.X509Util.html">KJUR.asn1.x509.X509Util</a></li>
 	
 	<li><a href="../symbols/KJUR.crypto.html">KJUR.crypto</a></li>
+	
+	<li><a href="../symbols/KJUR.crypto.Cipher.html">KJUR.crypto.Cipher</a></li>
 	
 	<li><a href="../symbols/KJUR.crypto.DSA.html">KJUR.crypto.DSA</a></li>
 	
@@ -401,7 +421,7 @@ ul.inheritsList
 	
 	<li><a href="../symbols/KJUR.jws.JWSJS.html">KJUR.jws.JWSJS</a></li>
 	
-	<li><a href="../symbols/PKCS5PKEY.html">PKCS5PKEY</a></li>
+	<li><a href="../symbols/KJUR.lang.String.html">KJUR.lang.String</a></li>
 	
 	<li><a href="../symbols/RSAKey.html">RSAKey</a></li>
 	
@@ -486,9 +506,9 @@ ul.inheritsList
 					<tbody>
 					
 						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="attributes">&nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont">KJUR.asn1.x509.TBSCertificate.<b><a href="../symbols/KJUR.asn1.x509.TBSCertificate.html#.appendExtension">appendExtension</a></b>(extObj)
+								<div class="fixedFont"><b><a href="../symbols/KJUR.asn1.x509.TBSCertificate.html#appendExtension">appendExtension</a></b>(extObj)
 								</div>
 								<div class="description">append X.509v3 extension to this object
 </div>
@@ -496,19 +516,20 @@ ul.inheritsList
 						</tr>
 					
 						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="attributes">&nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont">KJUR.asn1.x509.TBSCertificate.<b><a href="../symbols/KJUR.asn1.x509.TBSCertificate.html#.appendExtensionByName">appendExtensionByName</a></b>(name, extParams)
+								<div class="fixedFont"><b><a href="../symbols/KJUR.asn1.x509.TBSCertificate.html#appendExtensionByName">appendExtensionByName</a></b>(name, extParams)
 								</div>
 								<div class="description">append X.509v3 extension to this object by name and parameters
-</div>
+This method adds a X.509v3 extension specified by name 
+and extParams to internal extension array of X.509v3 extension objects.</div>
 							</td>
 						</tr>
 					
 						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="attributes">&nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont">KJUR.asn1.x509.TBSCertificate.<b><a href="../symbols/KJUR.asn1.x509.TBSCertificate.html#.setIssuerByParam">setIssuerByParam</a></b>(x500NameParam)
+								<div class="fixedFont"><b><a href="../symbols/KJUR.asn1.x509.TBSCertificate.html#setIssuerByParam">setIssuerByParam</a></b>(x500NameParam)
 								</div>
 								<div class="description">set issuer name field by parameter
 </div>
@@ -516,9 +537,9 @@ ul.inheritsList
 						</tr>
 					
 						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="attributes">&nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont">KJUR.asn1.x509.TBSCertificate.<b><a href="../symbols/KJUR.asn1.x509.TBSCertificate.html#.setNotAfterByParam">setNotAfterByParam</a></b>(timeParam)
+								<div class="fixedFont"><b><a href="../symbols/KJUR.asn1.x509.TBSCertificate.html#setNotAfterByParam">setNotAfterByParam</a></b>(timeParam)
 								</div>
 								<div class="description">set notAfter field by parameter
 </div>
@@ -526,9 +547,9 @@ ul.inheritsList
 						</tr>
 					
 						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="attributes">&nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont">KJUR.asn1.x509.TBSCertificate.<b><a href="../symbols/KJUR.asn1.x509.TBSCertificate.html#.setNotBeforeByParam">setNotBeforeByParam</a></b>(timeParam)
+								<div class="fixedFont"><b><a href="../symbols/KJUR.asn1.x509.TBSCertificate.html#setNotBeforeByParam">setNotBeforeByParam</a></b>(timeParam)
 								</div>
 								<div class="description">set notBefore field by parameter
 </div>
@@ -536,9 +557,9 @@ ul.inheritsList
 						</tr>
 					
 						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="attributes">&nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont">KJUR.asn1.x509.TBSCertificate.<b><a href="../symbols/KJUR.asn1.x509.TBSCertificate.html#.setSerialNumberByParam">setSerialNumberByParam</a></b>(intParam)
+								<div class="fixedFont"><b><a href="../symbols/KJUR.asn1.x509.TBSCertificate.html#setSerialNumberByParam">setSerialNumberByParam</a></b>(intParam)
 								</div>
 								<div class="description">set serial number field by parameter
 </div>
@@ -546,9 +567,9 @@ ul.inheritsList
 						</tr>
 					
 						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="attributes">&nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont">KJUR.asn1.x509.TBSCertificate.<b><a href="../symbols/KJUR.asn1.x509.TBSCertificate.html#.setSignatureAlgByParam">setSignatureAlgByParam</a></b>(algIdParam)
+								<div class="fixedFont"><b><a href="../symbols/KJUR.asn1.x509.TBSCertificate.html#setSignatureAlgByParam">setSignatureAlgByParam</a></b>(algIdParam)
 								</div>
 								<div class="description">set signature algorithm field by parameter
 </div>
@@ -556,11 +577,21 @@ ul.inheritsList
 						</tr>
 					
 						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="attributes">&nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont">KJUR.asn1.x509.TBSCertificate.<b><a href="../symbols/KJUR.asn1.x509.TBSCertificate.html#.setSubjectByParam">setSubjectByParam</a></b>(x500NameParam)
+								<div class="fixedFont"><b><a href="../symbols/KJUR.asn1.x509.TBSCertificate.html#setSubjectByParam">setSubjectByParam</a></b>(x500NameParam)
 								</div>
 								<div class="description">set subject name field by parameter
+</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/KJUR.asn1.x509.TBSCertificate.html#setSubjectPublicKey">setSubjectPublicKey</a></b>(param)
+								</div>
+								<div class="description">set subject public key info field by key object
 </div>
 							</td>
 						</tr>
@@ -575,23 +606,13 @@ ul.inheritsList
 							</td>
 						</tr>
 					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">KJUR.asn1.x509.TBSCertificate.<b><a href="../symbols/KJUR.asn1.x509.TBSCertificate.html#.setSubjectPublicKeyByParam">setSubjectPublicKeyByParam</a></b>(subjPKeyParam)
-								</div>
-								<div class="description">(DEPRECATED) set subject public key info field by RSA key parameter
-</div>
-							</td>
-						</tr>
-					
 					</tbody>
 				</table>
 				
 				
 				
 				<dl class="inheritsList">
-				
+				<dt>Methods borrowed from class <a href="../symbols/KJUR.asn1.ASN1Object.html">KJUR.asn1.ASN1Object</a>: </dt><dd><a href="../symbols/KJUR.asn1.ASN1Object.html#getEncodedHex">getEncodedHex</a>, <a href="../symbols/KJUR.asn1.ASN1Object.html#getLengthHexFromValue">getLengthHexFromValue</a>, <a href="../symbols/KJUR.asn1.ASN1Object.html#getValueHex">getValueHex</a></dd>
 				</dl>
 				
 			
@@ -625,7 +646,7 @@ ul.inheritsList
  o.setNotBeforeByParam({'str': '130504235959Z'});
  o.setNotAfterByParam({'str': '140504235959Z'});
  o.setSubjectByParam({'str': '/C=US/CN=b'});
- o.setSubjectPublicKeyByParam({'rsakey': rsaKey});
+ o.setSubjectPublicKey(rsaPubKey);
  o.appendExtension(new KJUR.asn1.x509.BasicConstraints({'cA':true}));
  o.appendExtension(new KJUR.asn1.x509.KeyUsage({'bin':'11'}));</pre>
 				
@@ -663,11 +684,11 @@ ul.inheritsList
 					Method Detail
 				</div>
 				
-					<a name=".appendExtension"> </a>
-					<div class="fixedFont">&lt;static&gt; 
+					<a name="appendExtension"> </a>
+					<div class="fixedFont">
 					
 					
-					<span class="light">KJUR.asn1.x509.TBSCertificate.</span><b>appendExtension</b>(extObj)
+					<b>appendExtension</b>(extObj)
 					
 					</div>
 					<div class="description">
@@ -712,27 +733,41 @@ tbsc.appendExtension(new KJUR.asn1.x509.KeyUsage({'bin':'11'}));</pre>
 
 					<hr />
 				
-					<a name=".appendExtensionByName"> </a>
-					<div class="fixedFont">&lt;static&gt; 
+					<a name="appendExtensionByName"> </a>
+					<div class="fixedFont">
 					
 					
-					<span class="light">KJUR.asn1.x509.TBSCertificate.</span><b>appendExtensionByName</b>(name, extParams)
+					<b>appendExtensionByName</b>(name, extParams)
 					
 					</div>
 					<div class="description">
 						append X.509v3 extension to this object by name and parameters
-
+This method adds a X.509v3 extension specified by name 
+and extParams to internal extension array of X.509v3 extension objects.
+Here is supported names of extension:
+<ul>
+<li>BasicConstraints - <a href="../symbols/KJUR.asn1.x509.BasicConstraints.html">KJUR.asn1.x509.BasicConstraints</a></li>
+<li>KeyUsage - <a href="../symbols/KJUR.asn1.x509.KeyUsage.html">KJUR.asn1.x509.KeyUsage</a></li>
+<li>CRLDistributionPoints - <a href="../symbols/KJUR.asn1.x509.CRLDistributionPoints.html">KJUR.asn1.x509.CRLDistributionPoints</a></li>
+<li>ExtKeyUsage - <a href="../symbols/KJUR.asn1.x509.ExtKeyUsage.html">KJUR.asn1.x509.ExtKeyUsage</a></li>
+<li>AuthorityKeyIdentifier - <a href="../symbols/KJUR.asn1.x509.AuthorityKeyIdentifier.html">KJUR.asn1.x509.AuthorityKeyIdentifier</a></li>
+<li>AuthorityInfoAccess - <a href="../symbols/KJUR.asn1.x509.AuthorityInfoAccess.html">KJUR.asn1.x509.AuthorityInfoAccess</a></li>
+<li>SubjectAltName - <a href="../symbols/KJUR.asn1.x509.SubjectAltName.html">KJUR.asn1.x509.SubjectAltName</a></li>
+<li>IssuerAltName - <a href="../symbols/KJUR.asn1.x509.IssuerAltName.html">KJUR.asn1.x509.IssuerAltName</a></li>
+</ul>
 						
 						
 					</div>
 					
 					
 					
-					<pre class="code">tbsc.appendExtensionByName('BasicConstraints', {'cA':true, 'critical': true});
-tbsc.appendExtensionByName('KeyUsage', {'bin':'11'});
-tbsc.appendExtensionByName('CRLDistributionPoints', {uri: 'http://aaa.com/a.crl'});
-tbsc.appendExtensionByName('ExtKeyUsage', {array: [{name: 'clientAuth'}]});
-tbsc.appendExtensionByName('AuthorityKeyIdentifier', {kid: '1234ab..'});</pre>
+					<pre class="code">var o = new KJUR.asn1.x509.TBSCertificate();
+o.appendExtensionByName('BasicConstraints', {'cA':true, 'critical': true});
+o.appendExtensionByName('KeyUsage', {'bin':'11'});
+o.appendExtensionByName('CRLDistributionPoints', {uri: 'http://aaa.com/a.crl'});
+o.appendExtensionByName('ExtKeyUsage', {array: [{name: 'clientAuth'}]});
+o.appendExtensionByName('AuthorityKeyIdentifier', {kid: '1234ab..'});
+o.appendExtensionByName('AuthorityInfoAccess', {array: [{accessMethod:{oid:...},accessLocation:{uri:...}}]});</pre>
 					
 					
 					
@@ -770,11 +805,11 @@ tbsc.appendExtensionByName('AuthorityKeyIdentifier', {kid: '1234ab..'});</pre>
 
 					<hr />
 				
-					<a name=".setIssuerByParam"> </a>
-					<div class="fixedFont">&lt;static&gt; 
+					<a name="setIssuerByParam"> </a>
+					<div class="fixedFont">
 					
 					
-					<span class="light">KJUR.asn1.x509.TBSCertificate.</span><b>setIssuerByParam</b>(x500NameParam)
+					<b>setIssuerByParam</b>(x500NameParam)
 					
 					</div>
 					<div class="description">
@@ -818,11 +853,11 @@ tbsc.appendExtensionByName('AuthorityKeyIdentifier', {kid: '1234ab..'});</pre>
 
 					<hr />
 				
-					<a name=".setNotAfterByParam"> </a>
-					<div class="fixedFont">&lt;static&gt; 
+					<a name="setNotAfterByParam"> </a>
+					<div class="fixedFont">
 					
 					
-					<span class="light">KJUR.asn1.x509.TBSCertificate.</span><b>setNotAfterByParam</b>(timeParam)
+					<b>setNotAfterByParam</b>(timeParam)
 					
 					</div>
 					<div class="description">
@@ -866,11 +901,11 @@ tbsc.appendExtensionByName('AuthorityKeyIdentifier', {kid: '1234ab..'});</pre>
 
 					<hr />
 				
-					<a name=".setNotBeforeByParam"> </a>
-					<div class="fixedFont">&lt;static&gt; 
+					<a name="setNotBeforeByParam"> </a>
+					<div class="fixedFont">
 					
 					
-					<span class="light">KJUR.asn1.x509.TBSCertificate.</span><b>setNotBeforeByParam</b>(timeParam)
+					<b>setNotBeforeByParam</b>(timeParam)
 					
 					</div>
 					<div class="description">
@@ -914,11 +949,11 @@ tbsc.appendExtensionByName('AuthorityKeyIdentifier', {kid: '1234ab..'});</pre>
 
 					<hr />
 				
-					<a name=".setSerialNumberByParam"> </a>
-					<div class="fixedFont">&lt;static&gt; 
+					<a name="setSerialNumberByParam"> </a>
+					<div class="fixedFont">
 					
 					
-					<span class="light">KJUR.asn1.x509.TBSCertificate.</span><b>setSerialNumberByParam</b>(intParam)
+					<b>setSerialNumberByParam</b>(intParam)
 					
 					</div>
 					<div class="description">
@@ -955,11 +990,11 @@ tbsc.appendExtensionByName('AuthorityKeyIdentifier', {kid: '1234ab..'});</pre>
 
 					<hr />
 				
-					<a name=".setSignatureAlgByParam"> </a>
-					<div class="fixedFont">&lt;static&gt; 
+					<a name="setSignatureAlgByParam"> </a>
+					<div class="fixedFont">
 					
 					
-					<span class="light">KJUR.asn1.x509.TBSCertificate.</span><b>setSignatureAlgByParam</b>(algIdParam)
+					<b>setSignatureAlgByParam</b>(algIdParam)
 					
 					</div>
 					<div class="description">
@@ -996,11 +1031,11 @@ tbsc.appendExtensionByName('AuthorityKeyIdentifier', {kid: '1234ab..'});</pre>
 
 					<hr />
 				
-					<a name=".setSubjectByParam"> </a>
-					<div class="fixedFont">&lt;static&gt; 
+					<a name="setSubjectByParam"> </a>
+					<div class="fixedFont">
 					
 					
-					<span class="light">KJUR.asn1.x509.TBSCertificate.</span><b>setSubjectByParam</b>(x500NameParam)
+					<b>setSubjectByParam</b>(x500NameParam)
 					
 					</div>
 					<div class="description">
@@ -1044,6 +1079,54 @@ tbsc.appendExtensionByName('AuthorityKeyIdentifier', {kid: '1234ab..'});</pre>
 
 					<hr />
 				
+					<a name="setSubjectPublicKey"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>setSubjectPublicKey</b>(param)
+					
+					</div>
+					<div class="description">
+						set subject public key info field by key object
+
+						
+						
+					</div>
+					
+					
+					
+					<pre class="code">tbsc.setSubjectPublicKey(keyobj);</pre>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{Array}</span> <b>param</b>
+									
+								</dt>
+								<dd><a href="../symbols/KJUR.asn1.x509.SubjectPublicKeyInfo.html">KJUR.asn1.x509.SubjectPublicKeyInfo</a> class constructor parameter</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">See:</dt>
+							
+								<dd><a href="../symbols/KJUR.asn1.x509.SubjectPublicKeyInfo.html">KJUR.asn1.x509.SubjectPublicKeyInfo</a></dd>
+							
+							</dl>
+						
+
+					<hr />
+				
 					<a name=".setSubjectPublicKeyByGetKey"> </a>
 					<div class="fixedFont">&lt;static&gt; 
 					
@@ -1060,8 +1143,8 @@ tbsc.appendExtensionByName('AuthorityKeyIdentifier', {kid: '1234ab..'});</pre>
 					
 					
 					
-					<pre class="code">tbsc.setSubjectPublicKeyByGetKeyParam(certPEMString); // or 
-tbsc.setSubjectPublicKeyByGetKeyParam(pkcs8PublicKeyPEMString); // or 
+					<pre class="code">tbsc.setSubjectPublicKeyByGetKeyParam(certPEMString); // or
+tbsc.setSubjectPublicKeyByGetKeyParam(pkcs8PublicKeyPEMString); // or
 tbsc.setSubjectPublicKeyByGetKeyParam(kjurCryptoECDSAKeyObject); // et.al.</pre>
 					
 					
@@ -1100,54 +1183,6 @@ tbsc.setSubjectPublicKeyByGetKeyParam(kjurCryptoECDSAKeyObject); // et.al.</pre>
 							</dl>
 						
 
-					<hr />
-				
-					<a name=".setSubjectPublicKeyByParam"> </a>
-					<div class="fixedFont">&lt;static&gt; 
-					
-					
-					<span class="light">KJUR.asn1.x509.TBSCertificate.</span><b>setSubjectPublicKeyByParam</b>(subjPKeyParam)
-					
-					</div>
-					<div class="description">
-						(DEPRECATED) set subject public key info field by RSA key parameter
-
-						
-						
-					</div>
-					
-					
-					
-					<pre class="code">tbsc.setSubjectPublicKeyByParam({'rsakey': pubKey});</pre>
-					
-					
-					
-						
-							<dl class="detailList">
-							<dt class="heading">Parameters:</dt>
-							
-								<dt>
-									<span class="light fixedFont">{Array}</span> <b>subjPKeyParam</b>
-									
-								</dt>
-								<dd>SubjectPublicKeyInfo parameter of RSA</dd>
-							
-							</dl>
-						
-						
-						
-						
-						
-						
-						
-							<dl class="detailList">
-							<dt class="heading">See:</dt>
-							
-								<dd><a href="../symbols/KJUR.asn1.x509.SubjectPublicKeyInfo.html">KJUR.asn1.x509.SubjectPublicKeyInfo</a></dd>
-							
-							</dl>
-						
-
 					
 				
 			
@@ -1161,7 +1196,7 @@ tbsc.setSubjectPublicKeyByGetKeyParam(kjurCryptoECDSAKeyObject); // et.al.</pre>
 		
 <!-- ============================== footer ================================= -->
 		<div class="fineprint" style="clear:both">
-                        &copy; 2012-2015 Kenji Urushima, All rights reserved<br/>
+                        &copy; 2012-2017 Kenji Urushima, All rights reserved<br/>
 			
 			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.4.0 
 		</div>

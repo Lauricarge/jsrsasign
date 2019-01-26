@@ -5,7 +5,7 @@
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="generator" content="JsDoc Toolkit" />
 		
-		<title>jsrsasign 4.8.7 JavaScript API Reference - KJUR.crypto.Mac</title>
+		<title>jsrsasign 8.0.0 JavaScript API Reference - KJUR.crypto.Mac</title>
 
 		<style type="text/css">
 			/* default.css */
@@ -299,6 +299,18 @@ ul.inheritsList
 	
 	<li><a href="../symbols/KJUR.asn1.DERUTF8String.html">KJUR.asn1.DERUTF8String</a></li>
 	
+	<li><a href="../symbols/KJUR.asn1.ocsp.html">KJUR.asn1.ocsp</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.ocsp.CertID.html">KJUR.asn1.ocsp.CertID</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.ocsp.OCSPRequest.html">KJUR.asn1.ocsp.OCSPRequest</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.ocsp.OCSPUtil.html">KJUR.asn1.ocsp.OCSPUtil</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.ocsp.Request.html">KJUR.asn1.ocsp.Request</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.ocsp.TBSRequest.html">KJUR.asn1.ocsp.TBSRequest</a></li>
+	
 	<li><a href="../symbols/KJUR.asn1.tsp.html">KJUR.asn1.tsp</a></li>
 	
 	<li><a href="../symbols/KJUR.asn1.tsp.AbstractTSAAdapter.html">KJUR.asn1.tsp.AbstractTSAAdapter</a></li>
@@ -333,6 +345,8 @@ ul.inheritsList
 	
 	<li><a href="../symbols/KJUR.asn1.x509.AttributeTypeAndValue.html">KJUR.asn1.x509.AttributeTypeAndValue</a></li>
 	
+	<li><a href="../symbols/KJUR.asn1.x509.AuthorityInfoAccess.html">KJUR.asn1.x509.AuthorityInfoAccess</a></li>
+	
 	<li><a href="../symbols/KJUR.asn1.x509.AuthorityKeyIdentifier.html">KJUR.asn1.x509.AuthorityKeyIdentifier</a></li>
 	
 	<li><a href="../symbols/KJUR.asn1.x509.BasicConstraints.html">KJUR.asn1.x509.BasicConstraints</a></li>
@@ -357,11 +371,15 @@ ul.inheritsList
 	
 	<li><a href="../symbols/KJUR.asn1.x509.GeneralNames.html">KJUR.asn1.x509.GeneralNames</a></li>
 	
+	<li><a href="../symbols/KJUR.asn1.x509.IssuerAltName.html">KJUR.asn1.x509.IssuerAltName</a></li>
+	
 	<li><a href="../symbols/KJUR.asn1.x509.KeyUsage.html">KJUR.asn1.x509.KeyUsage</a></li>
 	
 	<li><a href="../symbols/KJUR.asn1.x509.OID.html">KJUR.asn1.x509.OID</a></li>
 	
 	<li><a href="../symbols/KJUR.asn1.x509.RDN.html">KJUR.asn1.x509.RDN</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.x509.SubjectAltName.html">KJUR.asn1.x509.SubjectAltName</a></li>
 	
 	<li><a href="../symbols/KJUR.asn1.x509.SubjectPublicKeyInfo.html">KJUR.asn1.x509.SubjectPublicKeyInfo</a></li>
 	
@@ -376,6 +394,8 @@ ul.inheritsList
 	<li><a href="../symbols/KJUR.asn1.x509.X509Util.html">KJUR.asn1.x509.X509Util</a></li>
 	
 	<li><a href="../symbols/KJUR.crypto.html">KJUR.crypto</a></li>
+	
+	<li><a href="../symbols/KJUR.crypto.Cipher.html">KJUR.crypto.Cipher</a></li>
 	
 	<li><a href="../symbols/KJUR.crypto.DSA.html">KJUR.crypto.DSA</a></li>
 	
@@ -401,7 +421,7 @@ ul.inheritsList
 	
 	<li><a href="../symbols/KJUR.jws.JWSJS.html">KJUR.jws.JWSJS</a></li>
 	
-	<li><a href="../symbols/PKCS5PKEY.html">PKCS5PKEY</a></li>
+	<li><a href="../symbols/KJUR.lang.String.html">KJUR.lang.String</a></li>
 	
 	<li><a href="../symbols/RSAKey.html">RSAKey</a></li>
 	
@@ -484,9 +504,9 @@ NOTE: HmacSHA224 and HmacSHA384 issue was fixed since jsrsasign 4.1.4.</div>
 					<tbody>
 					
 						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="attributes">&nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont">KJUR.crypto.Mac.<b><a href="../symbols/KJUR.crypto.Mac.html#.doFinal">doFinal</a></b>()
+								<div class="fixedFont"><b><a href="../symbols/KJUR.crypto.Mac.html#doFinal">doFinal</a></b>()
 								</div>
 								<div class="description">completes hash calculation and returns hash result
 </div>
@@ -494,9 +514,9 @@ NOTE: HmacSHA224 and HmacSHA384 issue was fixed since jsrsasign 4.1.4.</div>
 						</tr>
 					
 						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="attributes">&nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont">KJUR.crypto.Mac.<b><a href="../symbols/KJUR.crypto.Mac.html#.doFinalHex">doFinalHex</a></b>(hex)
+								<div class="fixedFont"><b><a href="../symbols/KJUR.crypto.Mac.html#doFinalHex">doFinalHex</a></b>(hex)
 								</div>
 								<div class="description">performs final update on the digest using hexadecimal string, 
 then completes the digest computation
@@ -505,9 +525,9 @@ then completes the digest computation
 						</tr>
 					
 						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="attributes">&nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont">KJUR.crypto.Mac.<b><a href="../symbols/KJUR.crypto.Mac.html#.doFinalString">doFinalString</a></b>(str)
+								<div class="fixedFont"><b><a href="../symbols/KJUR.crypto.Mac.html#doFinalString">doFinalString</a></b>(str)
 								</div>
 								<div class="description">performs final update on the digest using string, then completes the digest computation
 </div>
@@ -515,9 +535,9 @@ then completes the digest computation
 						</tr>
 					
 						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="attributes">&nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont">KJUR.crypto.Mac.<b><a href="../symbols/KJUR.crypto.Mac.html#.setPassword">setPassword</a></b>(pass)
+								<div class="fixedFont"><b><a href="../symbols/KJUR.crypto.Mac.html#setPassword">setPassword</a></b>(pass)
 								</div>
 								<div class="description">set password for Mac
 This method will set password for (H)Mac internally.</div>
@@ -525,9 +545,9 @@ This method will set password for (H)Mac internally.</div>
 						</tr>
 					
 						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="attributes">&nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont">KJUR.crypto.Mac.<b><a href="../symbols/KJUR.crypto.Mac.html#.updateHex">updateHex</a></b>(hex)
+								<div class="fixedFont"><b><a href="../symbols/KJUR.crypto.Mac.html#updateHex">updateHex</a></b>(hex)
 								</div>
 								<div class="description">update digest by specified hexadecimal string
 </div>
@@ -535,9 +555,9 @@ This method will set password for (H)Mac internally.</div>
 						</tr>
 					
 						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="attributes">&nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont">KJUR.crypto.Mac.<b><a href="../symbols/KJUR.crypto.Mac.html#.updateString">updateString</a></b>(str)
+								<div class="fixedFont"><b><a href="../symbols/KJUR.crypto.Mac.html#updateString">updateString</a></b>(str)
 								</div>
 								<div class="description">update digest by specified string
 </div>
@@ -583,7 +603,7 @@ to avoid those issue.
 NOTE2: Hmac signature bug was fixed in jsrsasign 4.9.0 by providing CryptoJS
 bug workaround.
 <br/>
-Please see <a href="../symbols/KJUR.crypto.Mac.html#.setPassword">KJUR.crypto.Mac.setPassword</a>, how to provide password
+Please see KJUR.crypto.Mac.setPassword, how to provide password
 in various ways in detail.
 					
 				</div>
@@ -592,7 +612,7 @@ in various ways in detail.
 				
 				<pre class="code">var mac = new KJUR.crypto.Mac({alg: "HmacSHA1", "pass": "pass"});
 mac.updateString('aaa')
-var macHex = md.doFinal()
+var macHex = mac.doFinal()
 
 // other password representation 
 var mac = new KJUR.crypto.Mac({alg: "HmacSHA256", "pass": {"hex":  "6161"}});
@@ -635,11 +655,11 @@ var mac = new KJUR.crypto.Mac({alg: "HmacSHA256", "pass": {"b64u": "Mi02_-...a"}
 					Method Detail
 				</div>
 				
-					<a name=".doFinal"> </a>
-					<div class="fixedFont">&lt;static&gt; 
+					<a name="doFinal"> </a>
+					<div class="fixedFont">
 					
 					
-					<span class="light">KJUR.crypto.Mac.</span><b>doFinal</b>()
+					<b>doFinal</b>()
 					
 					</div>
 					<div class="description">
@@ -651,7 +671,7 @@ var mac = new KJUR.crypto.Mac({alg: "HmacSHA256", "pass": {"b64u": "Mi02_-...a"}
 					
 					
 					
-					<pre class="code">md.digest()</pre>
+					<pre class="code">mac.digest()</pre>
 					
 					
 					
@@ -665,11 +685,11 @@ var mac = new KJUR.crypto.Mac({alg: "HmacSHA256", "pass": {"b64u": "Mi02_-...a"}
 
 					<hr />
 				
-					<a name=".doFinalHex"> </a>
-					<div class="fixedFont">&lt;static&gt; 
+					<a name="doFinalHex"> </a>
+					<div class="fixedFont">
 					
 					
-					<span class="light">KJUR.crypto.Mac.</span><b>doFinalHex</b>(hex)
+					<b>doFinalHex</b>(hex)
 					
 					</div>
 					<div class="description">
@@ -682,7 +702,7 @@ then completes the digest computation
 					
 					
 					
-					<pre class="code">md.digestHex('0f2abd')</pre>
+					<pre class="code">mac.digestHex('0f2abd')</pre>
 					
 					
 					
@@ -707,11 +727,11 @@ then completes the digest computation
 
 					<hr />
 				
-					<a name=".doFinalString"> </a>
-					<div class="fixedFont">&lt;static&gt; 
+					<a name="doFinalString"> </a>
+					<div class="fixedFont">
 					
 					
-					<span class="light">KJUR.crypto.Mac.</span><b>doFinalString</b>(str)
+					<b>doFinalString</b>(str)
 					
 					</div>
 					<div class="description">
@@ -723,7 +743,7 @@ then completes the digest computation
 					
 					
 					
-					<pre class="code">md.digestString('aaa')</pre>
+					<pre class="code">mac.digestString('aaa')</pre>
 					
 					
 					
@@ -748,11 +768,11 @@ then completes the digest computation
 
 					<hr />
 				
-					<a name=".setPassword"> </a>
-					<div class="fixedFont">&lt;static&gt; 
+					<a name="setPassword"> </a>
+					<div class="fixedFont">
 					
 					
-					<span class="light">KJUR.crypto.Mac.</span><b>setPassword</b>(pass)
+					<b>setPassword</b>(pass)
 					
 					</div>
 					<div class="description">
@@ -824,11 +844,11 @@ mac.setPassword({"b64u": "Mb-c3f_"});</pre>
 
 					<hr />
 				
-					<a name=".updateHex"> </a>
-					<div class="fixedFont">&lt;static&gt; 
+					<a name="updateHex"> </a>
+					<div class="fixedFont">
 					
 					
-					<span class="light">KJUR.crypto.Mac.</span><b>updateHex</b>(hex)
+					<b>updateHex</b>(hex)
 					
 					</div>
 					<div class="description">
@@ -840,7 +860,7 @@ mac.setPassword({"b64u": "Mb-c3f_"});</pre>
 					
 					
 					
-					<pre class="code">md.updateHex('0afe36');</pre>
+					<pre class="code">mac.updateHex('0afe36');</pre>
 					
 					
 					
@@ -865,11 +885,11 @@ mac.setPassword({"b64u": "Mb-c3f_"});</pre>
 
 					<hr />
 				
-					<a name=".updateString"> </a>
-					<div class="fixedFont">&lt;static&gt; 
+					<a name="updateString"> </a>
+					<div class="fixedFont">
 					
 					
-					<span class="light">KJUR.crypto.Mac.</span><b>updateString</b>(str)
+					<b>updateString</b>(str)
 					
 					</div>
 					<div class="description">
@@ -881,7 +901,7 @@ mac.setPassword({"b64u": "Mb-c3f_"});</pre>
 					
 					
 					
-					<pre class="code">md.updateString('New York');</pre>
+					<pre class="code">mac.updateString('New York');</pre>
 					
 					
 					
@@ -917,7 +937,7 @@ mac.setPassword({"b64u": "Mb-c3f_"});</pre>
 		
 <!-- ============================== footer ================================= -->
 		<div class="fineprint" style="clear:both">
-                        &copy; 2012-2015 Kenji Urushima, All rights reserved<br/>
+                        &copy; 2012-2017 Kenji Urushima, All rights reserved<br/>
 			
 			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.4.0 
 		</div>

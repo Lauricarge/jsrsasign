@@ -5,7 +5,7 @@
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="generator" content="JsDoc Toolkit" />
 		
-		<title>jsrsasign 4.8.7 JavaScript API Reference - KJUR.asn1.x509.X509Util</title>
+		<title>jsrsasign 8.0.0 JavaScript API Reference - KJUR.asn1.x509.X509Util</title>
 
 		<style type="text/css">
 			/* default.css */
@@ -299,6 +299,18 @@ ul.inheritsList
 	
 	<li><a href="../symbols/KJUR.asn1.DERUTF8String.html">KJUR.asn1.DERUTF8String</a></li>
 	
+	<li><a href="../symbols/KJUR.asn1.ocsp.html">KJUR.asn1.ocsp</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.ocsp.CertID.html">KJUR.asn1.ocsp.CertID</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.ocsp.OCSPRequest.html">KJUR.asn1.ocsp.OCSPRequest</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.ocsp.OCSPUtil.html">KJUR.asn1.ocsp.OCSPUtil</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.ocsp.Request.html">KJUR.asn1.ocsp.Request</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.ocsp.TBSRequest.html">KJUR.asn1.ocsp.TBSRequest</a></li>
+	
 	<li><a href="../symbols/KJUR.asn1.tsp.html">KJUR.asn1.tsp</a></li>
 	
 	<li><a href="../symbols/KJUR.asn1.tsp.AbstractTSAAdapter.html">KJUR.asn1.tsp.AbstractTSAAdapter</a></li>
@@ -333,6 +345,8 @@ ul.inheritsList
 	
 	<li><a href="../symbols/KJUR.asn1.x509.AttributeTypeAndValue.html">KJUR.asn1.x509.AttributeTypeAndValue</a></li>
 	
+	<li><a href="../symbols/KJUR.asn1.x509.AuthorityInfoAccess.html">KJUR.asn1.x509.AuthorityInfoAccess</a></li>
+	
 	<li><a href="../symbols/KJUR.asn1.x509.AuthorityKeyIdentifier.html">KJUR.asn1.x509.AuthorityKeyIdentifier</a></li>
 	
 	<li><a href="../symbols/KJUR.asn1.x509.BasicConstraints.html">KJUR.asn1.x509.BasicConstraints</a></li>
@@ -357,11 +371,15 @@ ul.inheritsList
 	
 	<li><a href="../symbols/KJUR.asn1.x509.GeneralNames.html">KJUR.asn1.x509.GeneralNames</a></li>
 	
+	<li><a href="../symbols/KJUR.asn1.x509.IssuerAltName.html">KJUR.asn1.x509.IssuerAltName</a></li>
+	
 	<li><a href="../symbols/KJUR.asn1.x509.KeyUsage.html">KJUR.asn1.x509.KeyUsage</a></li>
 	
 	<li><a href="../symbols/KJUR.asn1.x509.OID.html">KJUR.asn1.x509.OID</a></li>
 	
 	<li><a href="../symbols/KJUR.asn1.x509.RDN.html">KJUR.asn1.x509.RDN</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.x509.SubjectAltName.html">KJUR.asn1.x509.SubjectAltName</a></li>
 	
 	<li><a href="../symbols/KJUR.asn1.x509.SubjectPublicKeyInfo.html">KJUR.asn1.x509.SubjectPublicKeyInfo</a></li>
 	
@@ -376,6 +394,8 @@ ul.inheritsList
 	<li><a href="../symbols/KJUR.asn1.x509.X509Util.html">KJUR.asn1.x509.X509Util</a></li>
 	
 	<li><a href="../symbols/KJUR.crypto.html">KJUR.crypto</a></li>
+	
+	<li><a href="../symbols/KJUR.crypto.Cipher.html">KJUR.crypto.Cipher</a></li>
 	
 	<li><a href="../symbols/KJUR.crypto.DSA.html">KJUR.crypto.DSA</a></li>
 	
@@ -401,7 +421,7 @@ ul.inheritsList
 	
 	<li><a href="../symbols/KJUR.jws.JWSJS.html">KJUR.jws.JWSJS</a></li>
 	
-	<li><a href="../symbols/PKCS5PKEY.html">PKCS5PKEY</a></li>
+	<li><a href="../symbols/KJUR.lang.String.html">KJUR.lang.String</a></li>
 	
 	<li><a href="../symbols/RSAKey.html">RSAKey</a></li>
 	
@@ -448,7 +468,7 @@ ul.inheritsList
 							<div class="fixedFont">
 								<b><a href="../symbols/KJUR.asn1.x509.X509Util.html#constructor">KJUR.asn1.x509.X509Util</a></b>()
 							</div>
-							<div class="description">X.509 certificate and CRL utilities class</div>
+							<div class="description">X.509 certificate and CRL utilities class<br/></div>
 						</td>
 					</tr>
 				</tbody>
@@ -471,16 +491,6 @@ ul.inheritsList
 						</tr>
 					</thead>
 					<tbody>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">KJUR.asn1.x509.X509Util.<b><a href="../symbols/KJUR.asn1.x509.X509Util.html#.getPKCS8PubKeyPEMfromRSAKey">getPKCS8PubKeyPEMfromRSAKey</a></b>(rsaKey)
-								</div>
-								<div class="description">get PKCS#8 PEM public key string from RSAKey object
-</div>
-							</td>
-						</tr>
 					
 						<tr>
 							<td class="attributes">&lt;static&gt; &nbsp;</td>
@@ -514,7 +524,7 @@ JSON object.</div>
 				</div>
 				
 				<div class="description">
-					X.509 certificate and CRL utilities class
+					X.509 certificate and CRL utilities class<br/>
 					
 				</div>
 				
@@ -541,47 +551,6 @@ JSON object.</div>
 					Method Detail
 				</div>
 				
-					<a name=".getPKCS8PubKeyPEMfromRSAKey"> </a>
-					<div class="fixedFont">&lt;static&gt; 
-					
-					
-					<span class="light">KJUR.asn1.x509.X509Util.</span><b>getPKCS8PubKeyPEMfromRSAKey</b>(rsaKey)
-					
-					</div>
-					<div class="description">
-						get PKCS#8 PEM public key string from RSAKey object
-
-						
-						
-					</div>
-					
-					
-					
-					<pre class="code">var pem = KJUR.asn1.x509.X509Util.getPKCS8PubKeyPEMfromRSAKey(pubKey);</pre>
-					
-					
-					
-						
-							<dl class="detailList">
-							<dt class="heading">Parameters:</dt>
-							
-								<dt>
-									<span class="light fixedFont">{<a href="../symbols/RSAKey.html">RSAKey</a>}</span> <b>rsaKey</b>
-									
-								</dt>
-								<dd>RSA public key of <a href="../symbols/RSAKey.html">RSAKey</a> object</dd>
-							
-							</dl>
-						
-						
-						
-						
-						
-						
-						
-
-					<hr />
-				
 					<a name=".newCertPEM"> </a>
 					<div class="fixedFont">&lt;static&gt; 
 					
@@ -593,23 +562,37 @@ JSON object.</div>
 						issue a certificate in PEM format
 This method can issue a certificate by a simple
 JSON object.
-Signature value will be provided by signing with 
-private key using 'cakey' parameter or 
+Signature value will be provided by signing with
+private key using 'cakey' parameter or
 hexa decimal signature value by 'sighex' parameter.
-
-NOTE: When using DSA or ECDSA CA signing key,
-use 'paramempty' in 'sigalg' to ommit parameter field
-of AlgorithmIdentifer. In case of RSA, parameter
-NULL will be specified by default.
+<br/>
+NOTE: Algorithm parameter of AlgorithmIdentifier will
+be set automatically by default. (see <a href="../symbols/KJUR.asn1.x509.AlgorithmIdentifier.html">KJUR.asn1.x509.AlgorithmIdentifier</a>)
+from jsrsasign 7.1.1 asn1x509 1.0.20.
 						
 						
 					</div>
 					
 					
 					
-					<pre class="code">var certPEM = KJUR.asn1.x509.X509Util.newCertPEM(
-{ serial: {int: 4},
-  sigalg: {name: 'SHA1withECDSA', paramempty: true},
+					<pre class="code">var certPEM = KJUR.asn1.x509.X509Util.newCertPEM({
+  serial: {int: 4},
+  sigalg: {name: 'SHA1withECDSA'},
+  issuer: {str: '/C=US/O=a'},
+  notbefore: {'str': '130504235959Z'},
+  notafter: {'str': '140504235959Z'},
+  subject: {str: '/C=US/O=b'},
+  sbjpubkey: pubKeyObj,
+  ext: [
+    {basicConstraints: {cA: true, critical: true}},
+    {keyUsage: {bin: '11'}},
+  ],
+  cakey: prvKeyObj
+});
+// -- or --
+var certPEM = KJUR.asn1.x509.X509Util.newCertPEM({
+  serial: {int: 4},
+  sigalg: {name: 'SHA1withECDSA'},
   issuer: {str: '/C=US/O=a'},
   notbefore: {'str': '130504235959Z'},
   notafter: {'str': '140504235959Z'},
@@ -622,28 +605,28 @@ NULL will be specified by default.
   cakey: [prvkey, pass]}
 );
 // -- or --
-var certPEM = KJUR.asn1.x509.X509Util.newCertPEM(
-{ serial: {int: 1},
-  sigalg: {name: 'SHA1withRSA', paramempty: true},
+var certPEM = KJUR.asn1.x509.X509Util.newCertPEM({
+  serial: {int: 1},
+  sigalg: {name: 'SHA1withRSA'},
   issuer: {str: '/C=US/O=T1'},
   notbefore: {'str': '130504235959Z'},
   notafter: {'str': '140504235959Z'},
   subject: {str: '/C=US/O=T1'},
   sbjpubkey: pubKeyObj,
-  sighex: '0102030405..'}
-);
+  sighex: '0102030405..'
+});
 // for the issuer and subject field, another
 // representation is also available
-var certPEM = KJUR.asn1.x509.X509Util.newCertPEM(
-{ serial: {int: 1},
-  sigalg: {name: 'SHA1withRSA', paramempty: true},
+var certPEM = KJUR.asn1.x509.X509Util.newCertPEM({
+  serial: {int: 1},
+  sigalg: {name: 'SHA256withRSA'},
   issuer: {C: "US", O: "T1"},
   notbefore: {'str': '130504235959Z'},
   notafter: {'str': '140504235959Z'},
   subject: {C: "US", O: "T1", CN: "http://example.com/"},
   sbjpubkey: pubKeyObj,
-  sighex: '0102030405..'}
-);</pre>
+  sighex: '0102030405..'
+});</pre>
 					
 					
 					
@@ -685,7 +668,7 @@ var certPEM = KJUR.asn1.x509.X509Util.newCertPEM(
 		
 <!-- ============================== footer ================================= -->
 		<div class="fineprint" style="clear:both">
-                        &copy; 2012-2015 Kenji Urushima, All rights reserved<br/>
+                        &copy; 2012-2017 Kenji Urushima, All rights reserved<br/>
 			
 			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.4.0 
 		</div>

@@ -5,7 +5,7 @@
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="generator" content="JsDoc Toolkit" />
 		
-		<title>jsrsasign 4.8.7 JavaScript API Reference - KJUR.jws.JWS</title>
+		<title>jsrsasign 8.0.0 JavaScript API Reference - KJUR.jws.JWS</title>
 
 		<style type="text/css">
 			/* default.css */
@@ -299,6 +299,18 @@ ul.inheritsList
 	
 	<li><a href="../symbols/KJUR.asn1.DERUTF8String.html">KJUR.asn1.DERUTF8String</a></li>
 	
+	<li><a href="../symbols/KJUR.asn1.ocsp.html">KJUR.asn1.ocsp</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.ocsp.CertID.html">KJUR.asn1.ocsp.CertID</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.ocsp.OCSPRequest.html">KJUR.asn1.ocsp.OCSPRequest</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.ocsp.OCSPUtil.html">KJUR.asn1.ocsp.OCSPUtil</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.ocsp.Request.html">KJUR.asn1.ocsp.Request</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.ocsp.TBSRequest.html">KJUR.asn1.ocsp.TBSRequest</a></li>
+	
 	<li><a href="../symbols/KJUR.asn1.tsp.html">KJUR.asn1.tsp</a></li>
 	
 	<li><a href="../symbols/KJUR.asn1.tsp.AbstractTSAAdapter.html">KJUR.asn1.tsp.AbstractTSAAdapter</a></li>
@@ -333,6 +345,8 @@ ul.inheritsList
 	
 	<li><a href="../symbols/KJUR.asn1.x509.AttributeTypeAndValue.html">KJUR.asn1.x509.AttributeTypeAndValue</a></li>
 	
+	<li><a href="../symbols/KJUR.asn1.x509.AuthorityInfoAccess.html">KJUR.asn1.x509.AuthorityInfoAccess</a></li>
+	
 	<li><a href="../symbols/KJUR.asn1.x509.AuthorityKeyIdentifier.html">KJUR.asn1.x509.AuthorityKeyIdentifier</a></li>
 	
 	<li><a href="../symbols/KJUR.asn1.x509.BasicConstraints.html">KJUR.asn1.x509.BasicConstraints</a></li>
@@ -357,11 +371,15 @@ ul.inheritsList
 	
 	<li><a href="../symbols/KJUR.asn1.x509.GeneralNames.html">KJUR.asn1.x509.GeneralNames</a></li>
 	
+	<li><a href="../symbols/KJUR.asn1.x509.IssuerAltName.html">KJUR.asn1.x509.IssuerAltName</a></li>
+	
 	<li><a href="../symbols/KJUR.asn1.x509.KeyUsage.html">KJUR.asn1.x509.KeyUsage</a></li>
 	
 	<li><a href="../symbols/KJUR.asn1.x509.OID.html">KJUR.asn1.x509.OID</a></li>
 	
 	<li><a href="../symbols/KJUR.asn1.x509.RDN.html">KJUR.asn1.x509.RDN</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.x509.SubjectAltName.html">KJUR.asn1.x509.SubjectAltName</a></li>
 	
 	<li><a href="../symbols/KJUR.asn1.x509.SubjectPublicKeyInfo.html">KJUR.asn1.x509.SubjectPublicKeyInfo</a></li>
 	
@@ -376,6 +394,8 @@ ul.inheritsList
 	<li><a href="../symbols/KJUR.asn1.x509.X509Util.html">KJUR.asn1.x509.X509Util</a></li>
 	
 	<li><a href="../symbols/KJUR.crypto.html">KJUR.crypto</a></li>
+	
+	<li><a href="../symbols/KJUR.crypto.Cipher.html">KJUR.crypto.Cipher</a></li>
 	
 	<li><a href="../symbols/KJUR.crypto.DSA.html">KJUR.crypto.DSA</a></li>
 	
@@ -401,7 +421,7 @@ ul.inheritsList
 	
 	<li><a href="../symbols/KJUR.jws.JWSJS.html">KJUR.jws.JWSJS</a></li>
 	
-	<li><a href="../symbols/PKCS5PKEY.html">PKCS5PKEY</a></li>
+	<li><a href="../symbols/KJUR.lang.String.html">KJUR.lang.String</a></li>
 	
 	<li><a href="../symbols/RSAKey.html">RSAKey</a></li>
 	
@@ -634,9 +654,27 @@ JSON Web Token(JWT).</div>
 				<div class="description">
 					JSON Web Signature(JWS) class.<br/>
 This class provides JSON Web Signature(JWS)/JSON Web Token(JWT) signing and validation.
-<h4>Supported Algorithms</h4>
-Here is supported algorithm names for <a href="../symbols/KJUR.jws.JWS.html#.sign">KJUR.jws.JWS.sign</a> and <a href="../symbols/KJUR.jws.JWS.html#.verify">KJUR.jws.JWS.verify</a>
-methods.
+
+<h4>METHOD SUMMARY</h4>
+Here is major methods of <a href="../symbols/KJUR.jws.JWS.html">KJUR.jws.JWS</a> class.
+<ul>
+<li><b>SIGN</b><br/>
+<li><a href="../symbols/KJUR.jws.JWS.html#.sign">KJUR.jws.JWS.sign</a> - sign JWS</li>
+</li>
+<li><b>VERIFY</b><br/>
+<li><a href="../symbols/KJUR.jws.JWS.html#.verify">KJUR.jws.JWS.verify</a> - verify JWS signature</li>
+<li><a href="../symbols/KJUR.jws.JWS.html#.verifyJWT">KJUR.jws.JWS.verifyJWT</a> - verify properties of JWT token at specified time</li>
+</li>
+<li><b>UTILITY</b><br/>
+<li><a href="../symbols/KJUR.jws.JWS.html#.getJWKthumbprint">KJUR.jws.JWS.getJWKthumbprint</a> - get RFC 7638 JWK thumbprint</li>
+<li><a href="../symbols/KJUR.jws.JWS.html#.isSafeJSONString">KJUR.jws.JWS.isSafeJSONString</a> - check whether safe JSON string or not</li>
+<li><a href="../symbols/KJUR.jws.JWS.html#.readSafeJSONString">KJUR.jws.JWS.readSafeJSONString</a> - read safe JSON string only</li>
+</li>
+</ul> 
+
+<h4>SUPPORTED SIGNATURE ALGORITHMS</h4>
+Here is supported algorithm names for <a href="../symbols/KJUR.jws.JWS.html#.sign">KJUR.jws.JWS.sign</a> and
+<a href="../symbols/KJUR.jws.JWS.html#.verify">KJUR.jws.JWS.verify</a> methods.
 <table>
 <tr><th>alg value</th><th>spec requirement</th><th>jsjws support</th></tr>
 <tr><td>HS256</td><td>REQUIRED</td><td>SUPPORTED</td></tr>
@@ -674,11 +712,11 @@ Removed methods are following:
 				
 				
 				<pre class="code">// JWS signing 
-sJWS = KJUR.jws.JWS.sign(null, '{"alg":"HS256", "cty":"JWT"}', '{"age": 21}', "password");
+sJWS = KJUR.jws.JWS.sign(null, '{"alg":"HS256", "cty":"JWT"}', '{"age": 21}', {"utf8": "password"});
 // JWS validation
-isValid = KJUR.jws.JWS.verify('eyJjdHkiOiJKV1QiLCJhbGc...', "password");
+isValid = KJUR.jws.JWS.verify('eyJjdHkiOiJKV1QiLCJhbGc...', {"utf8": "password"});
 // JWT validation
-isValid = KJUR.jws.JWS.verifyJWT('eyJh...', "password", {
+isValid = KJUR.jws.JWS.verifyJWT('eyJh...', {"utf8": "password"}, {
   alg: ['HS256', 'HS384'],
   iss: ['http://foo.com']
 });</pre>
@@ -701,9 +739,9 @@ isValid = KJUR.jws.JWS.verifyJWT('eyJh...', "password", {
 						<dl class="detailList">
 						<dt class="heading">See:</dt>
 						
-							<dd><a href="http://kjur.github.com/jsjws/">'jwjws'(JWS JavaScript Library) home page http://kjur.github.com/jsjws/</a></dd>
+							<dd><a href="https://kjur.github.io/jsjws/">'jwjws'(JWS JavaScript Library) home page https://kjur.github.io/jsjws/</a></dd>
 						
-							<dd><a href="http://kjur.github.com/jsrsasigns/">'jwrsasign'(RSA Sign JavaScript Library) home page http://kjur.github.com/jsrsasign/</a></dd>
+							<dd><a href="https://kjur.github.io/jsrsasigns/">'jwrsasign'(RSA Sign JavaScript Library) home page https://kjur.github.io/jsrsasign/</a></dd>
 						
 							<dd><a href="http://tools.ietf.org/html/draft-ietf-jose-json-web-algorithms-14">IETF I-D JSON Web Algorithms (JWA)</a></dd>
 						
@@ -839,7 +877,7 @@ thumbprint = KJUR.jws.JWS.getJWKthumbprint(jwk);</pre>
 							<dt class="heading">Parameters:</dt>
 							
 								<dt>
-									<span class="light fixedFont">{String}</span> <b>o</b>
+									<span class="light fixedFont">{Object}</span> <b>o</b>
 									
 								</dt>
 								<dd>JWK object to be calculated thumbprint</dd>
@@ -1270,8 +1308,8 @@ because of <a href="http://www.ietf.org/mail-archive/web/jose/current/msg02901.h
 <dt>NOTE3:
 From jsrsasign 4.10.0 jws 3.3.0, Way to provide password
 for HS* algorithm is changed. The 'key' attribute value is
-passed to <a href="../symbols/KJUR.crypto.Mac.html#.setPassword">KJUR.crypto.Mac.setPassword</a> so please see
-<a href="../symbols/KJUR.crypto.Mac.html#.setPassword">KJUR.crypto.Mac.setPassword</a> for detail.
+passed to KJUR.crypto.Mac.setPassword so please see
+KJUR.crypto.Mac.setPassword for detail.
 As for backword compatibility, if key is a string, has even length and
 0..9, A-F or a-f characters, key string is treated as a hexadecimal
 otherwise it is treated as a raw string.
@@ -1358,9 +1396,9 @@ sJWS = KJUR.jws.JWS.sign(null, '{alg:"HS256",cty:"JWT"}', '{age:21}', "aaa");</p
 							<dl class="detailList">
 							<dt class="heading">See:</dt>
 							
-								<dd><a href="http://kjur.github.io/jsrsasign/api/symbols/KJUR.crypto.Signature.html">jsrsasign KJUR.crypto.Signature method</a></dd>
+								<dd><a href="https://kjur.github.io/jsrsasign/api/symbols/KJUR.crypto.Signature.html">jsrsasign KJUR.crypto.Signature method</a></dd>
 							
-								<dd><a href="http://kjur.github.io/jsrsasign/api/symbols/KJUR.crypto.Mac.html">jsrsasign KJUR.crypto.Mac method</a></dd>
+								<dd><a href="https://kjur.github.io/jsrsasign/api/symbols/KJUR.crypto.Mac.html">jsrsasign KJUR.crypto.Mac method</a></dd>
 							
 							</dl>
 						
@@ -1409,8 +1447,8 @@ signature replacement attacks.<br/>
 <p>
 NOTE2: From jsrsasign 4.9.0 jws 3.2.5, Way to provide password
 for HS* algorithm is changed. The 'key' attribute value is
-passed to <a href="../symbols/KJUR.crypto.Mac.html#.setPassword">KJUR.crypto.Mac.setPassword</a> so please see
-<a href="../symbols/KJUR.crypto.Mac.html#.setPassword">KJUR.crypto.Mac.setPassword</a> for detail.
+passed to KJUR.crypto.Mac.setPassword so please see
+KJUR.crypto.Mac.setPassword for detail.
 As for backword compatibility, if key is a string, has even length and
 0..9, A-F or a-f characters, key string is treated as a hexadecimal
 otherwise it is treated as a raw string.
@@ -1474,7 +1512,7 @@ var isValid = KJUR.jws.JWS.verify('eyJh...', pubkey);</pre>
 							<dl class="detailList">
 							<dt class="heading">Returns:</dt>
 							
-								<dd><span class="light fixedFont">{Boolean}</span> true if the signature is valid otherwise false</dd>
+								<dd><span class="light fixedFont">{Boolean}</span> true if the signature is valid otherwise false including no signature case or without head and payload</dd>
 							
 							</dl>
 						
@@ -1483,9 +1521,9 @@ var isValid = KJUR.jws.JWS.verify('eyJh...', pubkey);</pre>
 							<dl class="detailList">
 							<dt class="heading">See:</dt>
 							
-								<dd><a href="http://kjur.github.io/jsrsasign/api/symbols/KJUR.crypto.Signature.html">jsrsasign KJUR.crypto.Signature method</a></dd>
+								<dd><a href="https://kjur.github.io/jsrsasign/api/symbols/KJUR.crypto.Signature.html">jsrsasign KJUR.crypto.Signature method</a></dd>
 							
-								<dd><a href="http://kjur.github.io/jsrsasign/api/symbols/KJUR.crypto.Mac.html">jsrsasign KJUR.crypto.Mac method</a></dd>
+								<dd><a href="https://kjur.github.io/jsrsasign/api/symbols/KJUR.crypto.Mac.html">jsrsasign KJUR.crypto.Mac method</a></dd>
 							
 							</dl>
 						
@@ -1518,15 +1556,44 @@ It will verify following:
     the same as value if specified. (OPTION)</li>
 <li>Time validity
 <ul>
-<li>If acceptField.verifyAt as number of UNIX origin time is specifed for validation time, 
-this method will verify at the time for it, otherwise current time will be used to verify.</li>
-<li>Payload.exp (expire) - Validation time is smaller than Payloead.exp.</li>
-<li>Payload.nbf (not before) - Validation time is greater than Payloead.nbf.</li>
-<li>Payload.iat (issued at) - Validation time is greater than Payloead.iat.</li>
+<li>
+If acceptField.verifyAt as number of UNIX origin time is specifed for validation time, 
+this method will verify at the time for it, otherwise current time will be used to verify.
+</li>
+<li>
+Clock of JWT generator or verifier can be fast or slow. If these clocks are
+very different, JWT validation may fail. To avoid such case, 'jsrsasign' supports
+'acceptField.gracePeriod' parameter which specifies acceptable time difference
+of those clocks in seconds. So if you want to accept slow or fast in 2 hours,
+you can specify <code>acceptField.gracePeriod = 2 * 60 * 60;</code>.
+"gracePeriod" is zero by default.
+"gracePeriod" is supported since jsrsasign 5.0.12.
+</li>
+<li>Payload.exp (expire) - Validation time is smaller than Payload.exp + gracePeriod.</li>
+<li>Payload.nbf (not before) - Validation time is greater than Payload.nbf - gracePeriod.</li>
+<li>Payload.iat (issued at) - Validation time is greater than Payload.iat - gracePeriod.</li>
 </ul>
 </li>
 <li>Payload.jti (JWT id) - Payload.jti is included in acceptField.jti if specified. (OPTION)</li>
 <li>JWS signature of JWS is valid for specified key.</li>
+</ul>
+
+<h4>acceptField parameters</h4>
+Here is available acceptField argument parameters:
+<ul>
+<li>alg - array of acceptable signature algorithm names (ex. ["HS256", "HS384"])</li>
+<li>iss - array of acceptable issuer names (ex. ['http://foo.com'])</li>
+<li>sub - array of acceptable subject names (ex. ['mailto:john@foo.com'])</li>
+<li>aud - array of acceptable audience name (ex. ['http://foo.com'])</li>
+<li>jti - string of acceptable JWT ID (OPTION) (ex. 'id1234')</li>
+<li>
+verifyAt - time to verify 'nbf', 'iat' and 'exp' in UNIX seconds 
+(OPTION) (ex. 1377663900).  
+If this is not specified, current time of verifier will be used. 
+<a href="../symbols/KJUR.jws.IntDate.html">KJUR.jws.IntDate</a> may be useful to specify it.
+</li>
+<li>gracePeriod - acceptable time difference between signer and verifier
+in seconds (ex. 3600). If this is not specified, zero will be used.</li>
 </ul>
 						
 						
@@ -1545,7 +1612,8 @@ isValid = KJUR.jws.JWS.verifyJWT('eyJh...', pubkey, {
   sub: ['mailto:john@foo.com', 'mailto:alice@foo.com'],
   verifyAt: KJUR.jws.IntDate.get('20150520235959Z'),
   aud: ['http://foo.com'], // aud: 'http://foo.com' is fine too.
-  jti: 'id123456'
+  jti: 'id123456',
+  gracePeriod: 1 * 60 * 60 // accept 1 hour slow or fast
 });</pre>
 					
 					
@@ -1607,7 +1675,7 @@ isValid = KJUR.jws.JWS.verifyJWT('eyJh...', pubkey, {
 		
 <!-- ============================== footer ================================= -->
 		<div class="fineprint" style="clear:both">
-                        &copy; 2012-2015 Kenji Urushima, All rights reserved<br/>
+                        &copy; 2012-2017 Kenji Urushima, All rights reserved<br/>
 			
 			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.4.0 
 		</div>

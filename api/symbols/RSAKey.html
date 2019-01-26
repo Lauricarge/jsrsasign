@@ -5,7 +5,7 @@
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="generator" content="JsDoc Toolkit" />
 		
-		<title>jsrsasign 4.8.7 JavaScript API Reference - RSAKey</title>
+		<title>jsrsasign 8.0.0 JavaScript API Reference - RSAKey</title>
 
 		<style type="text/css">
 			/* default.css */
@@ -299,6 +299,18 @@ ul.inheritsList
 	
 	<li><a href="../symbols/KJUR.asn1.DERUTF8String.html">KJUR.asn1.DERUTF8String</a></li>
 	
+	<li><a href="../symbols/KJUR.asn1.ocsp.html">KJUR.asn1.ocsp</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.ocsp.CertID.html">KJUR.asn1.ocsp.CertID</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.ocsp.OCSPRequest.html">KJUR.asn1.ocsp.OCSPRequest</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.ocsp.OCSPUtil.html">KJUR.asn1.ocsp.OCSPUtil</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.ocsp.Request.html">KJUR.asn1.ocsp.Request</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.ocsp.TBSRequest.html">KJUR.asn1.ocsp.TBSRequest</a></li>
+	
 	<li><a href="../symbols/KJUR.asn1.tsp.html">KJUR.asn1.tsp</a></li>
 	
 	<li><a href="../symbols/KJUR.asn1.tsp.AbstractTSAAdapter.html">KJUR.asn1.tsp.AbstractTSAAdapter</a></li>
@@ -333,6 +345,8 @@ ul.inheritsList
 	
 	<li><a href="../symbols/KJUR.asn1.x509.AttributeTypeAndValue.html">KJUR.asn1.x509.AttributeTypeAndValue</a></li>
 	
+	<li><a href="../symbols/KJUR.asn1.x509.AuthorityInfoAccess.html">KJUR.asn1.x509.AuthorityInfoAccess</a></li>
+	
 	<li><a href="../symbols/KJUR.asn1.x509.AuthorityKeyIdentifier.html">KJUR.asn1.x509.AuthorityKeyIdentifier</a></li>
 	
 	<li><a href="../symbols/KJUR.asn1.x509.BasicConstraints.html">KJUR.asn1.x509.BasicConstraints</a></li>
@@ -357,11 +371,15 @@ ul.inheritsList
 	
 	<li><a href="../symbols/KJUR.asn1.x509.GeneralNames.html">KJUR.asn1.x509.GeneralNames</a></li>
 	
+	<li><a href="../symbols/KJUR.asn1.x509.IssuerAltName.html">KJUR.asn1.x509.IssuerAltName</a></li>
+	
 	<li><a href="../symbols/KJUR.asn1.x509.KeyUsage.html">KJUR.asn1.x509.KeyUsage</a></li>
 	
 	<li><a href="../symbols/KJUR.asn1.x509.OID.html">KJUR.asn1.x509.OID</a></li>
 	
 	<li><a href="../symbols/KJUR.asn1.x509.RDN.html">KJUR.asn1.x509.RDN</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.x509.SubjectAltName.html">KJUR.asn1.x509.SubjectAltName</a></li>
 	
 	<li><a href="../symbols/KJUR.asn1.x509.SubjectPublicKeyInfo.html">KJUR.asn1.x509.SubjectPublicKeyInfo</a></li>
 	
@@ -376,6 +394,8 @@ ul.inheritsList
 	<li><a href="../symbols/KJUR.asn1.x509.X509Util.html">KJUR.asn1.x509.X509Util</a></li>
 	
 	<li><a href="../symbols/KJUR.crypto.html">KJUR.crypto</a></li>
+	
+	<li><a href="../symbols/KJUR.crypto.Cipher.html">KJUR.crypto.Cipher</a></li>
 	
 	<li><a href="../symbols/KJUR.crypto.DSA.html">KJUR.crypto.DSA</a></li>
 	
@@ -401,7 +421,7 @@ ul.inheritsList
 	
 	<li><a href="../symbols/KJUR.jws.JWSJS.html">KJUR.jws.JWSJS</a></li>
 	
-	<li><a href="../symbols/PKCS5PKEY.html">PKCS5PKEY</a></li>
+	<li><a href="../symbols/KJUR.lang.String.html">KJUR.lang.String</a></li>
 	
 	<li><a href="../symbols/RSAKey.html">RSAKey</a></li>
 	
@@ -473,11 +493,65 @@ ul.inheritsList
 					<tbody>
 					
 						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">RSAKey.<b><a href="../symbols/RSAKey.html#.getHexValueArrayOfChildrenFromHex">getHexValueArrayOfChildrenFromHex</a></b>(sPEMPrivateKey)
+								</div>
+								<div class="description">static method to get array of hex field values from hexadecimal PKCS#5 RSA private key.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">RSAKey.<b><a href="../symbols/RSAKey.html#.getPosArrayOfChildrenFromHex">getPosArrayOfChildrenFromHex</a></b>(sPEMPrivateKey)
+								</div>
+								<div class="description">static method to get array of field positions from hexadecimal PKCS#5 RSA private key.</div>
+							</td>
+						</tr>
+					
+						<tr>
 							<td class="attributes">&nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont"><b><a href="../symbols/RSAKey.html#readPrivateKeyFromASN1HexString">readPrivateKeyFromASN1HexString</a></b>(keyHex)
+								<div class="fixedFont"><b><a href="../symbols/RSAKey.html#readCertPubKeyHex">readCertPubKeyHex</a></b>(h, nthPKI)
 								</div>
-								<div class="description">read RSA private key from a ASN.1 hexadecimal string</div>
+								<div class="description">read an ASN.1 hexadecimal string of X.509 RSA public key certificate<br/></div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/RSAKey.html#readPKCS5PrvKeyHex">readPKCS5PrvKeyHex</a></b>(h)
+								</div>
+								<div class="description">read an ASN.1 hexadecimal string of PKCS#1/5 plain RSA private key<br/></div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/RSAKey.html#readPKCS5PubKeyHex">readPKCS5PubKeyHex</a></b>(h)
+								</div>
+								<div class="description">read an ASN.1 hexadecimal string of PKCS#5 RSA public key<br/></div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/RSAKey.html#readPKCS8PrvKeyHex">readPKCS8PrvKeyHex</a></b>(h)
+								</div>
+								<div class="description">read an ASN.1 hexadecimal string of PKCS#8 plain RSA private key<br/></div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/RSAKey.html#readPKCS8PubKeyHex">readPKCS8PubKeyHex</a></b>(h)
+								</div>
+								<div class="description">read an ASN.1 hexadecimal string of PKCS#8 RSA public key<br/></div>
 							</td>
 						</tr>
 					
@@ -486,14 +560,14 @@ ul.inheritsList
 							<td class="nameDescription">
 								<div class="fixedFont"><b><a href="../symbols/RSAKey.html#readPrivateKeyFromPEMString">readPrivateKeyFromPEMString</a></b>(keyPEM)
 								</div>
-								<div class="description">read PKCS#1 private key from a string</div>
+								<div class="description">read PKCS#1 private key from a string<br/></div>
 							</td>
 						</tr>
 					
 						<tr>
 							<td class="attributes">&lt;static&gt; &nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont">RSAKey.<b><a href="../symbols/RSAKey.html#.signString">signString</a></b>(s, hashAlg)
+								<div class="fixedFont">RSAKey.<b><a href="../symbols/RSAKey.html#.sign">sign</a></b>(s, hashAlg)
 								</div>
 								<div class="description">sign for a message string with RSA private key.</div>
 							</td>
@@ -502,7 +576,7 @@ ul.inheritsList
 						<tr>
 							<td class="attributes">&lt;static&gt; &nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont">RSAKey.<b><a href="../symbols/RSAKey.html#.signStringPSS">signStringPSS</a></b>(s, hashAlg, sLen)
+								<div class="fixedFont">RSAKey.<b><a href="../symbols/RSAKey.html#.signPSS">signPSS</a></b>(s, hashAlg, sLen)
 								</div>
 								<div class="description">sign for a message string with RSA private key by PKCS#1 PSS signing.</div>
 							</td>
@@ -529,7 +603,7 @@ ul.inheritsList
 						<tr>
 							<td class="attributes">&nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont"><b><a href="../symbols/RSAKey.html#verifyString">verifyString</a></b>(sMsg, hSig)
+								<div class="fixedFont"><b><a href="../symbols/RSAKey.html#verify">verify</a></b>(sMsg, hSig)
 								</div>
 								<div class="description">verifies a sigature for a message string with RSA public key.</div>
 							</td>
@@ -538,7 +612,7 @@ ul.inheritsList
 						<tr>
 							<td class="attributes">&lt;static&gt; &nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont">RSAKey.<b><a href="../symbols/RSAKey.html#.verifyStringPSS">verifyStringPSS</a></b>(sMsg, hSig, hashAlg, sLen)
+								<div class="fixedFont">RSAKey.<b><a href="../symbols/RSAKey.html#.verifyPSS">verifyPSS</a></b>(sMsg, hSig, hashAlg, sLen)
 								</div>
 								<div class="description">verifies a sigature for a message string with RSA public key by PKCS#1 PSS sign.</div>
 							</td>
@@ -610,15 +684,115 @@ ul.inheritsList
 					Method Detail
 				</div>
 				
-					<a name="readPrivateKeyFromASN1HexString"> </a>
-					<div class="fixedFont">
+					<a name=".getHexValueArrayOfChildrenFromHex"> </a>
+					<div class="fixedFont">&lt;static&gt; 
 					
-					
-					<b>readPrivateKeyFromASN1HexString</b>(keyHex)
+					<span class="light">{Array}</span>
+					<span class="light">RSAKey.</span><b>getHexValueArrayOfChildrenFromHex</b>(sPEMPrivateKey)
 					
 					</div>
 					<div class="description">
-						read RSA private key from a ASN.1 hexadecimal string
+						static method to get array of hex field values from hexadecimal PKCS#5 RSA private key.<br/>
+						
+							<br />
+							<i>Defined in: </i> <a href="../symbols/src/rsapem-1.1.js.html">rsapem-1.1.js</a>.
+						
+						
+					</div>
+					
+					
+					
+					<pre class="code">RSAKey.getHexValueArrayOfChildrenFromHex("3082...") &rarr; ["00", "3b42...", ...]</pre>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{String}</span> <b>sPEMPrivateKey</b>
+									
+								</dt>
+								<dd>PEM PKCS#1/5 s private key string</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{Array}</span> array of field hex value</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".getPosArrayOfChildrenFromHex"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{Array}</span>
+					<span class="light">RSAKey.</span><b>getPosArrayOfChildrenFromHex</b>(sPEMPrivateKey)
+					
+					</div>
+					<div class="description">
+						static method to get array of field positions from hexadecimal PKCS#5 RSA private key.<br/>
+						
+							<br />
+							<i>Defined in: </i> <a href="../symbols/src/rsapem-1.1.js.html">rsapem-1.1.js</a>.
+						
+						
+					</div>
+					
+					
+					
+					<pre class="code">RSAKey.getPosArrayOfChildrenFromHex("3082...") &rarr; [8, 32, ...]</pre>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{String}</span> <b>sPEMPrivateKey</b>
+									
+								</dt>
+								<dd>PEM PKCS#1/5 s private key string</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{Array}</span> array of field positions</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="readCertPubKeyHex"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>readCertPubKeyHex</b>(h, nthPKI)
+					
+					</div>
+					<div class="description">
+						read an ASN.1 hexadecimal string of X.509 RSA public key certificate<br/>
 						
 							<br />
 							<i>Defined in: </i> <a href="../symbols/src/rsapem-1.1.js.html">rsapem-1.1.js</a>.
@@ -633,10 +807,16 @@ ul.inheritsList
 							<dt class="heading">Parameters:</dt>
 							
 								<dt>
-									<span class="light fixedFont">{String}</span> <b>keyHex</b>
+									<span class="light fixedFont">{String}</span> <b>h</b>
 									
 								</dt>
-								<dd>ASN.1 hexadecimal string of PKCS#1 private key.</dd>
+								<dd>hexadecimal string of X.509 RSA public key certificate</dd>
+							
+								<dt>
+									<span class="light fixedFont">{Integer}</span> <b>nthPKI</b>
+									
+								</dt>
+								<dd>nth index of publicKeyInfo. (DEFAULT: 6 for X509v3)</dd>
 							
 							</dl>
 						
@@ -644,7 +824,194 @@ ul.inheritsList
 						
 							<dl class="detailList">
 							<dt class="heading">Since:</dt>
-								<dd>1.1.1</dd>
+								<dd>jsrsasign 7.1.0 rsapem 1.2.0</dd>
+							</dl>
+							</dl>
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="readPKCS5PrvKeyHex"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>readPKCS5PrvKeyHex</b>(h)
+					
+					</div>
+					<div class="description">
+						read an ASN.1 hexadecimal string of PKCS#1/5 plain RSA private key<br/>
+						
+							<br />
+							<i>Defined in: </i> <a href="../symbols/src/rsapem-1.1.js.html">rsapem-1.1.js</a>.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{String}</span> <b>h</b>
+									
+								</dt>
+								<dd>hexadecimal string of PKCS#1/5 plain RSA private key</dd>
+							
+							</dl>
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Since:</dt>
+								<dd>jsrsasign 7.1.0 rsapem 1.2.0</dd>
+							</dl>
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">See:</dt>
+							
+								<dd>former method</dd>
+							
+							</dl>
+						
+
+					<hr />
+				
+					<a name="readPKCS5PubKeyHex"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>readPKCS5PubKeyHex</b>(h)
+					
+					</div>
+					<div class="description">
+						read an ASN.1 hexadecimal string of PKCS#5 RSA public key<br/>
+						
+							<br />
+							<i>Defined in: </i> <a href="../symbols/src/rsapem-1.1.js.html">rsapem-1.1.js</a>.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{String}</span> <b>h</b>
+									
+								</dt>
+								<dd>hexadecimal string of PKCS#5 public key</dd>
+							
+							</dl>
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Since:</dt>
+								<dd>jsrsasign 7.1.0 rsapem 1.2.0</dd>
+							</dl>
+							</dl>
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="readPKCS8PrvKeyHex"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>readPKCS8PrvKeyHex</b>(h)
+					
+					</div>
+					<div class="description">
+						read an ASN.1 hexadecimal string of PKCS#8 plain RSA private key<br/>
+						
+							<br />
+							<i>Defined in: </i> <a href="../symbols/src/rsapem-1.1.js.html">rsapem-1.1.js</a>.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{String}</span> <b>h</b>
+									
+								</dt>
+								<dd>hexadecimal string of PKCS#8 plain RSA private key</dd>
+							
+							</dl>
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Since:</dt>
+								<dd>jsrsasign 7.1.0 rsapem 1.2.0</dd>
+							</dl>
+							</dl>
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="readPKCS8PubKeyHex"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>readPKCS8PubKeyHex</b>(h)
+					
+					</div>
+					<div class="description">
+						read an ASN.1 hexadecimal string of PKCS#8 RSA public key<br/>
+						
+							<br />
+							<i>Defined in: </i> <a href="../symbols/src/rsapem-1.1.js.html">rsapem-1.1.js</a>.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{String}</span> <b>h</b>
+									
+								</dt>
+								<dd>hexadecimal string of PKCS#8 public key</dd>
+							
+							</dl>
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Since:</dt>
+								<dd>jsrsasign 7.1.0 rsapem 1.2.0</dd>
 							</dl>
 							</dl>
 						
@@ -663,7 +1030,7 @@ ul.inheritsList
 					
 					</div>
 					<div class="description">
-						read PKCS#1 private key from a string
+						read PKCS#1 private key from a string<br/>
 						
 							<br />
 							<i>Defined in: </i> <a href="../symbols/src/rsapem-1.1.js.html">rsapem-1.1.js</a>.
@@ -694,11 +1061,11 @@ ul.inheritsList
 
 					<hr />
 				
-					<a name=".signString"> </a>
+					<a name=".sign"> </a>
 					<div class="fixedFont">&lt;static&gt; 
 					
 					
-					<span class="light">RSAKey.</span><b>signString</b>(s, hashAlg)
+					<span class="light">RSAKey.</span><b>sign</b>(s, hashAlg)
 					
 					</div>
 					<div class="description">
@@ -743,11 +1110,11 @@ ul.inheritsList
 
 					<hr />
 				
-					<a name=".signStringPSS"> </a>
+					<a name=".signPSS"> </a>
 					<div class="fixedFont">&lt;static&gt; 
 					
 					
-					<span class="light">RSAKey.</span><b>signStringPSS</b>(s, hashAlg, sLen)
+					<span class="light">RSAKey.</span><b>signPSS</b>(s, hashAlg, sLen)
 					
 					</div>
 					<div class="description">
@@ -928,11 +1295,11 @@ ul.inheritsList
 
 					<hr />
 				
-					<a name="verifyString"> </a>
+					<a name="verify"> </a>
 					<div class="fixedFont">
 					
 					
-					<b>verifyString</b>(sMsg, hSig)
+					<b>verify</b>(sMsg, hSig)
 					
 					</div>
 					<div class="description">
@@ -978,11 +1345,11 @@ ul.inheritsList
 
 					<hr />
 				
-					<a name=".verifyStringPSS"> </a>
+					<a name=".verifyPSS"> </a>
 					<div class="fixedFont">&lt;static&gt; 
 					
 					
-					<span class="light">RSAKey.</span><b>verifyStringPSS</b>(sMsg, hSig, hashAlg, sLen)
+					<span class="light">RSAKey.</span><b>verifyPSS</b>(sMsg, hSig, hashAlg, sLen)
 					
 					</div>
 					<div class="description">
@@ -1187,7 +1554,7 @@ ul.inheritsList
 		
 <!-- ============================== footer ================================= -->
 		<div class="fineprint" style="clear:both">
-                        &copy; 2012-2015 Kenji Urushima, All rights reserved<br/>
+                        &copy; 2012-2017 Kenji Urushima, All rights reserved<br/>
 			
 			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.4.0 
 		</div>

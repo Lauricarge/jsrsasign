@@ -3,33 +3,46 @@
 <html>
 <head>
 <title>QUnit for RSAKey signing add-on 'rsa-sign.js of RSAPSS signature'</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <script type="text/javascript" src="jquery-1.4.2.min.js"></script>
 <script type="text/javascript" src="qunit.js"></script>
 <link rel="stylesheet" href="qunit.css" type="text/css" media="screen" />
 
-<script language="JavaScript" type="text/javascript" src="../ext/jsbn.js"></script>
-<script language="JavaScript" type="text/javascript" src="../ext/jsbn2.js"></script>
-<script language="JavaScript" type="text/javascript" src="../ext/prng4.js"></script>
-<script language="JavaScript" type="text/javascript" src="../ext/rng.js"></script>
-<script language="JavaScript" type="text/javascript" src="../ext/rsa.js"></script>
-<script language="JavaScript" type="text/javascript" src="../ext/rsa2.js"></script>
-<script language="JavaScript" type="text/javascript" src="../ext/base64.js"></script>
+<script src="../ext/cj/cryptojs-312-core-fix.js"></script>
+<script src="../ext/cj/x64-core.js"></script>
+<script src="../ext/cj/cipher-core_min.js"></script>
+<script src="../ext/cj/aes_min.js"></script>
+<script src="../ext/cj/tripledes_min.js"></script>
+<script src="../ext/cj/enc-base64_min.js"></script>
+<script src="../ext/cj/md5_min.js"></script>
+<script src="../ext/cj/sha1_min.js"></script>
+<script src="../ext/cj/sha256_min.js"></script>
+<script src="../ext/cj/sha224_min.js"></script>
+<script src="../ext/cj/sha512_min.js"></script>
+<script src="../ext/cj/sha384_min.js"></script>
+<script src="../ext/cj/ripemd160_min.js"></script>
+<script src="../ext/cj/hmac_min.js"></script>
+<script src="../ext/cj/pbkdf2_min.js"></script>
 
-<script src="http://yui.yahooapis.com/2.9.0/build/yahoo/yahoo-min.js"></script>
-<script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/components/core.js"></script>
-<script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/components/sha1.js"></script>
-<script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/components/sha256.js"></script>
+<script src="../ext/yahoo.js"></script>
+<script src="../ext/jsbn.js"></script>
+<script src="../ext/jsbn2.js"></script>
+<script src="../ext/prng4.js"></script>
+<script src="../ext/rng.js"></script>
+<script src="../ext/rsa.js"></script>
+<script src="../ext/rsa2.js"></script>
+<script src="../ext/base64.js"></script>
 
-<script language="JavaScript" type="text/javascript" src="../rsapem-1.1.js"></script>
-<script language="JavaScript" type="text/javascript" src="../rsasign-1.2.js"></script>
-<script language="JavaScript" type="text/javascript" src="../asn1hex-1.1.js"></script>
-<script language="JavaScript" type="text/javascript" src="../crypto-1.1.js"></script>
-<script language="JavaScript" type="text/javascript" src="../pkcs5pkey-1.0.js"></script>
-<script language="JavaScript" type="text/javascript" src="../base64x-1.1.js"></script>
+<script src="../src/rsapem-1.1.js"></script>
+<script src="../src/rsasign-1.2.js"></script>
+<script src="../src/asn1hex-1.1.js"></script>
+<script src="../src/crypto-1.1.js"></script>
+<script src="../src/keyutil-1.0.js"></script>
+<script src="../src/base64x-1.1.js"></script>
 
-<script language="JavaScript" type="text/javascript" src="../ext/ec.js"></script>
-<script language="JavaScript" type="text/javascript" src="../ext/ec-patch.js"></script>
-<script language="JavaScript" type="text/javascript" src="../ecdsa-modified-1.0.js"></script>
+<script src="../ext/ec.js"></script>
+<script src="../ext/ec-patch.js"></script>
+<script src="../src/ecdsa-modified-1.0.js"></script>
 
 <script>
 $(document).ready(function(){
@@ -95,7 +108,7 @@ var sKp1SigAAA5 = "0bc25d05bc518cd752e5fe956382dbced768cd7d2f3751e96ca948d6b78c3
 module("Verifier Test");
 
 test("Signature(SHA1withRSAandMGF1) kp1.sig.aaa.-1.1 verify test", function() {
-  var pubKey = PKCS5PKEY.getRSAKeyFromPublicPKCS8PEM(sKp1PubPEM);
+  var pubKey = KEYUTIL.getKey(sKp1PubPEM);
   var s1 = new KJUR.crypto.Signature({"alg": "SHA1withRSAandMGF1"});
   s1.initVerifyByPublicKey(pubKey);
   s1.updateString('aaa');
@@ -104,7 +117,7 @@ test("Signature(SHA1withRSAandMGF1) kp1.sig.aaa.-1.1 verify test", function() {
 });
 
 test("Signature(SHA1withRSAandMGF1) kp1.sig.aaa.-1.2 verify test", function() {
-  var pubKey = PKCS5PKEY.getRSAKeyFromPublicPKCS8PEM(sKp1PubPEM);
+  var pubKey = KEYUTIL.getKey(sKp1PubPEM);
   var s1 = new KJUR.crypto.Signature({"alg": "SHA1withRSAandMGF1"});
   s1.initVerifyByPublicKey(pubKey);
   s1.updateString('aaa');
@@ -113,7 +126,7 @@ test("Signature(SHA1withRSAandMGF1) kp1.sig.aaa.-1.2 verify test", function() {
 });
 
 test("Signature(SHA1withRSAandMGF1) kp1.sig.aaa.-2.3 verify test", function() {
-  var pubKey = PKCS5PKEY.getRSAKeyFromPublicPKCS8PEM(sKp1PubPEM);
+  var pubKey = KEYUTIL.getKey(sKp1PubPEM);
   var s1 = new KJUR.crypto.Signature({"alg": "SHA1withRSAandMGF1",
                                       "psssaltlen": -2});
   s1.initVerifyByPublicKey(pubKey);
@@ -123,7 +136,7 @@ test("Signature(SHA1withRSAandMGF1) kp1.sig.aaa.-2.3 verify test", function() {
 });
 
 test("Signature(SHA1withRSAandMGF1) kp1.sig.aaa.-2.4 verify test", function() {
-  var pubKey = PKCS5PKEY.getRSAKeyFromPublicPKCS8PEM(sKp1PubPEM);
+  var pubKey = KEYUTIL.getKey(sKp1PubPEM);
   var s1 = new KJUR.crypto.Signature({"alg": "SHA1withRSAandMGF1",
                                       "psssaltlen": -2});
   s1.initVerifyByPublicKey(pubKey);
@@ -133,7 +146,7 @@ test("Signature(SHA1withRSAandMGF1) kp1.sig.aaa.-2.4 verify test", function() {
 });
 
 test("Signature(SHA1withRSAandMGF1) PSS1.out.1 verify test", function() {
-  var pubKey = PKCS5PKEY.getRSAKeyFromPublicPKCS8PEM(sKp1PubPEM);
+  var pubKey = KEYUTIL.getKey(sKp1PubPEM);
   var s1 = new KJUR.crypto.Signature({"alg": "SHA1withRSAandMGF1"});
   s1.initVerifyByPublicKey(pubKey);
   s1.updateString('aaa');
@@ -149,7 +162,7 @@ test("Signature(SHA1withRSAandMGF1) kp1 sign and verify", function() {
   s1.updateString('aaa');
   var hSigValue = s1.sign();
 
-  var pubKey = PKCS5PKEY.getRSAKeyFromPublicPKCS8PEM(sKp1PubPEM);
+  var pubKey = KEYUTIL.getKey(sKp1PubPEM);
   var s2 = new KJUR.crypto.Signature({"alg": "SHA1withRSAandMGF1"});
   s2.initVerifyByPublicKey(pubKey);
   s2.updateString('aaa');
@@ -166,7 +179,7 @@ test("Signature(SHA256withRSAandMGF1) kp1 sign and verify", function() {
   s1.updateString('aaa');
   var hSigValue = s1.sign();
 
-  var pubKey = PKCS5PKEY.getRSAKeyFromPublicPKCS8PEM(sKp1PubPEM);
+  var pubKey = KEYUTIL.getKey(sKp1PubPEM);
   var s2 = new KJUR.crypto.Signature({"alg": "SHA256withRSAandMGF1"});
   s2.initVerifyByPublicKey(pubKey);
   s2.updateString('aaa');

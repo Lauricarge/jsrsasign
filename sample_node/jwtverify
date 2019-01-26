@@ -3,24 +3,52 @@
 /*
  * jwtverify - verify JWT/JWS file or string
  *
- * Copyright (c) 2015 Kenji Urushima (kenji.urushima@gmail.com)
+ * Copyright (c) 2015-2016 Kenji Urushima (kenji.urushima@gmail.com)
  *
  * This software is licensed under the terms of the MIT License.
- * http://kjur.github.com/jsrsasign/license
+ * https://kjur.github.io/jsrsasign/license
  *
  * The above copyright and license notice shall be 
  * included in all copies or substantial portions of the Software.
  * 
  * Please use '-h' option for this script usage.
+ * ---------------------------------------------------------
+ * DESCRIPTION
+ *   This script verifies a JWT(JSON Web Token) file.
+ *
+ * USAGE
+ *   % jwtverify a1.jwt -k pub.pem
+ *   This JWT/JWS is valid.
+ *   % jwtverify a1.jwt -k pub.pem -v # verbose mode
+ *   *** HEADER ***
+ *   {
+ *     "alg": "ES256",
+ *     "cty": "JWT"
+ *   }
+ *   *** PAYLOAD ***
+ *   {
+ *     "age": 21
+ *   }
+ *   *** JWT/JWS VALIDATION RESULT ***
+ *     - on: JWS signature validation
+ *     - on: check acceptable signature algorithm
+ *     - on: verify at current time
+ *   This JWT/JWS is valid.
+ *
+ *   % jwtverify a2.jwt -p secret -t utf8 # for HS256 at jwt.io
+ *   % jwtverify a3.jwt -v --verifyat 20050101000000Z -p secret
+ *   % jwtverify a4.jwt -v --accept_iss http://aaa.com/ -p secret
+ *   % jwtverify a5.jwt -v --accept_sub mailto:kj@aaa.com -p secret
  */
 
 var program = require('commander');
 var rs = require('jsrsasign');
+var rsu = require('jsrsasign-util');
 var path = require('path');
 var JWS = rs.jws.JWS;
 
 program
-  .version('1.0.0 (2015-Nov-25)')
+  .version('1.0.2 (2016-Nov-05)')
   .usage('[options] <JWT/JWS file or string to verify>')
   .description('verify JWT/jWS file or string')
   .option('-t, --passtype <utf8|hex|b64|b64u>', 'Hmac(HS*) pass type', 'utf8')
@@ -38,7 +66,7 @@ if (program.args.length !== 1)
 var jwt;
 try {
   var inFile  = program.args[0];
-  jwt = rs.readFile(inFile);
+  jwt = rsu.readFile(inFile);
 } catch(ex) {
   jwt = program.args[0]; // as string
 }
@@ -56,7 +84,7 @@ if (program.passtype !== undefined && program.pass !== undefined) {
 }
 
 if (program.pubkey !== undefined) {
-   var pubKeyPEM = rs.readFile(program.pubkey);
+   var pubKeyPEM = rsu.readFile(program.pubkey);
    pubKeyObj = rs.KEYUTIL.getKey(pubKeyPEM);
 }
 
@@ -71,7 +99,7 @@ if (pubKeyObj !== undefined)
                      'ES256', 'ES384', 'ES512'];
 
 if (program.verify_at !== undefined)
-  acceptField.verifyAt = KJUR.jws.IntDate.getZulu(program.verify_at);
+  acceptField.verifyAt = rs.KJUR.jws.IntDate.getZulu(program.verify_at);
 
 if (program.accept_iss !== undefined)
   acceptField.iss = program.accept_iss.split(",");
@@ -84,8 +112,8 @@ if (program.accept_sub !== undefined)
  */
 if (program.verbose) {
   var a = jwt.split(".");
-  var pHeader = KJUR.jws.JWS.readSafeJSONString(rs.b64utoutf8(a[0]));
-  var pClaim = KJUR.jws.JWS.readSafeJSONString(rs.b64utoutf8(a[1]));
+  var pHeader = rs.KJUR.jws.JWS.readSafeJSONString(rs.b64utoutf8(a[0]));
+  var pClaim = rs.KJUR.jws.JWS.readSafeJSONString(rs.b64utoutf8(a[1]));
   var sHeader = JSON.stringify(pHeader, null, "  ");
   var sClaim = JSON.stringify(pClaim, null, "  ");
   console.log("*** HEADER ***");
@@ -101,13 +129,13 @@ if (program.verbose)
   console.log("*** JWT/JWS VALIDATION RESULT ***");
 
 var isValid;
-if (pass !== undefined) {
-   //console.log("pass defined");
-   isValid = rs.jws.JWS.verifyJWT(jwt, pass, acceptField);
-}
+
 if (pubKeyObj !== undefined) {
    //console.log("pubKeyObj defined");
    isValid = rs.jws.JWS.verifyJWT(jwt, pubKeyObj, acceptField);
+} else {
+   //console.log("pass defined");
+   isValid = rs.jws.JWS.verifyJWT(jwt, pass, acceptField);
 }
 
 if (program.verbose) {

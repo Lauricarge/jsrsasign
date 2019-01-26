@@ -5,7 +5,7 @@
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="generator" content="JsDoc Toolkit" />
 		
-		<title>jsrsasign 4.8.7 JavaScript API Reference - KJUR.asn1.csr.CertificationRequestInfo</title>
+		<title>jsrsasign 8.0.0 JavaScript API Reference - KJUR.asn1.csr.CertificationRequestInfo</title>
 
 		<style type="text/css">
 			/* default.css */
@@ -299,6 +299,18 @@ ul.inheritsList
 	
 	<li><a href="../symbols/KJUR.asn1.DERUTF8String.html">KJUR.asn1.DERUTF8String</a></li>
 	
+	<li><a href="../symbols/KJUR.asn1.ocsp.html">KJUR.asn1.ocsp</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.ocsp.CertID.html">KJUR.asn1.ocsp.CertID</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.ocsp.OCSPRequest.html">KJUR.asn1.ocsp.OCSPRequest</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.ocsp.OCSPUtil.html">KJUR.asn1.ocsp.OCSPUtil</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.ocsp.Request.html">KJUR.asn1.ocsp.Request</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.ocsp.TBSRequest.html">KJUR.asn1.ocsp.TBSRequest</a></li>
+	
 	<li><a href="../symbols/KJUR.asn1.tsp.html">KJUR.asn1.tsp</a></li>
 	
 	<li><a href="../symbols/KJUR.asn1.tsp.AbstractTSAAdapter.html">KJUR.asn1.tsp.AbstractTSAAdapter</a></li>
@@ -333,6 +345,8 @@ ul.inheritsList
 	
 	<li><a href="../symbols/KJUR.asn1.x509.AttributeTypeAndValue.html">KJUR.asn1.x509.AttributeTypeAndValue</a></li>
 	
+	<li><a href="../symbols/KJUR.asn1.x509.AuthorityInfoAccess.html">KJUR.asn1.x509.AuthorityInfoAccess</a></li>
+	
 	<li><a href="../symbols/KJUR.asn1.x509.AuthorityKeyIdentifier.html">KJUR.asn1.x509.AuthorityKeyIdentifier</a></li>
 	
 	<li><a href="../symbols/KJUR.asn1.x509.BasicConstraints.html">KJUR.asn1.x509.BasicConstraints</a></li>
@@ -357,11 +371,15 @@ ul.inheritsList
 	
 	<li><a href="../symbols/KJUR.asn1.x509.GeneralNames.html">KJUR.asn1.x509.GeneralNames</a></li>
 	
+	<li><a href="../symbols/KJUR.asn1.x509.IssuerAltName.html">KJUR.asn1.x509.IssuerAltName</a></li>
+	
 	<li><a href="../symbols/KJUR.asn1.x509.KeyUsage.html">KJUR.asn1.x509.KeyUsage</a></li>
 	
 	<li><a href="../symbols/KJUR.asn1.x509.OID.html">KJUR.asn1.x509.OID</a></li>
 	
 	<li><a href="../symbols/KJUR.asn1.x509.RDN.html">KJUR.asn1.x509.RDN</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.x509.SubjectAltName.html">KJUR.asn1.x509.SubjectAltName</a></li>
 	
 	<li><a href="../symbols/KJUR.asn1.x509.SubjectPublicKeyInfo.html">KJUR.asn1.x509.SubjectPublicKeyInfo</a></li>
 	
@@ -376,6 +394,8 @@ ul.inheritsList
 	<li><a href="../symbols/KJUR.asn1.x509.X509Util.html">KJUR.asn1.x509.X509Util</a></li>
 	
 	<li><a href="../symbols/KJUR.crypto.html">KJUR.crypto</a></li>
+	
+	<li><a href="../symbols/KJUR.crypto.Cipher.html">KJUR.crypto.Cipher</a></li>
 	
 	<li><a href="../symbols/KJUR.crypto.DSA.html">KJUR.crypto.DSA</a></li>
 	
@@ -401,7 +421,7 @@ ul.inheritsList
 	
 	<li><a href="../symbols/KJUR.jws.JWSJS.html">KJUR.jws.JWSJS</a></li>
 	
-	<li><a href="../symbols/PKCS5PKEY.html">PKCS5PKEY</a></li>
+	<li><a href="../symbols/KJUR.lang.String.html">KJUR.lang.String</a></li>
 	
 	<li><a href="../symbols/RSAKey.html">RSAKey</a></li>
 	
@@ -451,7 +471,10 @@ ul.inheritsList
 								<b><a href="../symbols/KJUR.asn1.csr.CertificationRequestInfo.html#constructor">KJUR.asn1.csr.CertificationRequestInfo</a></b>(params)
 							</div>
 							<div class="description">ASN.1 CertificationRequestInfo structure class
-<br/></div>
+<pre>
+// -- DEFINITION OF ASN.1 SYNTAX --
+// CertificationRequestInfo ::= SEQUENCE {
+//   version       INTEGER { v1(0) } (v1,.</div>
 						</td>
 					</tr>
 				</tbody>
@@ -485,9 +508,19 @@ ul.inheritsList
 					<tbody>
 					
 						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="attributes">&nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont">KJUR.asn1.csr.CertificationRequestInfo.<b><a href="../symbols/KJUR.asn1.csr.CertificationRequestInfo.html#.setSubjectByParam">setSubjectByParam</a></b>(x500NameParam)
+								<div class="fixedFont"><b><a href="../symbols/KJUR.asn1.csr.CertificationRequestInfo.html#appendExtensionByName">appendExtensionByName</a></b>(name, extParams)
+								</div>
+								<div class="description">append X.509v3 extension to this object by name and parameters
+</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/KJUR.asn1.csr.CertificationRequestInfo.html#setSubjectByParam">setSubjectByParam</a></b>(x500NameParam)
 								</div>
 								<div class="description">set subject name field by parameter
 </div>
@@ -495,9 +528,9 @@ ul.inheritsList
 						</tr>
 					
 						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="attributes">&nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont">KJUR.asn1.csr.CertificationRequestInfo.<b><a href="../symbols/KJUR.asn1.csr.CertificationRequestInfo.html#.setSubjectPublicKeyByGetKey">setSubjectPublicKeyByGetKey</a></b>(keyParam)
+								<div class="fixedFont"><b><a href="../symbols/KJUR.asn1.csr.CertificationRequestInfo.html#setSubjectPublicKeyByGetKey">setSubjectPublicKeyByGetKey</a></b>(keyParam)
 								</div>
 								<div class="description">set subject public key info by RSA/ECDSA/DSA key parameter
 </div>
@@ -510,7 +543,7 @@ ul.inheritsList
 				
 				
 				<dl class="inheritsList">
-				
+				<dt>Methods borrowed from class <a href="../symbols/KJUR.asn1.ASN1Object.html">KJUR.asn1.ASN1Object</a>: </dt><dd><a href="../symbols/KJUR.asn1.ASN1Object.html#getEncodedHex">getEncodedHex</a>, <a href="../symbols/KJUR.asn1.ASN1Object.html#getLengthHexFromValue">getLengthHexFromValue</a>, <a href="../symbols/KJUR.asn1.ASN1Object.html#getValueHex">getValueHex</a></dd>
 				</dl>
 				
 			
@@ -530,6 +563,14 @@ ul.inheritsList
 				
 				<div class="description">
 					ASN.1 CertificationRequestInfo structure class
+<pre>
+// -- DEFINITION OF ASN.1 SYNTAX --
+// CertificationRequestInfo ::= SEQUENCE {
+//   version       INTEGER { v1(0) } (v1,...),
+//   subject       Name,
+//   subjectPKInfo SubjectPublicKeyInfo{{ PKInfoAlgorithms }},
+//   attributes    [0] Attributes{{ CRIAttributes }} }
+</pre>
 <br/>
 					
 				</div>
@@ -538,14 +579,7 @@ ul.inheritsList
 				
 				<pre class="code">csri = new KJUR.asn1.csr.CertificationRequestInfo();
 csri.setSubjectByParam({'str': '/C=US/O=Test/CN=example.com'});
-csri.setSubjectPublicKeyByGetKey(pubKeyObj);
-
-// -- DEFINITION OF ASN.1 SYNTAX --
-// CertificationRequestInfo ::= SEQUENCE {
-//   version       INTEGER { v1(0) } (v1,...),
-//   subject       Name,
-//   subjectPKInfo SubjectPublicKeyInfo{{ PKInfoAlgorithms }},
-//   attributes    [0] Attributes{{ CRIAttributes }} }</pre>
+csri.setSubjectPublicKeyByGetKey(pubKeyObj);</pre>
 				
 				
 				
@@ -566,7 +600,7 @@ csri.setSubjectPublicKeyByGetKey(pubKeyObj);
 					
 						<dl class="detailList">
 						<dt class="heading">Since:</dt>
-							<dd>jsrsasign 4.8.7 asn1csr 1.0.0</dd>
+							<dd>jsrsasign 4.9.0 asn1csr 1.0.0</dd>
 						</dl>
 					
 					
@@ -586,11 +620,71 @@ csri.setSubjectPublicKeyByGetKey(pubKeyObj);
 					Method Detail
 				</div>
 				
-					<a name=".setSubjectByParam"> </a>
-					<div class="fixedFont">&lt;static&gt; 
+					<a name="appendExtensionByName"> </a>
+					<div class="fixedFont">
 					
 					
-					<span class="light">KJUR.asn1.csr.CertificationRequestInfo.</span><b>setSubjectByParam</b>(x500NameParam)
+					<b>appendExtensionByName</b>(name, extParams)
+					
+					</div>
+					<div class="description">
+						append X.509v3 extension to this object by name and parameters
+
+						
+						
+					</div>
+					
+					
+					
+					<pre class="code">var o = new KJUR.asn1.csr.CertificationRequestInfo();
+o.appendExtensionByName('BasicConstraints', {'cA':true, 'critical': true});
+o.appendExtensionByName('KeyUsage', {'bin':'11'});
+o.appendExtensionByName('CRLDistributionPoints', {uri: 'http://aaa.com/a.crl'});
+o.appendExtensionByName('ExtKeyUsage', {array: [{name: 'clientAuth'}]});
+o.appendExtensionByName('AuthorityKeyIdentifier', {kid: '1234ab..'});
+o.appendExtensionByName('AuthorityInfoAccess', {array: [{accessMethod:{oid:...},accessLocation:{uri:...}}]});</pre>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{name}</span> <b>name</b>
+									
+								</dt>
+								<dd>name of X.509v3 Extension object</dd>
+							
+								<dt>
+									<span class="light fixedFont">{Array}</span> <b>extParams</b>
+									
+								</dt>
+								<dd>parameters as argument of Extension constructor.</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">See:</dt>
+							
+								<dd><a href="../symbols/KJUR.asn1.x509.Extension.html">KJUR.asn1.x509.Extension</a></dd>
+							
+							</dl>
+						
+
+					<hr />
+				
+					<a name="setSubjectByParam"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>setSubjectByParam</b>(x500NameParam)
 					
 					</div>
 					<div class="description">
@@ -634,11 +728,11 @@ csri.setSubjectPublicKeyByGetKey(pubKeyObj);
 
 					<hr />
 				
-					<a name=".setSubjectPublicKeyByGetKey"> </a>
-					<div class="fixedFont">&lt;static&gt; 
+					<a name="setSubjectPublicKeyByGetKey"> </a>
+					<div class="fixedFont">
 					
 					
-					<span class="light">KJUR.asn1.csr.CertificationRequestInfo.</span><b>setSubjectPublicKeyByGetKey</b>(keyParam)
+					<b>setSubjectPublicKeyByGetKey</b>(keyParam)
 					
 					</div>
 					<div class="description">
@@ -697,7 +791,7 @@ csir.setSubjectPublicKeyByGetKeyParam(kjurCryptoECDSAKeyObject); // et.al.</pre>
 		
 <!-- ============================== footer ================================= -->
 		<div class="fineprint" style="clear:both">
-                        &copy; 2012-2015 Kenji Urushima, All rights reserved<br/>
+                        &copy; 2012-2017 Kenji Urushima, All rights reserved<br/>
 			
 			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.4.0 
 		</div>

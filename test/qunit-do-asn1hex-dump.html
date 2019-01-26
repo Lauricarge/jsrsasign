@@ -12,15 +12,14 @@
 <script language="JavaScript" type="text/javascript" src="../ext/jsbn2.js"></script>
 <script language="JavaScript" type="text/javascript" src="../ext/rsa.js"></script>
 <script language="JavaScript" type="text/javascript" src="../ext/rsa2.js"></script>
-<script language="JavaScript" type="text/javascript" src="../ext/sha1.js"></script>
 <script language="JavaScript" type="text/javascript" src="../ext/base64.js"></script>
-<script language="JavaScript" type="text/javascript" src="../base64x-1.1.js"></script>
-<script language="JavaScript" type="text/javascript" src="../rsasign-1.2.js"></script>
-<script language="JavaScript" type="text/javascript" src="../asn1hex-1.1.js"></script>
-<script language="JavaScript" type="text/javascript" src="../x509-1.1.js"></script>
-<script src="http://yui.yahooapis.com/2.9.0/build/yahoo/yahoo-min.js"></script>
-<script src="../asn1-1.0.js"></script>
-<script src="../asn1x509-1.0.js"></script>
+<script language="JavaScript" type="text/javascript" src="../src/base64x-1.1.js"></script>
+<script language="JavaScript" type="text/javascript" src="../src/rsasign-1.2.js"></script>
+<script language="JavaScript" type="text/javascript" src="../src/asn1hex-1.1.js"></script>
+<script language="JavaScript" type="text/javascript" src="../src/x509-1.1.js"></script>
+<script src="http://yui.yahooapis.com/2.9.0/build/yahoo/yahoo.js"></script>
+<script src="../src/asn1-1.0.js"></script>
+<script src="../src/asn1x509-1.0.js"></script>
 
 <script type="text/javascript">
 // _test/github.com.cer
@@ -75,11 +74,11 @@ var certGithubDump = (function() {/*SEQUENCE
           PrintableString 'US'
       SET
         SEQUENCE
-          ObjectIdentifier organization (2 5 4 10)
+          ObjectIdentifier organizationName (2 5 4 10)
           PrintableString 'DigiCert Inc'
       SET
         SEQUENCE
-          ObjectIdentifier organizationalUnit (2 5 4 11)
+          ObjectIdentifier organizationalUnitName (2 5 4 11)
           PrintableString 'www.digicert.com'
       SET
         SEQUENCE
@@ -91,15 +90,15 @@ var certGithubDump = (function() {/*SEQUENCE
     SEQUENCE
       SET
         SEQUENCE
-          ObjectIdentifier (2 5 4 15)
+          ObjectIdentifier businessCategory (2 5 4 15)
           UTF8String 'Private Organization'
       SET
         SEQUENCE
-          ObjectIdentifier (1 3 6 1 4 1 311 60 2 1 3)
+          ObjectIdentifier jurisdictionOfIncorporationC (1 3 6 1 4 1 311 60 2 1 3)
           PrintableString 'US'
       SET
         SEQUENCE
-          ObjectIdentifier (1 3 6 1 4 1 311 60 2 1 2)
+          ObjectIdentifier jurisdictionOfIncorporationSP (1 3 6 1 4 1 311 60 2 1 2)
           PrintableString 'Delaware'
       SET
         SEQUENCE
@@ -107,11 +106,11 @@ var certGithubDump = (function() {/*SEQUENCE
           PrintableString '5157550'
       SET
         SEQUENCE
-          ObjectIdentifier (2 5 4 9)
+          ObjectIdentifier streetAddress (2 5 4 9)
           PrintableString '548 4th Street'
       SET
         SEQUENCE
-          ObjectIdentifier (2 5 4 17)
+          ObjectIdentifier postalCode (2 5 4 17)
           PrintableString '94107'
       SET
         SEQUENCE
@@ -123,11 +122,11 @@ var certGithubDump = (function() {/*SEQUENCE
           PrintableString 'California'
       SET
         SEQUENCE
-          ObjectIdentifier locality (2 5 4 7)
+          ObjectIdentifier localityName (2 5 4 7)
           PrintableString 'San Francisco'
       SET
         SEQUENCE
-          ObjectIdentifier organization (2 5 4 10)
+          ObjectIdentifier organizationName (2 5 4 10)
           PrintableString 'GitHub, Inc.'
       SET
         SEQUENCE
@@ -193,10 +192,10 @@ var certGithubDump = (function() {/*SEQUENCE
           OCTETSTRING, encapsulates
             SEQUENCE
               SEQUENCE
-                ObjectIdentifier (1 3 6 1 5 5 7 48 1)
+                ObjectIdentifier ocsp (1 3 6 1 5 5 7 48 1)
                 [6] http://ocsp.digicert.com
               SEQUENCE
-                ObjectIdentifier (1 3 6 1 5 5 7 48 2)
+                ObjectIdentifier caIssuers (1 3 6 1 5 5 7 48 2)
                 [6] http://cacerts.digicert.com/DigiCertSHA2ExtendedValidationServerCA.crt
         SEQUENCE
           ObjectIdentifier basicConstraints (2 5 29 19)
@@ -229,7 +228,7 @@ test("ASN1HEX.dump", function() {
                      "UTCTime 230501235959Z\n", "UTCTime 2023");
   equal(ASN1HEX.dump('180f32303233303530313233353935395a'),
                      "GeneralizedTime 20230501235959Z\n", "GenTime 2023");
-  var aIdx = ASN1HEX.getPosArrayOfChildren_AtObj("3006020101020102", 0);
+  var aIdx = ASN1HEX.getChildIdx("3006020101020102", 0);
   equal(aIdx.length, 2, "aIdx.length");
   equal(aIdx[0], 4, "aIdx[0]");
   equal(aIdx[1], 10, "aIdx[1]");
@@ -254,6 +253,11 @@ test("ASN1HEX.dump longint", function() {
                      "long int");
 });
 
+test("ASN1HEX.dump ASN1Object", function() {
+  equal(ASN1HEX.dump(KJUR.asn1.ASN1Util.newObject({seq: [{int: 1}, {int: 2}]})),
+        "SEQUENCE\n  INTEGER 01\n  INTEGER 02\n", "ASN1Object SEQ INT 1 INT 2");
+});
+
 test("ASN1HEX.isASN1HEX", function() {
   equal(ASN1HEX.isASN1HEX('3006020101020102'), true, "3006020101020102");
   equal(ASN1HEX.isASN1HEX('300602010102010202'), false, "300602010102010202 extra 02");
@@ -261,10 +265,9 @@ test("ASN1HEX.isASN1HEX", function() {
 });
 
 test("ASN1HEX.dump cert", function() {
-  var hCert = X509.pemToHex(certGithubPEM);
+  var hCert = pemtohex(certGithubPEM);
   equal(ASN1HEX.dump(hCert), certGithubDump, "certGithubPEM");
 });
-
 
 });
 

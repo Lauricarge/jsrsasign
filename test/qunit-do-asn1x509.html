@@ -8,24 +8,39 @@
 <script type="text/javascript" src="qunit.js"></script>
 <link rel="stylesheet" href="qunit.css" type="text/css" media="screen" />
 
-<script src="http://yui.yahooapis.com/2.9.0/build/yahoo/yahoo-min.js"></script>
-<script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/components/core-min.js"></script>
-<script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/components/enc-base64-min.js"></script>
-<script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/components/sha1.js"></script>
-<script language="JavaScript" type="text/javascript" src="../ext/jsbn.js"></script>
-<script language="JavaScript" type="text/javascript" src="../ext/jsbn2.js"></script>
-<script language="JavaScript" type="text/javascript" src="../ext/base64.js"></script>
-<script language="JavaScript" type="text/javascript" src="../ext/rsa.js"></script>
-<script language="JavaScript" type="text/javascript" src="../ext/rsa2.js"></script>
-<script language="JavaScript" type="text/javascript" src="../base64x-1.1.js"></script>
-<script language="JavaScript" type="text/javascript" src="../asn1hex-1.1.js"></script>
-<script language="JavaScript" type="text/javascript" src="../rsapem-1.1.js"></script>
-<script language="JavaScript" type="text/javascript" src="../rsasign-1.2.js"></script>
-<script language="JavaScript" type="text/javascript" src="../crypto-1.1.js"></script>
-<script language="JavaScript" type="text/javascript" src="../asn1-1.0.js"></script>
-<script language="JavaScript" type="text/javascript" src="../asn1x509-1.0.js"></script>
-<script language="JavaScript" type="text/javascript" src="../x509-1.1.js"></script>
-<script language="JavaScript" type="text/javascript" src="../keyutil-1.0.js"></script>
+<script src="../ext/cj/cryptojs-312-core-fix.js"></script>
+<script src="../ext/cj/x64-core.js"></script>
+<script src="../ext/cj/cipher-core_min.js"></script>
+<script src="../ext/cj/aes_min.js"></script>
+<script src="../ext/cj/tripledes_min.js"></script>
+<script src="../ext/cj/enc-base64_min.js"></script>
+<script src="../ext/cj/md5_min.js"></script>
+<script src="../ext/cj/sha1_min.js"></script>
+<script src="../ext/cj/sha256_min.js"></script>
+<script src="../ext/cj/sha224_min.js"></script>
+<script src="../ext/cj/sha512_min.js"></script>
+<script src="../ext/cj/sha384_min.js"></script>
+<script src="../ext/cj/ripemd160_min.js"></script>
+<script src="../ext/cj/hmac_min.js"></script>
+<script src="../ext/cj/pbkdf2_min.js"></script>
+
+<script src="../ext/yahoo.js"></script>
+<script src="../ext/jsbn.js"></script>
+<script src="../ext/jsbn2.js"></script>
+<script src="../ext/prng4.js"></script>
+<script src="../ext/rng.js"></script>
+<script src="../ext/base64.js"></script>
+<script src="../ext/rsa.js"></script>
+<script src="../ext/rsa2.js"></script>
+<script src="../src/base64x-1.1.js"></script>
+<script src="../src/asn1hex-1.1.js"></script>
+<script src="../src/rsapem-1.1.js"></script>
+<script src="../src/rsasign-1.2.js"></script>
+<script src="../src/crypto-1.1.js"></script>
+<script src="../src/asn1-1.0.js"></script>
+<script src="../src/asn1x509-1.0.js"></script>
+<script src="../src/x509-1.1.js"></script>
+<script src="../src/keyutil-1.0.js"></script>
 
 <script type="text/javascript">
 <!--
@@ -66,12 +81,12 @@ test("Certificate class test", function() {
   o.setNotBeforeByParam({'str': '130504235959Z'});
   o.setNotAfterByParam({'str': '140504235959Z'});
   o.setSubjectByParam({'str': '/C=US/CN=b'});
-  o.setSubjectPublicKeyByParam({'rsakey': pubKey});
+  o.setSubjectPublicKey(pubKey);
   o.appendExtension(new KJUR.asn1.x509.BasicConstraints({'cA':true}));
   o.appendExtension(new KJUR.asn1.x509.KeyUsage({'bin':'11'}));
 
   var prvKey = new RSAKey();
-  prvKey.readPrivateKeyFromASN1HexString("3082013a020100024100e8664dd2b40529121568f3b39bc97a62e7ba3c09babdc4f0dcd8df90eb790b9bb645a2b70e3112747b4d3c41b51424895115fef88f79d43eae5b1a4e3518fd590203010001024078bbc54c646795e9a623cb0f912c7f9f6861711560e57bade21ded2f7d9579f86272fab9e71ab27282c2760c404dae6ac8a3ab852cf6bcd562f9aff8247a264d022100fe9bd450866b3255614fde976a76ac0b1d5830dda64f5359b946d8512bc1239f022100e9ab680f5f05dbb0f4311b0e6f4368f4874a1238979d8bc600c35c6f20707c07022100d549cb698dc17d4fe30e5a84f3ade860033c1eeb7f67d286465c9fd817d45b3702201849b4bb44493b989d092da2c675df46eb790b83ce5e95d4b2e79b88017b2fa902207d261a96256d49b020cb1d587ecde127e093a4d2b34cdbff171f34125b5857a9");
+  prvKey.readPKCS5PrvKeyHex("3082013a020100024100e8664dd2b40529121568f3b39bc97a62e7ba3c09babdc4f0dcd8df90eb790b9bb645a2b70e3112747b4d3c41b51424895115fef88f79d43eae5b1a4e3518fd590203010001024078bbc54c646795e9a623cb0f912c7f9f6861711560e57bade21ded2f7d9579f86272fab9e71ab27282c2760c404dae6ac8a3ab852cf6bcd562f9aff8247a264d022100fe9bd450866b3255614fde976a76ac0b1d5830dda64f5359b946d8512bc1239f022100e9ab680f5f05dbb0f4311b0e6f4368f4874a1238979d8bc600c35c6f20707c07022100d549cb698dc17d4fe30e5a84f3ade860033c1eeb7f67d286465c9fd817d45b3702201849b4bb44493b989d092da2c675df46eb790b83ce5e95d4b2e79b88017b2fa902207d261a96256d49b020cb1d587ecde127e093a4d2b34cdbff171f34125b5857a9");
   var crt1 = new KJUR.asn1.x509.Certificate({tbscertobj: o,
                                              prvkeyobj:  prvKey});
   crt1.sign();					  
@@ -102,7 +117,7 @@ test("TBSCertificate class test", function() {
   o.setNotBeforeByParam({'str': '130504235959Z'});
   o.setNotAfterByParam({'str': '140504235959Z'});
   o.setSubjectByParam({'str': '/C=US/CN=b'});
-  o.setSubjectPublicKeyByParam({'rsakey': rsaKey});
+  o.setSubjectPublicKey(rsaKey);
   o.appendExtension(new KJUR.asn1.x509.BasicConstraints({'cA':true}));
   o.appendExtension(new KJUR.asn1.x509.KeyUsage({'bin':'11'}));
 
@@ -117,6 +132,12 @@ test("X500Name class test", function() {
   equal(o.getEncodedHex(), 
          "301b310b3009060355040613025553310c300a060355040a0c03616161",
          "setByString(/C=US/O=aaa)");
+
+  o = new KJUR.asn1.x509.X500Name();
+  o.setByString("/C=US/O=あ");
+  equal(o.getEncodedHex(), 
+         "301b310b3009060355040613025553310c300a060355040a0c03e38182",
+         "setByString(/C=US/O=あ)");
 
   o = new KJUR.asn1.x509.X500Name();
   o.setByObject({C: "US", O: "aaa"});
@@ -138,6 +159,11 @@ test("X500Name class test", function() {
   equal(o.getEncodedHex(),
          "301b310b3009060355040613025553310c300a060355040a0c0361612f",
          "constructor obj C:US, O:aa/");
+
+  o = new KJUR.asn1.x509.X500Name({'str': '/O=a/O=b/b/O=c/c/c'});
+  equal(o.getEncodedHex(),
+         "302a310a3008060355040a0c0161310c300a060355040a0c03622f62310e300c060355040a0c05632f632f63",
+         "constructor str /O=a/O=b/b/O=c/c/c");
 });
 
 test("RDN class test", function() {
@@ -151,7 +177,6 @@ test("RDN class test", function() {
 });
 
 test("AttributeTypeAndValue class test", function() {
-  expect(3);
   var o1 = new KJUR.asn1.x509.AttributeTypeAndValue();
   o1.setByAttrTypeAndValueStr("O", "aaa");
   equal(o1.getEncodedHex(), "300a060355040a0c03616161", "setByAttrTypeAndValueStr O aaa");
@@ -162,25 +187,28 @@ test("AttributeTypeAndValue class test", function() {
 
   var o3 = new KJUR.asn1.x509.AttributeTypeAndValue({'str':'O=aaa'});
   equal(o3.getEncodedHex(), "300a060355040a0c03616161", "constructor str O=aaa");
+
+  var o4 = new KJUR.asn1.x509.AttributeTypeAndValue({'str':'O=あ'});
+  equal(o4.getEncodedHex(), "300a060355040a0c03e38182", "constructor str O=あ");
 });
 
 // === BEGIN Other ASN1 structure class  ======================================
 
 test("SubjectPublicKeyInfo class test", function() {
-  expect(4);
   var rsaKey = new RSAKey();
   rsaKey.setPublic('e8664dd2b40529121568f3b39bc97a62e7ba3c09babdc4f0dcd8df90eb790b9bb645a2b70e3112747b4d3c41b51424895115fef88f79d43eae5b1a', '10001');
-  var o1 = new KJUR.asn1.x509.SubjectPublicKeyInfo({'rsakey': rsaKey});
+  var o1 = new KJUR.asn1.x509.SubjectPublicKeyInfo(rsaKey);
   equal(o1.getEncodedHex(), "3057300d06092a864886f70d01010105000346003043023c00e8664dd2b40529121568f3b39bc97a62e7ba3c09babdc4f0dcd8df90eb790b9bb645a2b70e3112747b4d3c41b51424895115fef88f79d43eae5b1a0203010001", "constructor default rsaKey");
-  equal(o1.rsaKey.e.toString(16), "10001", "rsa1");
 
+  var pubpem2 =
+    "-----BEGIN PUBLIC KEY-----\n" +
+    "MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAOtpGHibL8Ue+MXPPufkcrNES40rCT5L\n" +
+    "RIU9MjTZ8/7owG5bAsiFA9Xxh3uZK1T5QA64jNJVbp2ojHAtNyWPuwsCAwEAAQ==" +
+    "-----END PUBLIC KEY-----\n" 
+  var pubobj2 = KEYUTIL.getKey(pubpem2);
   var o2 = new KJUR.asn1.x509.SubjectPublicKeyInfo();
-  o2.setRSAPEM("-----BEGIN PUBLIC KEY-----\n" +
-               "MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAOtpGHibL8Ue+MXPPufkcrNES40rCT5L\n" +
-               "RIU9MjTZ8/7owG5bAsiFA9Xxh3uZK1T5QA64jNJVbp2ojHAtNyWPuwsCAwEAAQ==" +
-               "-----END PUBLIC KEY-----\n");
-  equal(o2.rsaKey.n.toString(16), "eb6918789b2fc51ef8c5cf3ee7e472b3444b8d2b093e4b44853d3234d9f3fee8c06e5b02c88503d5f1877b992b54f9400eb88cd2556e9da88c702d37258fbb0b", "setRSAPEM rsaKey.n");
-  equal(o2.rsaKey.e.toString(16), "10001", "setRSAPEM rsaKey.e");
+  o2.setPubKey(pubobj2);
+  equal(o2.getEncodedHex(), "305c300d06092a864886f70d0101010500034b003048024100eb6918789b2fc51ef8c5cf3ee7e472b3444b8d2b093e4b44853d3234d9f3fee8c06e5b02c88503d5f1877b992b54f9400eb88cd2556e9da88c702d37258fbb0b0203010001", "pubpem2");
 });
 
 test("Time class test", function() {
@@ -200,27 +228,82 @@ test("Time class test", function() {
 });
 
 test("AlgorithmIdentifier class test", function() {
-  expect(1);
-  var o1 = new KJUR.asn1.x509.AlgorithmIdentifier({'name':'SHA1withRSA'});
-  equal(o1.getEncodedHex(), "300d06092a864886f70d0101050500", "constructor name SHA1withRSA");
+  equal(new KJUR.asn1.x509.AlgorithmIdentifier({'name':'SHA1withRSA'}).getEncodedHex(),
+        "300d06092a864886f70d0101050500", "constructor name SHA1withRSA");
+
+  equal(new KJUR.asn1.x509.AlgorithmIdentifier({'name':'SHA256withRSA'}).getEncodedHex(),
+        "300d06092a864886f70d01010b0500", "constructor name SHA256withRSA");
+
+  equal(new KJUR.asn1.x509.AlgorithmIdentifier({'name':'SHA256withRSA', paramempty: true}).getEncodedHex(),
+        "300b06092a864886f70d01010b", "constructor name SHA256withRSA, paramempty");
+
+  equal(new KJUR.asn1.x509.AlgorithmIdentifier({'name':'SHA1withDSA'}).getEncodedHex(),
+        "300906072a8648ce380403", "constructor name SHA1withDSA");
+
+  equal(new KJUR.asn1.x509.AlgorithmIdentifier({'name':'SHA512withECDSA'}).getEncodedHex(),
+        "300a06082a8648ce3d040304", "constructor name SHA512withECDSA");
+
+  equal(new KJUR.asn1.x509.AlgorithmIdentifier({'name':'rsaEncryption'}).getEncodedHex(),
+        "300d06092a864886f70d0101010500", "constructor name rsaEncryption");
+
+  equal(new KJUR.asn1.x509.AlgorithmIdentifier({'name':'sha1'}).getEncodedHex(),
+        "300906052b0e03021a0500", "constructor name sha1");
+});
+
+test("AlgorithmIdentifier SHA1withECDSA", function() {
+var o = new KJUR.asn1.x509.AlgorithmIdentifier({name: 'SHA1withECDSA', paramempty: true});
+equal(o.getEncodedHex(), "300906072a8648ce3d0401", "aaa");
+});
+
+test("AlgorithmIdentifier SHA256withECDSA", function() {
+var o = new KJUR.asn1.x509.AlgorithmIdentifier({name: 'SHA256withECDSA', paramempty: true});
+equal(o.getEncodedHex(), "300a06082a8648ce3d040302", "aaa");
+});
+
+test("AlgorithmIdentifier SHA1withDSA", function() {
+var o = new KJUR.asn1.x509.AlgorithmIdentifier({name: 'SHA1withDSA', paramempty: true});
+equal(o.getEncodedHex(), "300906072a8648ce380403", "aaa");
+});
+
+test("AlgorithmIdentifier SHA256withDSA", function() {
+var o = new KJUR.asn1.x509.AlgorithmIdentifier({name: 'SHA256withDSA', paramempty: true});
+equal(o.getEncodedHex(), "300b0609608648016503040302", "aaa");
 });
 
 test("GeneralName class test", function() {
-  expect(5);
-  var o1 = new KJUR.asn1.x509.GeneralName({'rfc822':'u1@foo.com'});
-  equal(o1.getEncodedHex(), "810a753140666f6f2e636f6d", "constructor rfc822 u1@foo.com");
+  var o;
+  o = new KJUR.asn1.x509.GeneralName({'rfc822':'u1@foo.com'});
+  equal(o.getEncodedHex(), "810a753140666f6f2e636f6d", "constructor rfc822 u1@foo.com");
 
-  var o2 = new KJUR.asn1.x509.GeneralName({'dns':'foo.com'});
-  equal(o2.getEncodedHex(), "8207666f6f2e636f6d", "constructor dns foo.com");
+  o = new KJUR.asn1.x509.GeneralName({'dns':'foo.com'});
+  equal(o.getEncodedHex(), "8207666f6f2e636f6d", "constructor dns foo.com");
 
-  var o3 = new KJUR.asn1.x509.GeneralName({'uri':'http://aaa.com/'});
-  equal(o3.getEncodedHex(), "860f687474703a2f2f6161612e636f6d2f", "constructor uri http://aaa.com/");
+  o = new KJUR.asn1.x509.GeneralName({'uri':'http://aaa.com/'});
+  equal(o.getEncodedHex(), "860f687474703a2f2f6161612e636f6d2f", "constructor uri http://aaa.com/");
 
-  var o4= new KJUR.asn1.x509.GeneralName({certissuer: z4TSACERT});
-  equal(o4.getEncodedHex(), "a41d301b310b3009060355040613025553310c300a060355040a0c03434131", "constructor certissuer cert1");
+  o = new KJUR.asn1.x509.GeneralName({certissuer: z4TSACERT});
+  equal(o.getEncodedHex(), "a41d301b310b3009060355040613025553310c300a060355040a0c03434131", "constructor certissuer cert1");
 
-  var o5= new KJUR.asn1.x509.GeneralName({certsubj: z4TSACERT});
-  equal(o5.getEncodedHex(), "a41e301c310b3009060355040613025553310d300b06035504030c0454534131", "constructor certsubj cert1");
+  o = new KJUR.asn1.x509.GeneralName({certsubj: z4TSACERT});
+  equal(o.getEncodedHex(), "a41e301c310b3009060355040613025553310d300b06035504030c0454534131", "constructor certsubj cert1");
+
+  o = new KJUR.asn1.x509.GeneralName({dn: '/C=US/O=Test'});
+  equal(o.getEncodedHex(), "a41e301c310b3009060355040613025553310d300b060355040a0c0454657374", "dn /C=US/O=Test");
+
+  o = new KJUR.asn1.x509.GeneralName({ldapdn: 'O=Test,C=US'});
+  equal(o.getEncodedHex(), "a41e301c310b3009060355040613025553310d300b060355040a0c0454657374", "ldapdn O=Test,C=US");
+
+  o = new KJUR.asn1.x509.GeneralName({ip: '192.168.1.1'});
+  equal(o.getEncodedHex(), "8704c0a80101", "ip: 192.168.1.1");
+
+  o = new KJUR.asn1.x509.GeneralName({ip: '2001:db8::4'});
+  equal(o.getEncodedHex(), "871020010db8000000000000000000000004", "ip: 2001:db8::4");
+
+  o = new KJUR.asn1.x509.GeneralName({ip: '2606:4700:4700::1111'});
+  equal(o.getEncodedHex(), "871026064700470000000000000000001111", "ip: 2606:4700:4700::1111");
+
+  o = new KJUR.asn1.x509.GeneralName({ip: 'c0a80101'});
+  equal(o.getEncodedHex(), "8704c0a80101", "ip: c0a80101");
 });
 
 test("GeneralNames class test", function() {
@@ -273,13 +356,22 @@ test("BasicConstraints class test", function() {
 
 // KeyUsage
 test("KeyUsage class test", function() {
-  expect(3);
-  var o = new KJUR.asn1.x509.KeyUsage({'bin':'11'});
+  var o;
+  o = new KJUR.asn1.x509.KeyUsage({'bin':'11'});
   equal(o.getExtnValueHex(), "030206c0", "constructor bin 11 getExtnValueHex");
   equal(o.getEncodedHex(), "300b0603551d0f0404030206c0", "constructor bin 11 getEncodedHex");
 
-  var o2 = new KJUR.asn1.x509.KeyUsage({'bin':'11', 'critical': true});
-  equal(o2.getEncodedHex(), "300e0603551d0f0101ff0404030206c0", "constructor bin 11 critical getEncodedHex");
+  o = new KJUR.asn1.x509.KeyUsage({'bin':'11', 'critical': true});
+  equal(o.getEncodedHex(), "300e0603551d0f0101ff0404030206c0", "constructor bin 11 critical getEncodedHex");
+
+  o = new KJUR.asn1.x509.KeyUsage({'names': ['digitalSignature', 'nonRepudiation']});
+  equal(o.getEncodedHex(), "300b0603551d0f0404030206c0", "constructor names [digitalSignature, nonRepudiation]");
+
+  o = new KJUR.asn1.x509.KeyUsage({'bin':'000000011'});
+  equal(o.getEncodedHex(), "300c0603551d0f04050303070180", "constructor bin 000000011");
+
+  o = new KJUR.asn1.x509.KeyUsage({'names': ['encipherOnly', 'decipherOnly']});
+  equal(o.getEncodedHex(), "300c0603551d0f04050303070180", "constructor names [encipherOnly, decipherOnly]");
 });
 
 // CRLDP
@@ -345,6 +437,24 @@ test("AuthorityKeyIdentifier class test (KID critical)", function() {
   equal(o1.getEncodedHex(), "30100603551d230101ff04063004800289ab", "ext hex");
 });
 
+test("SubjectAltName", function() {
+  var o1 = new KJUR.asn1.x509.SubjectAltName({
+    critical: true,
+    array: [{uri: 'http://a.com'}, {uri: 'http://b.com'}]
+  });
+  equal(o1.getExtnValueHex(), "301c860c687474703a2f2f612e636f6d860c687474703a2f2f622e636f6d", "URIs critical");
+  equal(o1.getEncodedHex(), "30280603551d110101ff041e301c860c687474703a2f2f612e636f6d860c687474703a2f2f622e636f6d", "ext hex");
+});
+
+test("IssuerAltName", function() {
+  var o1 = new KJUR.asn1.x509.IssuerAltName({
+    critical: true,
+    array: [{uri: 'http://a.com'}, {uri: 'http://b.com'}]
+  });
+  equal(o1.getExtnValueHex(), "301c860c687474703a2f2f612e636f6d860c687474703a2f2f622e636f6d", "URIs critical");
+  equal(o1.getEncodedHex(), "30280603551d120101ff041e301c860c687474703a2f2f612e636f6d860c687474703a2f2f622e636f6d", "ext hex");
+});
+
 // ==== END OF X.509V3 EXTENSION TEST ===================
 test("CRL class test", function() {
   expect(1);
@@ -357,9 +467,9 @@ test("CRL class test", function() {
   o.setNextUpdateByParam({'str': '130604235959Z'});
 
   var prvKey = new RSAKey();
-  prvKey.readPrivateKeyFromASN1HexString("3082013a020100024100e8664dd2b40529121568f3b39bc97a62e7ba3c09babdc4f0dcd8df90eb790b9bb645a2b70e3112747b4d3c41b51424895115fef88f79d43eae5b1a4e3518fd590203010001024078bbc54c646795e9a623cb0f912c7f9f6861711560e57bade21ded2f7d9579f86272fab9e71ab27282c2760c404dae6ac8a3ab852cf6bcd562f9aff8247a264d022100fe9bd450866b3255614fde976a76ac0b1d5830dda64f5359b946d8512bc1239f022100e9ab680f5f05dbb0f4311b0e6f4368f4874a1238979d8bc600c35c6f20707c07022100d549cb698dc17d4fe30e5a84f3ade860033c1eeb7f67d286465c9fd817d45b3702201849b4bb44493b989d092da2c675df46eb790b83ce5e95d4b2e79b88017b2fa902207d261a96256d49b020cb1d587ecde127e093a4d2b34cdbff171f34125b5857a9");
+  prvKey.readPKCS5PrvKeyHex("3082013a020100024100e8664dd2b40529121568f3b39bc97a62e7ba3c09babdc4f0dcd8df90eb790b9bb645a2b70e3112747b4d3c41b51424895115fef88f79d43eae5b1a4e3518fd590203010001024078bbc54c646795e9a623cb0f912c7f9f6861711560e57bade21ded2f7d9579f86272fab9e71ab27282c2760c404dae6ac8a3ab852cf6bcd562f9aff8247a264d022100fe9bd450866b3255614fde976a76ac0b1d5830dda64f5359b946d8512bc1239f022100e9ab680f5f05dbb0f4311b0e6f4368f4874a1238979d8bc600c35c6f20707c07022100d549cb698dc17d4fe30e5a84f3ade860033c1eeb7f67d286465c9fd817d45b3702201849b4bb44493b989d092da2c675df46eb790b83ce5e95d4b2e79b88017b2fa902207d261a96256d49b020cb1d587ecde127e093a4d2b34cdbff171f34125b5857a9");
 
-  var crl1 = new KJUR.asn1.x509.CRL({'tbsobj': o,'rsaprvkey': prvKey});
+  var crl1 = new KJUR.asn1.x509.CRL({'tbsobj': o,'prvkeyobj': prvKey});
   crl1.sign();
   equal(crl1.getEncodedHex(), "30819c3048300d06092a864886f70d01010505003019310b3009060355040613025553310a3008060355040a0c0161170d3133303530343233353935395a170d3133303630343233353935395a300d06092a864886f70d0101050500034100161f6e8b3cbe992aa4eece8894516a65d530543c6f23e83860cc391ae8289504cbe91f118fd20e2b96966182f695f9dce27b3e76f7d84beeab293cc3c9649740", "crl sign");
 });
@@ -393,20 +503,6 @@ test("CRLEntry class test", function() {
   equal(e.getEncodedHex(), "3012020103170d3133303531343233353935395a", "constructor/1");
 });
 
-test("X509Util.getPKCS8PubKeyPEMfromRSAKey", function() {
-  var s = "" +
-"-----BEGIN PUBLIC KEY-----\r\n" + 
-"MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAOtpGHibL8Ue+MXPPufkcrNES40rCT5L\r\n" + 
-"RIU9MjTZ8/7owG5bAsiFA9Xxh3uZK1T5QA64jNJVbp2ojHAtNyWPuwsCAwEAAQ==\r\n" + 
-"-----END PUBLIC KEY-----\r\n";
-
-  var rsaKey = new RSAKey();
-  rsaKey.setPublic("eb6918789b2fc51ef8c5cf3ee7e472b3444b8d2b093e4b44853d3234d9f3fee8c06e5b02c88503d5f1877b992b54f9400eb88cd2556e9da88c702d37258fbb0b", "10001"); // z1.pubp8.der
-  var pem = KJUR.asn1.x509.X509Util.getPKCS8PubKeyPEMfromRSAKey(rsaKey);
-
-  equal(pem, s, "z1.pubp8.pem");
-});
-
 });
 -->
 </script>
@@ -416,5 +512,10 @@ test("X509Util.getPKCS8PubKeyPEMfromRSAKey", function() {
 <div id="qunit"></div>
 <div id="qunit-fixture">test markup</div>
 <a href="index.html">TEST INDEX</a> |
+<a href="qunit-do-x509-hex2dn.html">x509-hex2dn</a> |
+<a href="qunit-do-asn1x509.html">asn1x509</a> |
+<a href="qunit-do-asn1x509-newcrt.html">asn1x509-newcrt</a> |
+<a href="qunit-do-asn1x509-multirdn.html">asn1x509-multirdn</a> |
+<a href="qunit-do-asn1csr.html">asn1csr</a> |
 </body>
 </html>

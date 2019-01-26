@@ -3,27 +3,41 @@
 <html>
 <head>
 <title>QUnit for RSAKey signing add-on 'rsa-sign.js'</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <script type="text/javascript" src="jquery-1.4.2.min.js"></script>
 <script type="text/javascript" src="qunit.js"></script>
 <link rel="stylesheet" href="qunit.css" type="text/css" media="screen" />
 
-<script language="JavaScript" type="text/javascript" src="../ext/jsbn.js"></script>
-<script language="JavaScript" type="text/javascript" src="../ext/jsbn2.js"></script>
-<script language="JavaScript" type="text/javascript" src="../ext/prng4.js"></script>
-<script language="JavaScript" type="text/javascript" src="../ext/rng.js"></script>
-<script language="JavaScript" type="text/javascript" src="../ext/rsa.js"></script>
-<script language="JavaScript" type="text/javascript" src="../ext/rsa2.js"></script>
-<script language="JavaScript" type="text/javascript" src="../ext/base64.js"></script>
+<script src="../ext/cj/cryptojs-312-core-fix.js"></script>
+<script src="../ext/cj/x64-core.js"></script>
+<script src="../ext/cj/cipher-core_min.js"></script>
+<script src="../ext/cj/aes_min.js"></script>
+<script src="../ext/cj/tripledes_min.js"></script>
+<script src="../ext/cj/enc-base64_min.js"></script>
+<script src="../ext/cj/md5_min.js"></script>
+<script src="../ext/cj/sha1_min.js"></script>
+<script src="../ext/cj/sha256_min.js"></script>
+<script src="../ext/cj/sha224_min.js"></script>
+<script src="../ext/cj/sha512_min.js"></script>
+<script src="../ext/cj/sha384_min.js"></script>
+<script src="../ext/cj/ripemd160_min.js"></script>
+<script src="../ext/cj/hmac_min.js"></script>
+<script src="../ext/cj/pbkdf2_min.js"></script>
 
-<script src="http://yui.yahooapis.com/2.9.0/build/yahoo/yahoo-min.js"></script>
-<script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/components/core.js"></script>
-<script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/components/sha1.js"></script>
-<script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/components/sha256.js"></script>
+<script src="../ext/yahoo.js"></script>
+<script src="../ext/jsbn.js"></script>
+<script src="../ext/jsbn2.js"></script>
+<script src="../ext/prng4.js"></script>
+<script src="../ext/rng.js"></script>
+<script src="../ext/rsa.js"></script>
+<script src="../ext/rsa2.js"></script>
+<script src="../ext/base64.js"></script>
 
-<script language="JavaScript" type="text/javascript" src="../rsapem-1.1.js"></script>
-<script language="JavaScript" type="text/javascript" src="../rsasign-1.2.js"></script>
-<script language="JavaScript" type="text/javascript" src="../asn1hex-1.1.js"></script>
-<script language="JavaScript" type="text/javascript" src="../crypto-1.1.js"></script>
+<script src="../src/base64x-1.1.js"></script>
+<script src="../src/rsapem-1.1.js"></script>
+<script src="../src/rsasign-1.2.js"></script>
+<script src="../src/asn1hex-1.1.js"></script>
+<script src="../src/crypto-1.1.js"></script>
 
 <script>
 $(document).ready(function(){
@@ -116,7 +130,7 @@ test("_rsasign_getHexPaddedDigestInfoForString aaa 4096/sha1", function() {
 //=========================================================================
 module("Signature Test");
 
-test("RSAKey.signString(aaa,sha1)", function() {
+test("RSAKey.sign(aaa,sha1)", function() {
   expect(2);
 
   var rsa = new RSAKey();
@@ -124,12 +138,12 @@ test("RSAKey.signString(aaa,sha1)", function() {
   equal(rsa.n.bitLength(), 1024, "check key size");
 
   //var hSig = rsa.signStringWithSHA1("aaa");
-  var hSig = rsa.signString("aaa", 'sha1');
+  var hSig = rsa.sign("aaa", 'sha1');
   equal(hSig, hSigAAA,
          "String 'aaa' is signed properly with SHA1withRSA algorithm." );
 });
 
-test("RSAKey.signString(aaa,sha1) via readPEM", function() {
+test("RSAKey.sign(aaa,sha1) via readPEM", function() {
   expect(2);
 
   var rsa = new RSAKey();
@@ -137,12 +151,12 @@ test("RSAKey.signString(aaa,sha1) via readPEM", function() {
   equal(rsa.n.bitLength(), 1024, "check key size");
 
   //var hSig = rsa.signStringWithSHA1("aaa");
-  var hSig = rsa.signString("aaa", 'sha1');
+  var hSig = rsa.sign("aaa", 'sha1');
   equal(hSig, hSigAAA,
          "String 'aaa' is signed properly with SHA1withRSA algorithm. (2)" );
 });
 
-test("RSAKey.signString(aaa,sha256) via readPEM", function() {
+test("RSAKey.sign(aaa,sha256) via readPEM", function() {
   expect(2);
 
   var rsa = new RSAKey();
@@ -150,7 +164,7 @@ test("RSAKey.signString(aaa,sha256) via readPEM", function() {
   equal(rsa.n.bitLength(), 1024, "check key size");
 
   //var hSig = rsa.signStringWithSHA256("aaa");
-  var hSig = rsa.signString("aaa", 'sha256');
+  var hSig = rsa.sign("aaa", 'sha256');
   equal(hSig, hSigAAAkZ1SHA256,
          "String 'aaa' is signed properly with SHA256withRSA algorithm. (2)" );
 });
@@ -190,50 +204,6 @@ test("_rsasign_getAlgNameAndHashFromHexDisgestInfo", function() {
   equal(a.length, 2, "check result length.");
   equal(a[0], 'sha1', "check algName");
   equal(a[1], '7e240de74fb1ed08fa08d38063f6a6a91462a815', 'check hash value');
-});
-
-test("_rsasign_verifySignatureWithArgs", function() {
-  var hSig = "6f7df91d8f973a0619d525c319337741130b77b21f9667dc7d1d74853b644cbe5e6b0e84aacc2faee883d43affb811fc653b67c38203d4f206d1b838c4714b6b2cf17cd621303c21bac96090df3883e58784a0576e501c10cdefb12b6bf887e548f6b07b09ae80d8416151d7dab7066d645e2eee57ac5f7af2a70ee0724c8e47";
-  var biSig = parseBigInt(hSig, 16);
-  var k_n =  "00d184617b5f8034655944839f785a63835555088a23d0b34e1a2e6bdf83c49ba2b1ecb398105eed1a21d513ea76f9ad3879843db27e91765885ba33ccf45b1461c227205f08bcd07d5a2cf7fa9443cf2ef376f448503630699059002546d2f2eba124478ac34704e3d83cd1e041178042a922fa3c541b3fdfeb072c5dc44a0021";
-  var k_e =  "010001";
-  var sMsg = "aaa";
-
-  var result = _rsasign_verifySignatureWithArgs(sMsg, biSig, k_n, k_e);
-
-  expect(2);
-  equal(KJUR.crypto.Util.sha1("aaa"), '7e240de74fb1ed08fa08d38063f6a6a91462a815',
-         'check hex_sha1 works properly.');
-  equal(result, true, 'check signature verification result');
-});
-
-test("RSAKey.verifyHexSignatureForMessage aaa hSig", function() {
-  var hSig = "6f7df91d8f973a0619d525c319337741130b77b21f9667dc7d1d74853b644cbe5e6b0e84aacc2faee883d43affb811fc653b67c38203d4f206d1b838c4714b6b2cf17cd621303c21bac96090df3883e58784a0576e501c10cdefb12b6bf887e548f6b07b09ae80d8416151d7dab7066d645e2eee57ac5f7af2a70ee0724c8e47";
-  var k_n =  "00d184617b5f8034655944839f785a63835555088a23d0b34e1a2e6bdf83c49ba2b1ecb398105eed1a21d513ea76f9ad3879843db27e91765885ba33ccf45b1461c227205f08bcd07d5a2cf7fa9443cf2ef376f448503630699059002546d2f2eba124478ac34704e3d83cd1e041178042a922fa3c541b3fdfeb072c5dc44a0021";
-  var k_e =  "010001";
-  var sMsg = "aaa";
-
-  var rsa = new RSAKey();
-  rsa.setPublic(k_n, k_e);
-
-  var result = rsa.verifyHexSignatureForMessage(hSig, sMsg);
-  //var result = true;
-
-  equal(result, true, 'check signature verification result');
-});
-
-test("RSAKey.verifyHexSignatureForMessage aaa ByteArray hSig", function() {
-  var hSig = "6f7df91d8f973a0619d525c319337741130b77b21f9667dc7d1d74853b644cbe5e6b0e84aacc2faee883d43affb811fc653b67c38203d4f206d1b838c4714b6b2cf17cd621303c21bac96090df3883e58784a0576e501c10cdefb12b6bf887e548f6b07b09ae80d8416151d7dab7066d645e2eee57ac5f7af2a70ee0724c8e47";
-  var k_n =  "00d184617b5f8034655944839f785a63835555088a23d0b34e1a2e6bdf83c49ba2b1ecb398105eed1a21d513ea76f9ad3879843db27e91765885ba33ccf45b1461c227205f08bcd07d5a2cf7fa9443cf2ef376f448503630699059002546d2f2eba124478ac34704e3d83cd1e041178042a922fa3c541b3fdfeb072c5dc44a0021";
-  var k_e =  "010001";
-  var sMsg = String.fromCharCode(97, 97, 97);
-
-  var rsa = new RSAKey();
-  rsa.setPublic(k_n, k_e);
-
-  var result = rsa.verifyHexSignatureForMessage(hSig, sMsg);
-
-  equal(result, true, 'signature of message ByteArray aaa is successfully verified.');
 });
 
 //=========================================================================

@@ -5,7 +5,7 @@
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="generator" content="JsDoc Toolkit" />
 		
-		<title>jsrsasign 4.8.7 JavaScript API Reference - KJUR.asn1.x509.AuthorityKeyIdentifier</title>
+		<title>jsrsasign 8.0.0 JavaScript API Reference - KJUR.asn1.x509.AuthorityKeyIdentifier</title>
 
 		<style type="text/css">
 			/* default.css */
@@ -299,6 +299,18 @@ ul.inheritsList
 	
 	<li><a href="../symbols/KJUR.asn1.DERUTF8String.html">KJUR.asn1.DERUTF8String</a></li>
 	
+	<li><a href="../symbols/KJUR.asn1.ocsp.html">KJUR.asn1.ocsp</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.ocsp.CertID.html">KJUR.asn1.ocsp.CertID</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.ocsp.OCSPRequest.html">KJUR.asn1.ocsp.OCSPRequest</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.ocsp.OCSPUtil.html">KJUR.asn1.ocsp.OCSPUtil</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.ocsp.Request.html">KJUR.asn1.ocsp.Request</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.ocsp.TBSRequest.html">KJUR.asn1.ocsp.TBSRequest</a></li>
+	
 	<li><a href="../symbols/KJUR.asn1.tsp.html">KJUR.asn1.tsp</a></li>
 	
 	<li><a href="../symbols/KJUR.asn1.tsp.AbstractTSAAdapter.html">KJUR.asn1.tsp.AbstractTSAAdapter</a></li>
@@ -333,6 +345,8 @@ ul.inheritsList
 	
 	<li><a href="../symbols/KJUR.asn1.x509.AttributeTypeAndValue.html">KJUR.asn1.x509.AttributeTypeAndValue</a></li>
 	
+	<li><a href="../symbols/KJUR.asn1.x509.AuthorityInfoAccess.html">KJUR.asn1.x509.AuthorityInfoAccess</a></li>
+	
 	<li><a href="../symbols/KJUR.asn1.x509.AuthorityKeyIdentifier.html">KJUR.asn1.x509.AuthorityKeyIdentifier</a></li>
 	
 	<li><a href="../symbols/KJUR.asn1.x509.BasicConstraints.html">KJUR.asn1.x509.BasicConstraints</a></li>
@@ -357,11 +371,15 @@ ul.inheritsList
 	
 	<li><a href="../symbols/KJUR.asn1.x509.GeneralNames.html">KJUR.asn1.x509.GeneralNames</a></li>
 	
+	<li><a href="../symbols/KJUR.asn1.x509.IssuerAltName.html">KJUR.asn1.x509.IssuerAltName</a></li>
+	
 	<li><a href="../symbols/KJUR.asn1.x509.KeyUsage.html">KJUR.asn1.x509.KeyUsage</a></li>
 	
 	<li><a href="../symbols/KJUR.asn1.x509.OID.html">KJUR.asn1.x509.OID</a></li>
 	
 	<li><a href="../symbols/KJUR.asn1.x509.RDN.html">KJUR.asn1.x509.RDN</a></li>
+	
+	<li><a href="../symbols/KJUR.asn1.x509.SubjectAltName.html">KJUR.asn1.x509.SubjectAltName</a></li>
 	
 	<li><a href="../symbols/KJUR.asn1.x509.SubjectPublicKeyInfo.html">KJUR.asn1.x509.SubjectPublicKeyInfo</a></li>
 	
@@ -376,6 +394,8 @@ ul.inheritsList
 	<li><a href="../symbols/KJUR.asn1.x509.X509Util.html">KJUR.asn1.x509.X509Util</a></li>
 	
 	<li><a href="../symbols/KJUR.crypto.html">KJUR.crypto</a></li>
+	
+	<li><a href="../symbols/KJUR.crypto.Cipher.html">KJUR.crypto.Cipher</a></li>
 	
 	<li><a href="../symbols/KJUR.crypto.DSA.html">KJUR.crypto.DSA</a></li>
 	
@@ -401,7 +421,7 @@ ul.inheritsList
 	
 	<li><a href="../symbols/KJUR.jws.JWSJS.html">KJUR.jws.JWSJS</a></li>
 	
-	<li><a href="../symbols/PKCS5PKEY.html">PKCS5PKEY</a></li>
+	<li><a href="../symbols/KJUR.lang.String.html">KJUR.lang.String</a></li>
 	
 	<li><a href="../symbols/RSAKey.html">RSAKey</a></li>
 	
@@ -492,34 +512,34 @@ KeyIdentifier ::= OCTET STRING
 					<tbody>
 					
 						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="attributes">&nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont">KJUR.asn1.x509.AuthorityKeyIdentifier.<b><a href="../symbols/KJUR.asn1.x509.AuthorityKeyIdentifier.html#.setCertIssuerByParam">setCertIssuerByParam</a></b>(param)
+								<div class="fixedFont"><b><a href="../symbols/KJUR.asn1.x509.AuthorityKeyIdentifier.html#setCertIssuerByParam">setCertIssuerByParam</a></b>(param)
 								</div>
 								<div class="description">set authorityCertIssuer value by X500Name parameter
-NOTE: Automatic authorityCertIssuer name setting by an issuer 
+NOTE: Automatic authorityCertIssuer name setting by an issuer
 certificate will be supported in future version.</div>
 							</td>
 						</tr>
 					
 						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="attributes">&nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont">KJUR.asn1.x509.AuthorityKeyIdentifier.<b><a href="../symbols/KJUR.asn1.x509.AuthorityKeyIdentifier.html#.setCertSerialNumberByParam">setCertSerialNumberByParam</a></b>(param)
+								<div class="fixedFont"><b><a href="../symbols/KJUR.asn1.x509.AuthorityKeyIdentifier.html#setCertSerialNumberByParam">setCertSerialNumberByParam</a></b>(param)
 								</div>
 								<div class="description">set authorityCertSerialNumber value by DERInteger parameter
-NOTE: Automatic authorityCertSerialNumber setting by an issuer 
+NOTE: Automatic authorityCertSerialNumber setting by an issuer
 certificate will be supported in future version.</div>
 							</td>
 						</tr>
 					
 						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="attributes">&nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont">KJUR.asn1.x509.AuthorityKeyIdentifier.<b><a href="../symbols/KJUR.asn1.x509.AuthorityKeyIdentifier.html#.setKIDByParam">setKIDByParam</a></b>(param)
+								<div class="fixedFont"><b><a href="../symbols/KJUR.asn1.x509.AuthorityKeyIdentifier.html#setKIDByParam">setKIDByParam</a></b>(param)
 								</div>
 								<div class="description">set keyIdentifier value by DERInteger parameter
-NOTE: Automatic keyIdentifier value calculation by an issuer 
+NOTE: Automatic keyIdentifier value calculation by an issuer
 public key will be supported in future version.</div>
 							</td>
 						</tr>
@@ -530,7 +550,7 @@ public key will be supported in future version.</div>
 				
 				
 				<dl class="inheritsList">
-				
+				<dt>Methods borrowed from class <a href="../symbols/KJUR.asn1.ASN1Object.html">KJUR.asn1.ASN1Object</a>: </dt><dd><a href="../symbols/KJUR.asn1.ASN1Object.html#getEncodedHex">getEncodedHex</a>, <a href="../symbols/KJUR.asn1.ASN1Object.html#getLengthHexFromValue">getLengthHexFromValue</a>, <a href="../symbols/KJUR.asn1.ASN1Object.html#getValueHex">getValueHex</a></dd>
 				</dl>
 				
 			
@@ -563,11 +583,12 @@ KeyIdentifier ::= OCTET STRING
 				
 				
 				
-				<pre class="code">var param = {'kid': {'hex': '89ab'},
-             'issuer': {'str': '/C=US/CN=a'},
-             'sn': {'hex': '1234'},
-             'critical': true});
-var e1 = new KJUR.asn1.x509.AuthorityKeyIdentifier(param);</pre>
+				<pre class="code">e1 = new KJUR.asn1.x509.AuthorityKeyIdentifier({
+  critical: true,
+  kid:    {hex: '89ab'},
+  issuer: {str: '/C=US/CN=a'},
+  sn:     {hex: '1234'}
+});</pre>
 				
 				
 				
@@ -608,16 +629,16 @@ var e1 = new KJUR.asn1.x509.AuthorityKeyIdentifier(param);</pre>
 					Method Detail
 				</div>
 				
-					<a name=".setCertIssuerByParam"> </a>
-					<div class="fixedFont">&lt;static&gt; 
+					<a name="setCertIssuerByParam"> </a>
+					<div class="fixedFont">
 					
 					
-					<span class="light">KJUR.asn1.x509.AuthorityKeyIdentifier.</span><b>setCertIssuerByParam</b>(param)
+					<b>setCertIssuerByParam</b>(param)
 					
 					</div>
 					<div class="description">
 						set authorityCertIssuer value by X500Name parameter
-NOTE: Automatic authorityCertIssuer name setting by an issuer 
+NOTE: Automatic authorityCertIssuer name setting by an issuer
 certificate will be supported in future version.
 						
 						
@@ -652,16 +673,16 @@ certificate will be supported in future version.
 
 					<hr />
 				
-					<a name=".setCertSerialNumberByParam"> </a>
-					<div class="fixedFont">&lt;static&gt; 
+					<a name="setCertSerialNumberByParam"> </a>
+					<div class="fixedFont">
 					
 					
-					<span class="light">KJUR.asn1.x509.AuthorityKeyIdentifier.</span><b>setCertSerialNumberByParam</b>(param)
+					<b>setCertSerialNumberByParam</b>(param)
 					
 					</div>
 					<div class="description">
 						set authorityCertSerialNumber value by DERInteger parameter
-NOTE: Automatic authorityCertSerialNumber setting by an issuer 
+NOTE: Automatic authorityCertSerialNumber setting by an issuer
 certificate will be supported in future version.
 						
 						
@@ -696,16 +717,16 @@ certificate will be supported in future version.
 
 					<hr />
 				
-					<a name=".setKIDByParam"> </a>
-					<div class="fixedFont">&lt;static&gt; 
+					<a name="setKIDByParam"> </a>
+					<div class="fixedFont">
 					
 					
-					<span class="light">KJUR.asn1.x509.AuthorityKeyIdentifier.</span><b>setKIDByParam</b>(param)
+					<b>setKIDByParam</b>(param)
 					
 					</div>
 					<div class="description">
 						set keyIdentifier value by DERInteger parameter
-NOTE: Automatic keyIdentifier value calculation by an issuer 
+NOTE: Automatic keyIdentifier value calculation by an issuer
 public key will be supported in future version.
 						
 						
@@ -751,7 +772,7 @@ public key will be supported in future version.
 		
 <!-- ============================== footer ================================= -->
 		<div class="fineprint" style="clear:both">
-                        &copy; 2012-2015 Kenji Urushima, All rights reserved<br/>
+                        &copy; 2012-2017 Kenji Urushima, All rights reserved<br/>
 			
 			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.4.0 
 		</div>

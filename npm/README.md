@@ -3,9 +3,14 @@ jsrsasign
 
 The 'jsrsasign' (RSA-Sign JavaScript Library) is an opensource free pure JavaScript cryptographic library supports RSA/RSAPSS/ECDSA/DSA signing/validation, ASN.1, PKCS#1/5/8 private/public key, X.509 certificate, CRL, CMS SignedData, TimeStamp and CAdES and JSON Web Signature(JWS)/Token(JWT)/Key(JWK).
 
-Public page is http://kjur.github.com/jsrsasign .
+[![license](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/kjur/jsrsasign/blob/master/LICENSE.txt)
+[![bower](https://img.shields.io/bower/v/jsrsasign.svg?maxAge=2592000)](https://libraries.io/bower/jsrsasign)
+[![npm version](https://badge.fury.io/js/jsrsasign.svg)](https://badge.fury.io/js/jsrsasign)
+[![CDNJS](https://img.shields.io/cdnjs/v/jsrsasign.svg)](https://cdnjs.com/libraries/jsrsasign)
 
-[github TOP](http://kjur.github.io/jsrsasign/)|[API doc](http://kjur.github.io/jsrsasign/api/)|[Wiki](https://github.com/kjur/jsrsasign/wiki)|[Node sample](https://github.com/kjur/jsrsasign/tree/master/sample_node)
+Public page is https://kjur.github.io/jsrsasign .
+
+[github TOP](https://kjur.github.io/jsrsasign/)|[API doc](https://kjur.github.io/jsrsasign/api/)|[Wiki](https://github.com/kjur/jsrsasign/wiki)|[Node sample](https://github.com/kjur/jsrsasign/tree/master/sample_node)
 
 DIFFERENCE WITH CRYPTO MODULE
 -----------------------------
@@ -32,28 +37,29 @@ and this 'jsrsasign' module.
 AVAILABLE CLASSES AND METHODS
 -----------------------------
 
-Most of the classes and methods defined in jsrsasign and jsjws are
+Most of the classes and methods defined in jsrsasign 
 available in this jsrsasign npm module.
 
 After loading the module,
 
     > var r = require('jsrsasign');
+    > var r = require('jsrsasign-util'); // for file I/O utilities
 
 You can refer name spaces, classes, methods and functions 
 by following variables:
 
 - r.BigInteger - BigInteger class
-- r.RSAKey - [RSAKey class](http://kjur.github.io/jsrsasign/api/symbols/RSAKey.html)
-- r.ECDSA - [KJUR.crypto.ECDSA class](http://kjur.github.io/jsrsasign/api/symbols/KJUR.crypto.ECDSA.html)
-- r.DSA - [KJUR.crypto.DSA class](http://kjur.github.io/jsrsasign/api/symbols/KJUR.crypto.DSA.html)
-- r.Signature - [KJUR.crypto.Signature class](http://kjur.github.io/jsrsasign/api/symbols/KJUR.crypto.Signature.html)
-- r.MessageDigest - [KJUR.crypto.MessageDigest class](http://kjur.github.io/jsrsasign/api/symbols/KJUR.crypto.MessageDigest.html)
-- r.Mac - [KJUR.crypto.Mac class](http://kjur.github.io/jsrsasign/api/symbols/KJUR.crypto.Mac.html)
-- r.KEYUTIL - [KEYUTIL class](http://kjur.github.io/jsrsasign/api/symbols/KEYUTIL.html)
-- r.ASN1HEX - [ASN1HEX class](http://kjur.github.io/jsrsasign/api/symbols/ASN1HEX.html)
-- r.crypto - [KJUR.crypto name space](http://kjur.github.io/jsrsasign/api/symbols/KJUR.crypto.html)
-- r.asn1 - [KJUR.asn1 name space](http://kjur.github.io/jsrsasign/api/symbols/KJUR.asn1.html)
-- r.jws - [KJUR.jws name space](http://kjur.github.io/jsjws/api/)
+- r.RSAKey - [RSAKey class](https://kjur.github.io/jsrsasign/api/symbols/RSAKey.html)
+- r.ECDSA - [KJUR.crypto.ECDSA class](https://kjur.github.io/jsrsasign/api/symbols/KJUR.crypto.ECDSA.html)
+- r.DSA - [KJUR.crypto.DSA class](https://kjur.github.io/jsrsasign/api/symbols/KJUR.crypto.DSA.html)
+- r.Signature - [KJUR.crypto.Signature class](https://kjur.github.io/jsrsasign/api/symbols/KJUR.crypto.Signature.html)
+- r.MessageDigest - [KJUR.crypto.MessageDigest class](https://kjur.github.io/jsrsasign/api/symbols/KJUR.crypto.MessageDigest.html)
+- r.Mac - [KJUR.crypto.Mac class](https://kjur.github.io/jsrsasign/api/symbols/KJUR.crypto.Mac.html)
+- r.KEYUTIL - [KEYUTIL class](https://kjur.github.io/jsrsasign/api/symbols/KEYUTIL.html)
+- r.ASN1HEX - [ASN1HEX class](https://kjur.github.io/jsrsasign/api/symbols/ASN1HEX.html)
+- r.crypto - [KJUR.crypto name space](https://kjur.github.io/jsrsasign/api/symbols/KJUR.crypto.html)
+- r.asn1 - [KJUR.asn1 name space](https://kjur.github.io/jsrsasign/api/symbols/KJUR.asn1.html)
+- r.jws - [KJUR.jws name space](https://kjur.github.io/jsjws/api/)
 
 Please see API reference in the above links.
 
@@ -62,9 +68,10 @@ EXAMPLE(1) SIGNATURE
 
 Loading encrypted PKCS#5 private key:
 
-    > var fs = require('fs');
-    > var pem = fs.readFileSync('z1.prv.p5e.pem', 'binary');
-    > var prvKey = a.KEYUTIL.getKey(pem, 'passwd');
+    > var rs = require('jsrsasign');
+    > var rsu = require('jsrsasign-util');
+    > var pem = rsu.readFile('z1.prv.p5e.pem');
+    > var prvKey = rs.KEYUTIL.getKey(pem, 'passwd');
 
 Sign string 'aaa' with the loaded private key:
 
